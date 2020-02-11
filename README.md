@@ -8,4 +8,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-This will also run a mock server (with [json-server](https://www.npmjs.com/package/json-server)) for local d
+This will also run a mock server (with [json-server](https://www.npmjs.com/package/json-server)) for local development. Currently it mocks the data from LTO bridge, because that is not maintained on testnet environment. See the `mock-data` folder to change the data from this server.
+
+## Buil
