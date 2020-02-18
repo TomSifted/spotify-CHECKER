@@ -19,4 +19,4 @@ Run `npm run build` to build the project. The build artifacts will be stored in 
 
 ## Running unit tests
 
-Run `npm t
+Run `npm test` to execute the unit tests via [Karma](https://karma-runner.github.io). You can also run `npm run test:watch` to watch for changes on the test files.
