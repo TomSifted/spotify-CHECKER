@@ -12,4 +12,11 @@ This will also run a mock server (with [json-server](https://www.npmjs.com/packa
 
 ## Build
 
-Run `npm run build` to build the project. The build artifacts will be stored in the `dist/` directory. Use `:testnet` or `:mainnet` to build for different environment
+Run `npm run build` to build the project. The build artifacts will be stored in the `dist/` directory. Use `:testnet` or `:mainnet` to build for different environments.
+
+- [Testnet](https://testnet-wallet.ltonetwork.com/) - `npm run build:testnet`
+- [Mainnet](https://wallet.lto.network/) - `npm run build:mainnet`
+
+## Running unit tests
+
+Run `npm t
