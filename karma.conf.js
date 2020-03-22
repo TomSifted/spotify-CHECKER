@@ -31,4 +31,7 @@ module.exports = function (config) {
         flags: ['--no-sandbox']
       }
     },
-    browsers: ['ChromeHeadl
+    browsers: ['ChromeHeadlessNoSandbox'],
+    singleRun: false
+  });
+};
