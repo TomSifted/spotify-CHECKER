@@ -14,4 +14,11 @@
       "lto20": {
         "address": "0x35C666DDeFEdFA19Ea433f3b8e5e34428B223fC3",
         "total": 410732102.47333676,
-        "supply": 80103049.464305
+        "supply": 80103049.46430518,
+        "bridge": 330629053.0090316,
+        "initial": 500000000,
+        "burned": 89267897.52666323,
+        "burn_fee": 10000000000
+      },
+      "binance": {
+        "address": "bn
