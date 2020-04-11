@@ -31,3 +31,32 @@
         <div fxLayout="row" fxLayoutAlign="start center" class="anchors-header">
           <div class="label">ANCHOR:</div>
           <div
+            class="anchor-button"
+            matRipple
+            [ngClass]="{ selected: selectedAnchorTpe === 'hex' }"
+            (click)="selectAnchorType('hex')"
+          >
+            Hex
+          </div>
+          <div
+            class="anchor-button"
+            matRipple
+            [ngClass]="{ selected: selectedAnchorTpe === 'base64' }"
+            (click)="selectAnchorType('base64')"
+          >
+            Base64
+          </div>
+          <div
+            class="anchor-button"
+            matRipple
+            [ngClass]="{ selected: selectedAnchorTpe === 'base58' }"
+            (click)="selectAnchorType('base58')"
+          >
+            Base58
+          </div>
+        </div>
+        <lto-copyable-text text="ashdkjfhaskjdfh"></lto-copyable-text>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
