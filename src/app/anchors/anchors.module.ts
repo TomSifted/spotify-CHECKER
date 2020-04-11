@@ -1,2 +1,4 @@
 import { NgModule } from '@angular/core';
-impor
+import { SharedModule } from '../shared';
+import { AnchorsComponent } from './anchors.component';
+import { FileDropModule, AnchorDetailsModule } from './components
