@@ -1,2 +1,6 @@
 <div class="container" fxLayout="row" fxLayoutAlign="center center">
-  <label fo
+  <label for="file-input" class="box">
+    <ngx-file-drop customstyle="box--" (onFileDrop)="dropped($event)">
+      <ng-template ngx-file-drop-content-tmp>
+        <div>
+          <img src="assets/fil
