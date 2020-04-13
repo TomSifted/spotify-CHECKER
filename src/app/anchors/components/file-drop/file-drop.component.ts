@@ -25,3 +25,28 @@ export class FileDropComponent implements OnInit {
       this.readFile(file);
     });
   }
+
+  fileSelected(event: any) {
+    const file = event.target.files[0];
+    this.readFile(file);
+  }
+
+  private readFile(file: File) {
+    const reader = new FileReader();
+    reader.onload = () => {
+      this.generateHash(reader.result);
+    };
+
+    reader.readAsArrayBuffer(file);
+  }
+
+  private generateHash(buffer: any) {
+    const hex = sha256(buffer);
+    const shaBuffer = sha256.digest(buffer);
+
+    this.fileHash.next({
+      hex,
+      base58: this.encoder.base58Encode(shaBuffer),
+    });
+  }
+}
