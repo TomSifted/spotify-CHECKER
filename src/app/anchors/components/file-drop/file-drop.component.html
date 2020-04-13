@@ -20,4 +20,9 @@
     <input
       type="file"
       #fileInput
-      (click
+      (click)="fileInput.value = null"
+      id="file-input"
+      (change)="fileSelected($event)"
+    />
+  </label>
+</div>
