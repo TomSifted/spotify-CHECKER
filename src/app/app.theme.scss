@@ -1,0 +1,53 @@
+
+@import './core/components/components.theme.scss';
+@import './shared//components/components.theme.scss';
+@import './pages/pages.theme.scss';
+@mixin app-theme($theme) {
+  @include signin-theme($theme);
+  @include core-components-theme($theme);
+  @include shared-components-theme($theme);
+  @include pages-theme($theme);
+
+  .mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-end,
+  .mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-gap,
+  .mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-start {
+    border-width: 1px !important;
+  }
+
+  .mat-drawer-container {
+    background-color: #f5f6f8;
+  }
+
+  .mat-card.mat-card {
+    padding: 0;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+    border-radius: 6px;
+
+    .mat-card-title {
+      font-weight: 400;
+      padding: 16px;
+      box-sizing: border-box;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+      font-size: 18px;
+    }
+  }
+
+  .mat-icon[svgicon] {
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .mat-toolbar {
+    color: #fff;
+  }
+
+  .mat-card-content {
+    margin: 0 15px;
+  }
+}
+
+.qrcode {
+  text-align: center;
+}

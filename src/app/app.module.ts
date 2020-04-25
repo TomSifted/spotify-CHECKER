@@ -80,3 +80,45 @@ import { environment } from '../environments/environment';
     {
       provide: LTO_NETWORK_BYTE,
       useValue: environment.networkByte,
+    },
+    {
+      provide: LTO_PUBLIC_API,
+      useValue: environment.lto_api_url,
+    },
+    {
+      provide: LTO_MOBILE_AUTH,
+      useValue: environment.mobile_auth,
+    },
+    {
+      provide: AMOUNT_DIVIDER,
+      useValue: 100000000,
+    },
+    {
+      provide: LTO_BRIDGE_HOST,
+      useValue: environment.bridge_url,
+    },
+    {
+      provide: DEFAULT_TRANSFER_FEE,
+      useValue: environment.transfer_fee,
+    },
+    {
+      provide: MASS_TRANSFER_FEE,
+      useValue: environment.mass_transfer_fee,
+    },
+    {
+      provide: ANCHOR_FEE,
+      useValue: environment.anchor_fee,
+    },
+    {
+      provide: BRIDGE_ENABLED,
+      useValue: environment.bridge,
+    },
+    {
+      provide: SWAP_PAGE_ENABLED,
+      useValue: environment.swapPageEnabled,
+    },
+  ],
+  bootstrap: [AppComponent],
+  entryComponents: [],
+})
+export class AppModule {}
