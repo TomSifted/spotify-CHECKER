@@ -6,4 +6,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgxFileDropModule } from 'ngx-file-drop';
 
 @NgModule({
-  declarations: [FileDropCo
+  declarations: [FileDropComponent],
+  imports: [CommonModule, MatIconModule, FlexLayoutModule, NgxFileDropModule],
+  exports: [FileDropComponent],
+})
+export class FileDropModule {}
