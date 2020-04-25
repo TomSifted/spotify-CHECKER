@@ -1,0 +1,15 @@
+
+<mat-sidenav-container fxFlexFill [hasBackdrop]="hasBackdrop$ | async" (backdropClick)="closeSidenav()">
+  <mat-sidenav
+    *ngIf="authenticated$ | async"
+    [opened]="opened$ | async"
+    [mode]="mode$ | async"
+    [disableClose]="true"
+  >
+    <lto-sidenav></lto-sidenav>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <lto-appbar></lto-appbar>
+    <div class="content"><router-outlet></router-outlet></div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -69,3 +69,12 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes),
     // SigninModule,
+    CreateAccountModule,
+    ImportModule,
+    NoAccountModule,
+    TransfersModule,
+    AnchorsModule
+  ],
+  exports: [RouterModule]
+})
+export class AppRoutingModule {}
