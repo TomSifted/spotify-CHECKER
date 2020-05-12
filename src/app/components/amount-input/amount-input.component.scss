@@ -10,4 +10,15 @@
 input {
   border: none;
   outline: none;
-  border-bott
+  border-bottom: 1px dashed #979797;
+  font-size: 18px;
+  text-align: center;
+  max-width: 100%;
+
+  &:disabled {
+    color: #c9c9c9;
+  }
+
+  &.invalid {
+    border-color: red;
+    colo
