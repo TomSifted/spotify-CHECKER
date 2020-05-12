@@ -20,4 +20,8 @@ export class BridgeDepositDialogComponent implements OnInit {
   }
 
   async createBridget() {
-    const address = await toProm
+    const address = await toPromise(this.wallet.address$);
+    this.bridgeAddress = await toPromise(this.bridgeService.depositTo(address, this.captcha));
+    this.step = 2;
+  }
+}
