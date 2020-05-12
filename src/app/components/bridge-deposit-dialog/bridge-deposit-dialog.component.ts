@@ -13,4 +13,11 @@ export class BridgeDepositDialogComponent implements OnInit {
 
   constructor(private wallet: WalletService, private bridgeService: BridgeService) {}
 
-  ng
+  ngOnInit() {}
+
+  async resolvedCaptcha(captchaResponse: string) {
+    this.captcha = captchaResponse;
+  }
+
+  async createBridget() {
+    const address = await toProm
