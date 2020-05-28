@@ -9,4 +9,7 @@
     <div class="address-box">
       <h4>Your ERC20 wallet address:</h4>
       <mat-form-field appearance="outline" floatLabel="never">
-        <input ma
+        <input matInput [(ngModel)]="erc20Address" required type="text" placeholder="Fill in your wallet address" />
+      </mat-form-field>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center" fxL
