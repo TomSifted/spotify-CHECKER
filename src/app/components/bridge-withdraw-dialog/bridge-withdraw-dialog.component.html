@@ -17,4 +17,8 @@
         <h4>LTO Mainnet</h4>
         <lto-wallet-amount-input [(ngModel)]="mainnetAmount"></lto-wallet-amount-input>
       </div>
- 
+      <mat-icon>arrow_right_alt</mat-icon>
+      <div>
+        <h4>ERC20</h4>
+        <lto-wallet-amount-input [disabled]="true" [ngModel]="erc20Amount"></lto-wallet-amount-input>
+      
