@@ -12,4 +12,9 @@
         <input matInput [(ngModel)]="erc20Address" required type="text" placeholder="Fill in your wallet address" />
       </mat-form-field>
     </div>
-    <div fxLayout="row" fxLayoutAlign="center center" fxL
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px" *ngIf="burnRatePts">
+      <div>
+        <h4>LTO Mainnet</h4>
+        <lto-wallet-amount-input [(ngModel)]="mainnetAmount"></lto-wallet-amount-input>
+      </div>
+ 
