@@ -26,4 +26,11 @@
     <div class="captcha" fxLayout="row" fxLayoutAlign="center">
       <re-captcha (resolved)="resolvedCaptcha($event)"></re-captcha>
     </div>
-    <div class="confirm" fxLay
+    <div class="confirm" fxLayout="row" fxLayoutAlign="center center">
+      <button mat-flat-button color="primary" (click)="transfer()" [disabled]="cannotContinue">
+        Confirm swap
+      </button>
+    </div>
+  </ng-container>
+
+  <ng-
