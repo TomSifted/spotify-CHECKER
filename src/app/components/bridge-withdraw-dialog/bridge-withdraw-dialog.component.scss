@@ -33,4 +33,19 @@ mat-dialog-content {
   text-align: center;
 
   h4 {
-    margin-bot
+    margin-bottom: 0;
+  }
+
+  mat-icon {
+    margin-bottom: -44px;
+  }
+
+  .captcha {
+    padding: 32px 0;
+  }
+
+  .success {
+    text-align: center;
+    p {
+      width: 350px;
+  
