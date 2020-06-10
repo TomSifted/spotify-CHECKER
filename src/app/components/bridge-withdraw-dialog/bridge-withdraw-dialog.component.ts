@@ -28,4 +28,10 @@ export class BridgeWithdrawDialogComponent implements OnInit {
   captchaResponse: string = '';
   burnRate: number = 0;
 
-  get canno
+  get cannotContinue(): boolean {
+    return !this.captchaResponse || this.erc20Amount === 0 || !this.erc20Address;
+  }
+
+  constructor(
+    private bridgeService: BridgeService,
+    private wallet: Wallet
