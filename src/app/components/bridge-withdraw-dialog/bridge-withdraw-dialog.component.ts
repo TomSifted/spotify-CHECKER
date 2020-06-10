@@ -44,4 +44,11 @@ export class BridgeWithdrawDialogComponent implements OnInit {
   ngOnInit() {}
 
   resolvedCaptcha(captchaResponse: string) {
-    this.captchaR
+    this.captchaResponse = captchaResponse;
+  }
+
+  async transfer() {
+    await this.wallet.withdraw(
+      this.erc20Address,
+      this.mainnetAmount,
+      this.DEFAULT_TRANSFER_FEE / this.AMOUNT_DIVIDER,
