@@ -10,4 +10,14 @@ import { DEFAULT_TRANSFER_FEE, AMOUNT_DIVIDER } from '../../tokens';
 })
 export class BridgeWithdrawDialogComponent implements OnInit {
   step: number = 1;
-  mainnetAmount
+  mainnetAmount = 0;
+
+  get erc20Amount(): number {
+    const amount = parseFloat(this.mainnetAmount + '');
+    if (isNaN(amount)) {
+      return 0;
+    }
+    return amount - amount * this.burnRate;
+  }
+
+  ge
