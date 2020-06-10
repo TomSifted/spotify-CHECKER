@@ -20,4 +20,12 @@ export class BridgeWithdrawDialogComponent implements OnInit {
     return amount - amount * this.burnRate;
   }
 
-  ge
+  get burnRatePts(): number {
+    return this.burnRate * 100;
+  }
+
+  erc20Address = '';
+  captchaResponse: string = '';
+  burnRate: number = 0;
+
+  get canno
