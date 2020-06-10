@@ -38,4 +38,10 @@ export class BridgeWithdrawDialogComponent implements OnInit {
     @Inject(DEFAULT_TRANSFER_FEE) private DEFAULT_TRANSFER_FEE: number,
     @Inject(AMOUNT_DIVIDER) private AMOUNT_DIVIDER: number
   ) {
-    bridgeS
+    bridgeService.burnRate$.pipe(take(1)).subscribe(burnRate => (this.burnRate = burnRate));
+  }
+
+  ngOnInit() {}
+
+  resolvedCaptcha(captchaResponse: string) {
+    this.captchaR
