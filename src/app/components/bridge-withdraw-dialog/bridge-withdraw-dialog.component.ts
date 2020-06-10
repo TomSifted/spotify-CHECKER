@@ -34,4 +34,8 @@ export class BridgeWithdrawDialogComponent implements OnInit {
 
   constructor(
     private bridgeService: BridgeService,
-    private wallet: Wallet
+    private wallet: WalletService,
+    @Inject(DEFAULT_TRANSFER_FEE) private DEFAULT_TRANSFER_FEE: number,
+    @Inject(AMOUNT_DIVIDER) private AMOUNT_DIVIDER: number
+  ) {
+    bridgeS
