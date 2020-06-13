@@ -52,3 +52,8 @@ export class BridgeWithdrawDialogComponent implements OnInit {
       this.erc20Address,
       this.mainnetAmount,
       this.DEFAULT_TRANSFER_FEE / this.AMOUNT_DIVIDER,
+      this.captchaResponse
+    );
+    this.step = 2;
+  }
+}
