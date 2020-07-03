@@ -11,4 +11,8 @@ export interface DialogData {
   templateUrl: './content-dialog.component.html',
   styleUrls: ['./content-dialog.component.scss'],
 })
-export class ContentDialogComponent im
+export class ContentDialogComponent implements OnInit {
+  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+
+  ngOnInit() {}
+}
