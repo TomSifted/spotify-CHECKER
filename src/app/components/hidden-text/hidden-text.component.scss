@@ -1,4 +1,14 @@
 .text-box {
   .label {
     margin-bottom: 16px;
- 
+    font-weight: 500;
+  }
+
+  .text-holder {
+    background: rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    text-align: center;
+    font-size: 16px;
+
+  
