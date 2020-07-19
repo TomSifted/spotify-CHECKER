@@ -18,4 +18,13 @@ export class HiddenTextComponent implements OnInit {
     return '*****************************';
   }
 
- 
+  visible: boolean = false;
+
+  constructor() {}
+
+  ngOnInit() {}
+
+  show() {
+    this.visible = true;
+  }
+}
