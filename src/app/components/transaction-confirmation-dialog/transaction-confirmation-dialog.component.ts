@@ -9,4 +9,13 @@ export interface TransactionConfirmDialogData {
 
 interface TransactionDataField {
   label: string;
-  value: st
+  value: string | number;
+  /**
+   * Field to only be shown in the detail view
+   */
+  detailOnly?: boolean;
+}
+
+@Component({
+  selector: 'lto-wallet-transaction-confirmation-dialog',
+  t
