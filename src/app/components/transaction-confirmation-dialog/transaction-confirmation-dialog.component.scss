@@ -16,4 +16,18 @@
     padding: 12px 8px;
 
     .label {
-      
+      color: rgba(0, 0, 0, 0.44);
+    }
+    .value {
+      text-align: right;
+    }
+  }
+}
+
+.detail {
+  font-size: 0.8em;
+}
+
+.hidden {
+  display: none !important;
+}
