@@ -8,4 +8,12 @@
   margin-bottom: 20px;
 }
 
-.transactio
+.transaction-data-list {
+  border-top: 1px solid #ebebeb;
+  margin-bottom: 32px;
+  .transaction-data-row {
+    border-bottom: 1px solid #ebebeb;
+    padding: 12px 8px;
+
+    .label {
+      
