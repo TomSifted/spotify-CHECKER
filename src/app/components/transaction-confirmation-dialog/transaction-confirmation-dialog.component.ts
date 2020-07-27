@@ -21,4 +21,9 @@ interface TransactionDataField {
   templateUrl: './transaction-confirmation-dialog.component.html',
   styleUrls: ['./transaction-confirmation-dialog.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers:
+  providers: [DecimalPipe],
+})
+export class TransactionConfirmationDialogComponent implements OnInit {
+  dialogTitle!: string;
+  transactionData!: TransactionDataField[];
+  showDetails = false
