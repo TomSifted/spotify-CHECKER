@@ -26,4 +26,12 @@ interface TransactionDataField {
 export class TransactionConfirmationDialogComponent implements OnInit {
   dialogTitle!: string;
   transactionData!: TransactionDataField[];
-  showDetails = false
+  showDetails = false;
+
+  constructor(
+    @Inject(MAT_DIALOG_DATA) private _dialogData: TransactionConfirmDialogData,
+    private _decimalPipe: DecimalPipe
+  ) {}
+
+  ngOnInit() {
+    this.dia
