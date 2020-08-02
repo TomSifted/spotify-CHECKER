@@ -34,4 +34,9 @@ export class TransactionConfirmationDialogComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.dia
+    this.dialogTitle = this._dialogData.title || 'Confirm transaction';
+    this.transactionData = this._dialogData.transactionData || [];
+  }
+
+  isNumber(value: any): boolean {
+    return type
