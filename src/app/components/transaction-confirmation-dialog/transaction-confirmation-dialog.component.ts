@@ -48,4 +48,10 @@ export class TransactionConfirmationDialogComponent implements OnInit {
     }
 
     return value;
- 
+  }
+
+  /**
+   * Return true if there is fields to show only in the detail view
+   */
+  get haveDetails () { return this.transactionData.some(field => field.detailOnly); }
+}
