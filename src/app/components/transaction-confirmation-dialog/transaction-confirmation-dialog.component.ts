@@ -39,4 +39,13 @@ export class TransactionConfirmationDialogComponent implements OnInit {
   }
 
   isNumber(value: any): boolean {
-    return type
+    return typeof value === 'number';
+  }
+
+  prettify(value: string | number) {
+    if (typeof value === 'number') {
+      return this._decimalPipe.transform(value);
+    }
+
+    return value;
+ 
