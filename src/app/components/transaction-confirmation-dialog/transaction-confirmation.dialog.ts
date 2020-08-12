@@ -13,4 +13,9 @@ export class TransactionConfirmDialog {
     return this.matDialog
       .open(TransactionConfirmationDialogComponent, {
         width: `${width}px`,
-        
+        data: dialogData,
+      })
+      .afterClosed()
+      .toPromise();
+  }
+}
