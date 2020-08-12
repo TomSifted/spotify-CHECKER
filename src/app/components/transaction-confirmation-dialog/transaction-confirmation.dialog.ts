@@ -9,4 +9,8 @@ import {
 export class TransactionConfirmDialog {
   constructor(private matDialog: MatDialog) {}
 
-  show(dialogData: 
+  show(dialogData: TransactionConfirmDialogData, width: number = 500): Promise<boolean> {
+    return this.matDialog
+      .open(TransactionConfirmationDialogComponent, {
+        width: `${width}px`,
+        
