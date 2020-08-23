@@ -10,4 +10,13 @@
 
 .transaction-data-list {
   border-top: 1px solid #ebebeb;
-  
+  margin-bottom: 32px;
+  .transaction-data-row {
+    border-bottom: 1px solid #ebebeb;
+    padding: 12px 8px;
+
+    .label {
+      color: rgba(0, 0, 0, 0.44);
+    }
+    .value {
+      tex
