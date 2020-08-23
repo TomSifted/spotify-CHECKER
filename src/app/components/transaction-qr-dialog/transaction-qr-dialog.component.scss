@@ -19,4 +19,15 @@
       color: rgba(0, 0, 0, 0.44);
     }
     .value {
-      tex
+      text-align: right;
+    }
+  }
+}
+
+.detail {
+  font-size: 0.8em;
+}
+
+.hidden {
+  display: none !important;
+}
