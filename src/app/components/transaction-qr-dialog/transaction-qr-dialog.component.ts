@@ -20,4 +20,9 @@ interface TransactionDataField {
 
 @Component({
   selector: 'lto-wallet-transaction-qr-dialog',
-  templateUrl: './transaction-qr-
+  templateUrl: './transaction-qr-dialog.component.html',
+  styleUrls: ['./transaction-qr-dialog.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [DecimalPipe],
+})
+export class Transact
