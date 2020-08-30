@@ -25,4 +25,11 @@ interface TransactionDataField {
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [DecimalPipe],
 })
-export class Transact
+export class TransactionQrDialogComponent implements OnInit {
+  dialogTitle!: string;
+  tx!: object;
+  transactionData!: TransactionDataField[];
+  showDetails = false;
+
+  constructor(
+    @Inject(MAT_DIALOG_DATA) pr
