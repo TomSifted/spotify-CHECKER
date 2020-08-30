@@ -11,4 +11,13 @@ export interface TransactionQrDialogData {
 
 interface TransactionDataField {
   label: string;
-  value: string |
+  value: string | number;
+  /**
+   * Field to only be shown in the detail view
+   */
+  detailOnly?: boolean;
+}
+
+@Component({
+  selector: 'lto-wallet-transaction-qr-dialog',
+  templateUrl: './transaction-qr-
