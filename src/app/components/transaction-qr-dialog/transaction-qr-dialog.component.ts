@@ -32,4 +32,9 @@ export class TransactionQrDialogComponent implements OnInit {
   showDetails = false;
 
   constructor(
-    @Inject(MAT_DIALOG_DATA) pr
+    @Inject(MAT_DIALOG_DATA) private _dialogData: TransactionQrDialogData,
+    private _decimalPipe: DecimalPipe
+  ) {}
+
+  ngOnInit() {
+    this.dialogTitle = this._dialogData.title || 'Scan the QR code with
