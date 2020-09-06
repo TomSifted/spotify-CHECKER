@@ -37,4 +37,10 @@ export class TransactionQrDialogComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.dialogTitle = this._dialogData.title || 'Scan the QR code with
+    this.dialogTitle = this._dialogData.title || 'Scan the QR code with LTO Universal wallet';
+    this.tx = this._dialogData.tx;
+    this.transactionData = this._dialogData.transactionData || [];
+  }
+
+  isNumber(value: any): boolean {
+    ret
