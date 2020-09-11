@@ -55,4 +55,7 @@ export class TransactionQrDialogComponent implements OnInit {
   }
 
   /**
-   * Return t
+   * Return true if there is fields to show only in the detail view
+   */
+  get haveDetails () { return this.transactionData.some(field => field.detailOnly); }
+}
