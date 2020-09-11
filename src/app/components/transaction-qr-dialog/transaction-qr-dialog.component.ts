@@ -43,4 +43,16 @@ export class TransactionQrDialogComponent implements OnInit {
   }
 
   isNumber(value: any): boolean {
-    ret
+    return typeof value === 'number';
+  }
+
+  prettify(value: string | number) {
+    if (typeof value === 'number') {
+      return this._decimalPipe.transform(value);
+    }
+
+    return value;
+  }
+
+  /**
+   * Return t
