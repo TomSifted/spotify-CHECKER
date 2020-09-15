@@ -8,4 +8,5 @@ import { BridgeDepositDialogComponent } from './bridge-deposit-dialog/bridge-dep
 import { BridgeWithdrawDialogComponent } from './bridge-withdraw-dialog/bridge-withdraw-dialog.component';
 import { ContentDialogComponent } from './content-dialog';
 import { DeleteAccountDialogComponent } from './delete-account-dialog/delete-account-dialog.component';
-i
+import { HiddenTextComponent } from './hidden-text/hidden-text.component';
+import { TransactionConfirmationDialogModule } from './transaction-confirmat
