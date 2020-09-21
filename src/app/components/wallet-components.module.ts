@@ -14,3 +14,9 @@ import { TransactionQrDialogModule } from './transaction-qr-dialog';
 import { AccountQrComponent } from './account-qr/account-qr.component';
 
 @NgModule({
+  imports: [SharedModule, QRCodeModule, RecaptchaModule],
+  declarations: [
+    AmountInputComponent,
+    BridgeDepositDialogComponent,
+    BridgeWithdrawDialogComponent,
+    Delet
