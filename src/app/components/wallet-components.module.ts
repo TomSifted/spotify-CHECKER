@@ -19,4 +19,12 @@ import { AccountQrComponent } from './account-qr/account-qr.component';
     AmountInputComponent,
     BridgeDepositDialogComponent,
     BridgeWithdrawDialogComponent,
-    Delet
+    DeleteAccountDialogComponent,
+    HiddenTextComponent,
+    ContentDialogComponent,
+    AccountQrComponent,
+  ],
+  exports: [
+    AmountInputComponent,
+    BridgeDepositDialogComponent,
+    BridgeWithdrawDialogCom
