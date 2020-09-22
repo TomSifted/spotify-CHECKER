@@ -27,4 +27,11 @@ import { AccountQrComponent } from './account-qr/account-qr.component';
   exports: [
     AmountInputComponent,
     BridgeDepositDialogComponent,
-    BridgeWithdrawDialogCom
+    BridgeWithdrawDialogComponent,
+    HiddenTextComponent,
+    TransactionConfirmationDialogModule,
+    TransactionQrDialogModule,
+    AccountQrComponent
+  ],
+  entryComponents: [
+    BridgeDeposit
