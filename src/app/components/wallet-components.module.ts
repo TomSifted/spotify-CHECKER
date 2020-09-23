@@ -34,4 +34,10 @@ import { AccountQrComponent } from './account-qr/account-qr.component';
     AccountQrComponent
   ],
   entryComponents: [
-    BridgeDeposit
+    BridgeDepositDialogComponent,
+    BridgeWithdrawDialogComponent,
+    DeleteAccountDialogComponent,
+    ContentDialogComponent,
+  ]
+})
+export class WalletComponentsModule {}
