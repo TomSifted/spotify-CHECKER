@@ -1,1 +1,4 @@
-<mat-t
+<mat-toolbar fxLayout="row">
+  <lto-brand *ngIf="authenticated !== true"></lto-brand>
+  <ng-container *ngIf="authenticated">
+    <button mat-icon-button fxHide fxShow.lt-lg (click)
