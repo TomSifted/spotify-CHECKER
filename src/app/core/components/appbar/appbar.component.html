@@ -11,4 +11,7 @@
   <span fxFlex="1 1 auto"></span>
   <div fxLayout="row" fxLayoutGap="8px" class="hide-small-screen" *ngIf="authenticated !== true">
     <a mat-button routerLink="/signin">Sign in</a>
-    <a mat-button routerLink="create-account">Create Ac
+    <a mat-button routerLink="create-account">Create Account</a>
+    <a mat-button routerLink="import-account">Import Account</a>
+  </div>
+  <div *ngIf="authenticated" fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="16px">
