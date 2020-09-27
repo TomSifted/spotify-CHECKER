@@ -5,4 +5,8 @@
       <mat-icon>menu</mat-icon>
     </button>
   </ng-container>
-  <div class="address" *ngIf="authenticated" (click)="copyAddressToClipboard(userAccount?.address || ledger
+  <div class="address" *ngIf="authenticated" (click)="copyAddressToClipboard(userAccount?.address || ledgerAccount?.address)">
+    <span fxHide.xs>Address:</span> {{userAccount?.address || ledgerAccount?.address}}
+  </div>
+  <span fxFlex="1 1 auto"></span>
+  <div f
