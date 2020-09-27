@@ -9,4 +9,6 @@
     <span fxHide.xs>Address:</span> {{userAccount?.address || ledgerAccount?.address}}
   </div>
   <span fxFlex="1 1 auto"></span>
-  <div f
+  <div fxLayout="row" fxLayoutGap="8px" class="hide-small-screen" *ngIf="authenticated !== true">
+    <a mat-button routerLink="/signin">Sign in</a>
+    <a mat-button routerLink="create-account">Create Ac
