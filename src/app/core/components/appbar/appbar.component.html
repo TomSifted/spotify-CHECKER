@@ -16,4 +16,8 @@
   </div>
   <div *ngIf="authenticated" fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="16px">
     <button mat-button fxLayout="row" fxLayoutAlign="start center" class="account-button" [matMenuTriggerFor]="appMenu">
-      <mat-icon class="user-icon">account_box
+      <mat-icon class="user-icon">account_box</mat-icon>
+      <span class="hide-small-screen">{{ userAccount?.name || ledgerAccount?.name }}</span>
+      <mat-icon>arrow_drop_down</mat-icon>
+    </button>
+    <mat-menu #appMenu="matMenu
