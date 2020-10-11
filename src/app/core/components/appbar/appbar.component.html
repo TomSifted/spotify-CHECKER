@@ -15,3 +15,5 @@
     <a mat-button routerLink="import-account">Import Account</a>
   </div>
   <div *ngIf="authenticated" fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="16px">
+    <button mat-button fxLayout="row" fxLayoutAlign="start center" class="account-button" [matMenuTriggerFor]="appMenu">
+      <mat-icon class="user-icon">account_box
