@@ -10,4 +10,9 @@ import { AuthService, ILedgerAccount, IUserAccount, Sidenav } from '@app/core/se
   templateUrl: './appbar.component.html',
   styleUrls: ['./appbar.component.scss'],
 })
-exp
+export class AppbarComponent implements OnInit, OnDestroy {
+  authenticated$!: Subscription;
+  authenticated!: boolean;
+
+  user$!: Subscription;
+  userAccount!: IUserAccount | nul
