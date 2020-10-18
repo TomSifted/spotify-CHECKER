@@ -25,4 +25,10 @@ export class AppbarComponent implements OnInit, OnDestroy {
 
   constructor(
     private _auth: AuthService,
-    private _
+    private _router: Router,
+    private _sidenav: Sidenav,
+    private _snackbar: MatSnackBar
+  ) {}
+
+  ngOnInit() {
+    this.user$ = this._auth.account$.subscribe((userAccount) => (this.use
