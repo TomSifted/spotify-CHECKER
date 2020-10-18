@@ -31,4 +31,8 @@ export class AppbarComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    this.user$ = this._auth.account$.subscribe((userAccount) => (this.use
+    this.user$ = this._auth.account$.subscribe((userAccount) => (this.userAccount = userAccount));
+    this.ledger$ = this._auth.ledgerAccount$.subscribe(
+      (ledgerAccount) => (this.ledgerAccount = ledgerAccount)
+    );
+    this.authent
