@@ -35,4 +35,8 @@ export class AppbarComponent implements OnInit, OnDestroy {
     this.ledger$ = this._auth.ledgerAccount$.subscribe(
       (ledgerAccount) => (this.ledgerAccount = ledgerAccount)
     );
-    this.authent
+    this.authenticated$ = this._auth.authenticated$.subscribe(
+      (authenticated) => (this.authenticated = authenticated)
+    );
+    this.accounts$ = this._auth.availableAccounts$.subscribe(
+      (ava
