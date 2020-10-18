@@ -15,4 +15,14 @@ export class AppbarComponent implements OnInit, OnDestroy {
   authenticated!: boolean;
 
   user$!: Subscription;
-  userAccount!: IUserAccount | nul
+  userAccount!: IUserAccount | null;
+
+  ledger$!: Subscription;
+  ledgerAccount!: ILedgerAccount | null;
+
+  accounts$!: Subscription;
+  availableAccounts!: any;
+
+  constructor(
+    private _auth: AuthService,
+    private _
