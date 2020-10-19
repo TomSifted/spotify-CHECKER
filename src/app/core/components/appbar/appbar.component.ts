@@ -39,4 +39,11 @@ export class AppbarComponent implements OnInit, OnDestroy {
       (authenticated) => (this.authenticated = authenticated)
     );
     this.accounts$ = this._auth.availableAccounts$.subscribe(
-      (ava
+      (availableAccounts) => (this.availableAccounts = availableAccounts)
+    );
+  }
+
+  ngOnDestroy() {
+    this.user$.unsubscribe();
+    this.ledger$.unsubscribe();
+    this.accounts$.unsubscribe()
