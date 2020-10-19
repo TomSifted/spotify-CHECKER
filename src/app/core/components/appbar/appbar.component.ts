@@ -46,4 +46,16 @@ export class AppbarComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.user$.unsubscribe();
     this.ledger$.unsubscribe();
-    this.accounts$.unsubscribe()
+    this.accounts$.unsubscribe();
+    this.authenticated$.unsubscribe();
+  }
+
+  signout() {
+    this._auth.logout();
+    this._router.navigate(['/', 'signin']);
+  }
+
+  openSidenav() {
+    this._sidenav.open();
+  }
+
