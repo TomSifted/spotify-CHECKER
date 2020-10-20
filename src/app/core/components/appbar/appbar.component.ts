@@ -59,3 +59,7 @@ export class AppbarComponent implements OnInit, OnDestroy {
     this._sidenav.open();
   }
 
+  copyAddressToClipboard(address: string) {
+    const input = document.createElement('input');
+    input.style.position = 'absolute';
+    input.style.bottom = '-1000px
