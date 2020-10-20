@@ -62,4 +62,11 @@ export class AppbarComponent implements OnInit, OnDestroy {
   copyAddressToClipboard(address: string) {
     const input = document.createElement('input');
     input.style.position = 'absolute';
-    input.style.bottom = '-1000px
+    input.style.bottom = '-1000px';
+    document.body.appendChild(input);
+    input.value = address;
+    input.select();
+    document.execCommand('copy');
+    document.body.removeChild(input);
+
+    this._snackbar.open('Ad
