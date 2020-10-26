@@ -69,4 +69,6 @@ export class AppbarComponent implements OnInit, OnDestroy {
     document.execCommand('copy');
     document.body.removeChild(input);
 
-    this._snackbar.open('Ad
+    this._snackbar.open('Address is copied', 'Dismiss', { duration: 3000 });
+  }
+}
