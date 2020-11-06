@@ -23,4 +23,13 @@ import { Component, OnInit } from '@angular/core';
       }
 
       a img {
-        heigh
+        height: 33px;
+      }
+    `
+  ]
+})
+export class BrandComponent implements OnInit {
+  constructor() {}
+
+  ngOnInit() {}
+}
