@@ -13,4 +13,14 @@ import { Component, OnInit } from '@angular/core';
         font-weight: 100;
         display: flex;
         flex-direction: row;
-        al
+        align-content: center;
+        align-items: end;
+      }
+
+      a strong {
+        font-weight: 500;
+        margin-right: 8px;
+      }
+
+      a img {
+        heigh
