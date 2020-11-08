@@ -1,3 +1,19 @@
 :host {
   display: block;
-  wid
+  width: 300px;
+}
+
+mat-toolbar {
+  background: rgb(23, 5, 75);
+  border-bottom: 1px solid rgb(23, 5, 75);
+}
+
+.brand {
+}
+
+.main-navigation {
+  width: 300px;
+
+  a {
+    display: flex;
+    
