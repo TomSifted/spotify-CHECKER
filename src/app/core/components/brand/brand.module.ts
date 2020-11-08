@@ -7,4 +7,4 @@ import { BrandComponent } from './brand.component';
   declarations: [BrandComponent],
   exports: [BrandComponent]
 })
-export class B
+export class BrandModule {}

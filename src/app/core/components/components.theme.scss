@@ -1,0 +1,4 @@
+@import './sidenav/sidenav.theme';
+
+@mixin core-components-theme($theme) {
+  @include sidenav-theme($theme);
