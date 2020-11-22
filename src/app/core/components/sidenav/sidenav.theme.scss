@@ -1,0 +1,7 @@
+@mixin sidenav-theme($theme) {
+  $primary: map-get($theme, primary);
+
+  lto-sidenav {
+    .main-navigation {
+      a:hover,
+      a.act
