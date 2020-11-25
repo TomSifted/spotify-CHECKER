@@ -10,4 +10,8 @@
       }
 
       a.active {
-        border-left-color: mat-color($primary) !importa
+        border-left-color: mat-color($primary) !important;
+      }
+    }
+  }
+}
