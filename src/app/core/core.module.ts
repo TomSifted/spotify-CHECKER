@@ -10,4 +10,12 @@ import {
   EncoderService,
   WalletService,
   AuthService,
-  addresValidatorP
+  addresValidatorProvider,
+  WavesService,
+  Sidenav,
+  wavesAddressValidatorProvider,
+  ScriptsService,
+  LedgerService,
+} from './services';
+
+import { ScriptsServiceImpl } from './services/scripts.s
