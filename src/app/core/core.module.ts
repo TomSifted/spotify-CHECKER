@@ -18,4 +18,11 @@ import {
   LedgerService,
 } from './services';
 
-import { ScriptsServiceImpl } from './services/scripts.s
+import { ScriptsServiceImpl } from './services/scripts.service.impl';
+
+@NgModule({
+  declarations: [],
+  imports: [HttpClientModule, MatDialogModule],
+  exports: [AppbarModule, SidenavModule],
+  providers: [
+    PublicNode.pr
