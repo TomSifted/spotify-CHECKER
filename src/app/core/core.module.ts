@@ -32,4 +32,13 @@ import { ScriptsServiceImpl } from './services/scripts.service.impl';
     AuthService.provider,
     addresValidatorProvider,
     wavesAddressValidatorProvider,
-    WavesService.provid
+    WavesService.provider,
+    Sidenav.provider,
+    LedgerService.provider,
+    {
+      provide: ScriptsService,
+      useClass: ScriptsServiceImpl,
+    },
+  ],
+})
+export class CoreModule {
