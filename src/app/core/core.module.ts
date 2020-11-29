@@ -41,4 +41,4 @@ import { ScriptsServiceImpl } from './services/scripts.service.impl';
     },
   ],
 })
-export class CoreModule {
+export class CoreModule {}
