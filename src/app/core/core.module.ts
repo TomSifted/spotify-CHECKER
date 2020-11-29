@@ -25,4 +25,11 @@ import { ScriptsServiceImpl } from './services/scripts.service.impl';
   imports: [HttpClientModule, MatDialogModule],
   exports: [AppbarModule, SidenavModule],
   providers: [
-    PublicNode.pr
+    PublicNode.provider,
+    BridgeService.provider,
+    EncoderService,
+    WalletService.provider,
+    AuthService.provider,
+    addresValidatorProvider,
+    wavesAddressValidatorProvider,
+    WavesService.provid
