@@ -15,4 +15,7 @@ export class AuthGuard implements CanActivate {
   ) {}
 
   canActivate(): Observable<boolean> {
-    return combineLatest(this.auth.authenticated$, this.auth.
+    return combineLatest(this.auth.authenticated$, this.auth.availableAccounts$).pipe(
+      tap(([authenticated, accounts]) => {
+        if (!authenticated) {
+          const page = accounts.length ? 'signin' : 'st
