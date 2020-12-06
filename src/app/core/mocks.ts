@@ -1,1 +1,1 @@
-export * from './s
+export * from './services/mocks';
