@@ -18,4 +18,11 @@ export class AuthGuard implements CanActivate {
     return combineLatest(this.auth.authenticated$, this.auth.availableAccounts$).pipe(
       tap(([authenticated, accounts]) => {
         if (!authenticated) {
-          const page = accounts.length ? 'signin' : 'st
+          const page = accounts.length ? 'signin' : 'start';
+          this.router.navigate(['/', page]);
+        }
+      }),
+      map(([authenticated]) => authenticated)
+    );
+  }
+}
