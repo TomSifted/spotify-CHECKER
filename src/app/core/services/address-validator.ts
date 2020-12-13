@@ -11,4 +11,9 @@ export function addressValidatorFactory(networkByte: string, publicApi: string):
     let isValid = true;
 
     if (value) {
-     
+      const nodeAddress = publicApi.replace(/\/$/, '');
+      const lto = new LTO(networkByte, nodeAddress);
+      isValid = lto.isValidAddress(control.value);
+    }
+
+    return isValid ? 
