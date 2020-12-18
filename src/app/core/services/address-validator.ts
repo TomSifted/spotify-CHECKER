@@ -16,4 +16,9 @@ export function addressValidatorFactory(networkByte: string, publicApi: string):
       isValid = lto.isValidAddress(control.value);
     }
 
-    return isValid ? 
+    return isValid ? null : { invalidAddress: { value: control.value } };
+  };
+}
+
+export function wavesAddressValidatorFactory(wavesService: WavesService): ValidatorFn {
+  return function(control: any) {
