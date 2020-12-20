@@ -22,3 +22,15 @@ export function addressValidatorFactory(networkByte: string, publicApi: string):
 
 export function wavesAddressValidatorFactory(wavesService: WavesService): ValidatorFn {
   return function(control: any) {
+    const value = control.value;
+    let isValid = true;
+
+    if (value) {
+      isValid = wavesService.isValidAddress(value);
+    }
+
+    return isValid ? null : { invalidAddress: { value } };
+  };
+}
+
+export co
