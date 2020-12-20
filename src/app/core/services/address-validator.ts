@@ -33,4 +33,7 @@ export function wavesAddressValidatorFactory(wavesService: WavesService): Valida
   };
 }
 
-export co
+export const ADDRESS_VALIDATOR = new InjectionToken('ADDRESS_VALIDATOR');
+export const WAVES_ADDRESS_VALIDATOR = new InjectionToken('WAVES_ADDRESS_VALIDATOR');
+
+export const addresValidatorProvider: Factory
