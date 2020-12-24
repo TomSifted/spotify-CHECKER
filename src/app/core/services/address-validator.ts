@@ -42,4 +42,8 @@ export const addresValidatorProvider: FactoryProvider = {
   deps: [LTO_NETWORK_BYTE, LTO_PUBLIC_API]
 };
 
-export const wavesAddressValidatorProvider: Facto
+export const wavesAddressValidatorProvider: FactoryProvider = {
+  provide: WAVES_ADDRESS_VALIDATOR,
+  useFactory: wavesAddressValidatorFactory,
+  deps: [WavesService]
+};
