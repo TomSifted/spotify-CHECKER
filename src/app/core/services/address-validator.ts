@@ -36,4 +36,10 @@ export function wavesAddressValidatorFactory(wavesService: WavesService): Valida
 export const ADDRESS_VALIDATOR = new InjectionToken('ADDRESS_VALIDATOR');
 export const WAVES_ADDRESS_VALIDATOR = new InjectionToken('WAVES_ADDRESS_VALIDATOR');
 
-export const addresValidatorProvider: Factory
+export const addresValidatorProvider: FactoryProvider = {
+  provide: ADDRESS_VALIDATOR,
+  useFactory: addressValidatorFactory,
+  deps: [LTO_NETWORK_BYTE, LTO_PUBLIC_API]
+};
+
+export const wavesAddressValidatorProvider: Facto
