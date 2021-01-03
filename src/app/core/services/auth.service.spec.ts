@@ -12,4 +12,11 @@ describe('core/AuthServiceImpl', () => {
     TestBed.configureTestingModule({
       providers: [
         AuthService.provider,
-        LedgerSer
+        LedgerServiceMock.provider,
+        {
+          provide: LTO_NETWORK_BYTE,
+          useValue: 'T'
+        },
+        {
+          provide: LTO_PUBLIC_API,
+          useVal
