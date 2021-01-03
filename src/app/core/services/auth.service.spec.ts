@@ -5,4 +5,11 @@ import { LedgerServiceMock } from './mocks';
 
 import { AuthService } from './auth.service';
 
-describe('co
+describe('core/AuthServiceImpl', () => {
+  let auth: AuthService;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      providers: [
+        AuthService.provider,
+        LedgerSer
