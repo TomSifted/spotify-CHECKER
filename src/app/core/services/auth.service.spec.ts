@@ -19,4 +19,11 @@ describe('core/AuthServiceImpl', () => {
         },
         {
           provide: LTO_PUBLIC_API,
-          useVal
+          useValue: 'http://localhost'
+        },
+        {
+          provide: LTO_MOBILE_AUTH,
+          useValue: {
+            'ws': 'ws://localhost/connect',
+            'url': 'http://localhost'
+          }
