@@ -27,3 +27,14 @@ describe('core/AuthServiceImpl', () => {
             'ws': 'ws://localhost/connect',
             'url': 'http://localhost'
           }
+        }
+      ]
+    });
+
+    auth = TestBed.get(AuthService);
+  });
+
+  it('should create', () => {
+    expect(auth).toBeTruthy();
+  });
+});
