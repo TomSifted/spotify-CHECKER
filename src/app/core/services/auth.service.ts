@@ -34,3 +34,125 @@ export class AuthServiceImpl implements AuthService {
   constructor(
     @Inject(LTO_NETWORK_BYTE) networkByte: string,
     @Inject(LTO_PUBLIC_API) publicApi: string,
+    private _injector: Injector,
+    private ledger: LedgerService,
+    private mobileAuth: MobileAuthService
+  ) {
+    this.ltoInstance = new LTO(networkByte, publicApi.replace(/\/$/, ''));
+
+    // Create Observable to give latest data on every subscription
+    this.availableAccounts$ = new Observable((subscriber) => {
+      this._availableAccounts$ = subscriber;
+      subscriber.next(this.readFromLocalStorage());
+    });
+
+    this.authenticated$ = combineLatest(this.wallet$, this.ledger.connected$, this.mobileAuth.account$).pipe(
+      map(([wallet, ledgerConnected, mobileAccount]) => !!wallet || ledgerConnected || !!mobileAccount)
+    );
+
+    this.account$ = combineLatest(this.localAccount$, this.ledger.ledgerAccount$, this.mobileAuth.account$).pipe(
+      map(([localAccount, ledgerAccount, mobileAccount]) =>
+        localAccount ||
+        (ledgerAccount ? { name: ledgerAccount.name + ' @ ledger', address: ledgerAccount.address } : null) ||
+        (mobileAccount ? { name: 'LTO Universal wallet', address: mobileAccount.address } : null)
+      )
+    );
+
+    this.ledgerAccount$ = this.ledger.ledgerAccount$;
+  }
+
+  saveAccount(name: string, password: string, wallet: Account): IUserAccount {
+    const encryptedSeed = wallet.encryptSeed(password);
+    const newAccount: IUserAccount = {
+      name,
+      encryptedSeed,
+      address: wallet.address,
+    };
+
+    // Save this account in local storage
+    this.saveToLocalStorage(newAccount);
+
+    return newAccount;
+  }
+
+  generateWallet(phrase?: string) {
+    return phrase
+      ? this.ltoInstance.createAccountFromExistingPhrase(phrase)
+      : this.ltoInstance.createAccount();
+  }
+
+  login(userAccount: IUserAccount, password: string): string {
+    let wallet: Account;
+
+    if (userAccount.encryptedSeed) {
+      const seed = this.ltoInstance.decryptSeedPhrase(userAccount.encryptedSeed, password);
+      wallet = this.ltoInstance.createAccountFromExistingPhrase(seed);
+    } else if (userAccount.privateKey) {
+      wallet = this.ltoInstance.createAccountFromPrivateKey(userAccount.privateKey);
+    } else {
+      throw new Error('Seed missing');
+    }
+
+    this.localAccount$.next(userAccount);
+    this.wallet$.next(wallet);
+
+    return wallet.address;
+  }
+
+  logout() {
+    this.localAccount$.next(null);
+    this.wallet$.next(null);
+    this.mobileAuth.account$.next(null);
+    this.ledger.disconnect();
+  }
+
+  deleteAccount(account: IUserAccount) {
+    const newAccounts = this.deleteFromLocalStorage(account);
+    if (this._availableAccounts$) {
+      // Update available accounts observable to display changes
+      this._availableAccounts$.next(newAccounts);
+    }
+  }
+
+  private readFromLocalStorage(): IUserAccount[] {
+    return JSON.parse(localStorage.getItem(this.STORAGE_KEY) || '[]');
+  }
+
+  private saveToLocalStorage(account: IUserAccount) {
+    const accounts = this.readFromLocalStorage();
+    localStorage.setItem(this.STORAGE_KEY, JSON.stringify([...accounts, account]));
+  }
+
+  private deleteFromLocalStorage(account: IUserAccount): IUserAccount[] {
+    const accounts = this.readFromLocalStorage();
+    const newAccounts = accounts.filter((a) => a.address !== account.address);
+    localStorage.setItem(this.STORAGE_KEY, JSON.stringify(newAccounts));
+    return newAccounts;
+  }
+}
+
+export abstract class AuthService {
+  static provider: ClassProvider = {
+    provide: AuthService,
+    useClass: AuthServiceImpl,
+  };
+
+  abstract readonly STORAGE_KEY: string;
+
+  abstract authenticated$: Observable<boolean>;
+  abstract account$: Observable<IUserAccount | null>;
+  abstract wallet$: BehaviorSubject<Account | null> = new BehaviorSubject<Account | null>(null);
+  abstract localAccount$: BehaviorSubject<IUserAccount | null> =
+    new BehaviorSubject<IUserAccount | null>(null);
+  abstract ledgerAccount$: BehaviorSubject<ILedgerAccount | null> =
+    new BehaviorSubject<ILedgerAccount | null>(null);
+
+  abstract ltoInstance: LTO;
+  abstract availableAccounts$: Observable<IUserAccount[]>;
+
+  abstract saveAccount(name: string, password: string, wallet: Account): IUserAccount;
+  abstract generateWallet(phrase?: string): Account;
+  abstract login(userAccount: IUserAccount, password: string): string;
+  abstract logout(): void;
+  abstract deleteAccount(account: IUserAccount): void;
+}
