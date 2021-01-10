@@ -13,4 +13,13 @@ function configureTestingModule(bridgeEnabled: boolean) {
         useValue: 'http://test_brige',
       },
       {
-        provide: BRIDGE_ENA
+        provide: BRIDGE_ENABLED,
+        useValue: bridgeEnabled,
+      },
+    ],
+  });
+}
+
+describe('Core/BridgeService', () => {
+  it('should provide BridgeServiceImpl if bridge disabled', () => {
+    con
