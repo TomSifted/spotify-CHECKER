@@ -6,4 +6,11 @@ import { LTO_BRIDGE_HOST, BRIDGE_ENABLED } from '@app/tokens';
 function configureTestingModule(bridgeEnabled: boolean) {
   TestBed.configureTestingModule({
     imports: [HttpClientTestingModule],
-    p
+    providers: [
+      BridgeService.provider,
+      {
+        provide: LTO_BRIDGE_HOST,
+        useValue: 'http://test_brige',
+      },
+      {
+        provide: BRIDGE_ENA
