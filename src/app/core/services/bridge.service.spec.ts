@@ -27,4 +27,8 @@ describe('Core/BridgeService', () => {
     expect(service instanceof BridgeServiceImpl).toBe(true);
   });
 
-  it('should provide BridgeServiceImpl if br
+  it('should provide BridgeServiceImpl if bridge disabled', () => {
+    configureTestingModule(true);
+    const service = TestBed.get(BridgeService);
+    expect(service instanceof BridgeServiceImpl).toBe(true);
+  }
