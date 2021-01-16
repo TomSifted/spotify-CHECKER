@@ -22,4 +22,9 @@ function configureTestingModule(bridgeEnabled: boolean) {
 
 describe('Core/BridgeService', () => {
   it('should provide BridgeServiceImpl if bridge disabled', () => {
-    con
+    configureTestingModule(false);
+    const service = TestBed.get(BridgeService);
+    expect(service instanceof BridgeServiceImpl).toBe(true);
+  });
+
+  it('should provide BridgeServiceImpl if br
