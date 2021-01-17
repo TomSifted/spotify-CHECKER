@@ -31,4 +31,13 @@ describe('Core/BridgeService', () => {
     configureTestingModule(true);
     const service = TestBed.get(BridgeService);
     expect(service instanceof BridgeServiceImpl).toBe(true);
-  }
+  });
+});
+
+describe('Core/BridgeServiceImpl', () => {
+  let bridge: BridgeService;
+
+  beforeEach(() => {
+    configureTestingModule(true);
+
+    bridge = TestBed.get(BridgeService)
