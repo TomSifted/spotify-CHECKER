@@ -40,4 +40,10 @@ describe('Core/BridgeServiceImpl', () => {
   beforeEach(() => {
     configureTestingModule(true);
 
-    bridge = TestBed.get(BridgeService)
+    bridge = TestBed.get(BridgeService);
+  });
+
+  it('should create', () => {
+    expect(bridge).toBeTruthy();
+  });
+});
