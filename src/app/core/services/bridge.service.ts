@@ -26,4 +26,14 @@ interface BridgeStats {
   };
 }
 
-interface BurnFe
+interface BurnFees {
+  lto: number;
+  lto20: number;
+  binance: number;
+}
+
+@Injectable()
+export class BridgeServiceImpl implements BridgeService {
+  readonly STORAGE_KEY = '__bridge__';
+
+  burnRate$: Obs
