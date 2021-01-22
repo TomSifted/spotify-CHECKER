@@ -11,4 +11,19 @@ interface BridgeCache {
     [address: string]: string;
   };
 
-  
+  withdraw: {
+    [recipient: string]: string;
+  };
+}
+
+interface BridgeStats {
+  burn_rate: number;
+  burned: number;
+  volume: {
+    lto: any;
+    lto20: any;
+    binance: any;
+  };
+}
+
+interface BurnFe
