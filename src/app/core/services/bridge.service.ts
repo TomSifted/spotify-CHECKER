@@ -36,4 +36,11 @@ interface BurnFees {
 export class BridgeServiceImpl implements BridgeService {
   readonly STORAGE_KEY = '__bridge__';
 
-  burnRate$: Obs
+  burnRate$: Observable<number>;
+  burnedTokens$: Observable<number>;
+  burnFees$: Observable<BurnFees>;
+
+  bridgeStats$: Observable<BridgeStats>;
+  private cache: BridgeCache;
+
+  con
