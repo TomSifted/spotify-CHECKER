@@ -43,4 +43,6 @@ export class BridgeServiceImpl implements BridgeService {
   bridgeStats$: Observable<BridgeStats>;
   private cache: BridgeCache;
 
-  con
+  constructor(@Inject(LTO_BRIDGE_HOST) private ltoBridgeHost: string, private http: HttpClient) {
+    // Restore bridge address from localstorage
+    this.cache = this.restoreCache();
