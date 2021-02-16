@@ -48,4 +48,7 @@ export class BridgeServiceImpl implements BridgeService {
     this.cache = this.restoreCache();
 
     this.bridgeStats$ = http.get<BridgeStats>(`${this.ltoBridgeHost}/stats`).pipe(shareReplay(1));
-    this.burnRate$ = this.bridgeStats$.pipe(map(stats => stats.bur
+    this.burnRate$ = this.bridgeStats$.pipe(map(stats => stats.burn_rate));
+    this.burnedTokens$ = this.bridgeStats$.pipe(map(stats => stats.burned));
+    this.burnFees$ = this.bridgeStats$.pipe(map(stats => ({
+      lto: Math.round(stats.vo
