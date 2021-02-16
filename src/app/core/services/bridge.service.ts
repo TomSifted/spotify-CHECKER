@@ -46,3 +46,6 @@ export class BridgeServiceImpl implements BridgeService {
   constructor(@Inject(LTO_BRIDGE_HOST) private ltoBridgeHost: string, private http: HttpClient) {
     // Restore bridge address from localstorage
     this.cache = this.restoreCache();
+
+    this.bridgeStats$ = http.get<BridgeStats>(`${this.ltoBridgeHost}/stats`).pipe(shareReplay(1));
+    this.burnRate$ = this.bridgeStats$.pipe(map(stats => stats.bur
