@@ -51,4 +51,7 @@ export class BridgeServiceImpl implements BridgeService {
     this.burnRate$ = this.bridgeStats$.pipe(map(stats => stats.burn_rate));
     this.burnedTokens$ = this.bridgeStats$.pipe(map(stats => stats.burned));
     this.burnFees$ = this.bridgeStats$.pipe(map(stats => ({
-      lto: Math.round(stats.vo
+      lto: Math.round(stats.volume.lto.burn_fee / 100000000),
+      lto20: Math.round(stats.volume.lto20.burn_fee / 100000000),
+      binance: Math.round(stats.volume.binance.burn_fee / 100000000)
+    })));
