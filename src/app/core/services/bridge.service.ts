@@ -55,3 +55,9 @@ export class BridgeServiceImpl implements BridgeService {
       lto20: Math.round(stats.volume.lto20.burn_fee / 100000000),
       binance: Math.round(stats.volume.binance.burn_fee / 100000000)
     })));
+
+    // Make it hot
+    this.bridgeStats$.subscribe();
+  }
+
+  depositTo(address: string, captcha: string, tokenType: TokenType = 'LTO20', toTokenType: TokenType = 'LTO'): Observa
