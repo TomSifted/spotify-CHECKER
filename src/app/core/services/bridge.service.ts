@@ -60,4 +60,8 @@ export class BridgeServiceImpl implements BridgeService {
     this.bridgeStats$.subscribe();
   }
 
-  depositTo(address: string, captcha: string, tokenType: TokenType = 'LTO20', toTokenType: TokenType = 'LTO'): Observa
+  depositTo(address: string, captcha: string, tokenType: TokenType = 'LTO20', toTokenType: TokenType = 'LTO'): Observable<string> {
+    const cacheKey = `${address}:${tokenType}:${toTokenType}`;
+    if (this.cache.deposit[cacheKey]) {
+      return of(this.cache.deposit[cacheKey]);
+    
