@@ -69,4 +69,10 @@ export class BridgeServiceImpl implements BridgeService {
     return this.createBridgeAddress(tokenType, toTokenType, address, captcha).pipe(
       tap(bridge => {
         this.cache.deposit[cacheKey] = bridge;
-        this.saveCache
+        this.saveCache(this.cache);
+      })
+    );
+  }
+
+  withdrawTo(recipient: string, captcha: string, tokenType: TokenType = 'LTO20'): Observable<string> {
+    const cacheKey = recipient + tokenT
