@@ -64,4 +64,9 @@ export class BridgeServiceImpl implements BridgeService {
     const cacheKey = `${address}:${tokenType}:${toTokenType}`;
     if (this.cache.deposit[cacheKey]) {
       return of(this.cache.deposit[cacheKey]);
-    
+    }
+
+    return this.createBridgeAddress(tokenType, toTokenType, address, captcha).pipe(
+      tap(bridge => {
+        this.cache.deposit[cacheKey] = bridge;
+        this.saveCache
