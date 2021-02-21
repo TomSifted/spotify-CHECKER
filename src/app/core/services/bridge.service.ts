@@ -75,4 +75,9 @@ export class BridgeServiceImpl implements BridgeService {
   }
 
   withdrawTo(recipient: string, captcha: string, tokenType: TokenType = 'LTO20'): Observable<string> {
-    const cacheKey = recipient + tokenT
+    const cacheKey = recipient + tokenType;
+    if (this.cache.withdraw[cacheKey]) {
+      return of(this.cache.withdraw[cacheKey]);
+    }
+
+    return this.createBridgeAddress('LTO', tokenType, recipient, captcha)
