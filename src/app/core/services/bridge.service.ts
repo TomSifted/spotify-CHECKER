@@ -80,4 +80,12 @@ export class BridgeServiceImpl implements BridgeService {
       return of(this.cache.withdraw[cacheKey]);
     }
 
-    return this.createBridgeAddress('LTO', tokenType, recipient, captcha)
+    return this.createBridgeAddress('LTO', tokenType, recipient, captcha).pipe(
+      tap(bridge => {
+        this.cache.withdraw[cacheKey] = bridge;
+        this.saveCache(this.cache);
+      })
+    );
+  }
+
+  faucet(recipient: string, captcha_response: 
