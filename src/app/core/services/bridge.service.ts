@@ -88,4 +88,12 @@ export class BridgeServiceImpl implements BridgeService {
     );
   }
 
-  faucet(recipient: string, captcha_response: 
+  faucet(recipient: string, captcha_response: string): Observable<any> {
+    return this.http.post(`${this.ltoBridgeHost}/waves/faucet`, {
+      recipient,
+      captcha_response
+    });
+  }
+
+  private createBridgeAddress(
+    f
