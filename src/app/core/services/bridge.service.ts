@@ -96,4 +96,10 @@ export class BridgeServiceImpl implements BridgeService {
   }
 
   private createBridgeAddress(
-    f
+    fromToken: TokenType,
+    toToken: TokenType,
+    toAddress: string,
+    captcha: string
+  ): Observable<string> {
+    return this.http
+      .post<any>(this.ltoBridgeHost
