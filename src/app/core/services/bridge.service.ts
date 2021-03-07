@@ -102,4 +102,10 @@ export class BridgeServiceImpl implements BridgeService {
     captcha: string
   ): Observable<string> {
     return this.http
-      .post<any>(this.ltoBridgeHost
+      .post<any>(this.ltoBridgeHost + '/bridge/address', {
+        from_token: fromToken,
+        to_token: toToken,
+        to_address: toAddress,
+        captcha_response: captcha
+      })
+    
