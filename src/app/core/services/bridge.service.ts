@@ -108,4 +108,10 @@ export class BridgeServiceImpl implements BridgeService {
         to_address: toAddress,
         captcha_response: captcha
       })
-    
+      .pipe(map(response => response.address));
+  }
+
+  private restoreCache(): BridgeCache {
+    const cache = localStorage.getItem(this.STORAGE_KEY);
+    if (cache) {
+      return JSON
