@@ -114,4 +114,16 @@ export class BridgeServiceImpl implements BridgeService {
   private restoreCache(): BridgeCache {
     const cache = localStorage.getItem(this.STORAGE_KEY);
     if (cache) {
-      return JSON
+      return JSON.parse(cache);
+    }
+
+    const initialCache: BridgeCache = {
+      deposit: {},
+      withdraw: {}
+    };
+    this.saveCache(initialCache);
+
+    return initialCache;
+  }
+
+  privat
