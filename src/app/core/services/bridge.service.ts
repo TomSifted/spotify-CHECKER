@@ -126,4 +126,11 @@ export class BridgeServiceImpl implements BridgeService {
     return initialCache;
   }
 
-  privat
+  private saveCache(cache: BridgeCache) {
+    localStorage.setItem(this.STORAGE_KEY, JSON.stringify(cache));
+  }
+}
+
+export abstract class BridgeService {
+  static provider: ClassProvider = {
+    p
