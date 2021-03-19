@@ -133,4 +133,10 @@ export class BridgeServiceImpl implements BridgeService {
 
 export abstract class BridgeService {
   static provider: ClassProvider = {
-    p
+    provide: BridgeService,
+    useClass: BridgeServiceImpl
+  };
+
+  abstract burnRate$: Observable<number>;
+  abstract burnedTokens$: Observable<number>;
+  abstract burnFees$: Obse
