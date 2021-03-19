@@ -139,4 +139,9 @@ export abstract class BridgeService {
 
   abstract burnRate$: Observable<number>;
   abstract burnedTokens$: Observable<number>;
-  abstract burnFees$: Obse
+  abstract burnFees$: Observable<BurnFees>;
+
+  /**
+   * Generates bridge addres to convert LTO24 -> LTO and transfer on your account
+   * @param address - your account address
+   * @param captcha - c
