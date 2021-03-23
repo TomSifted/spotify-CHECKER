@@ -144,4 +144,7 @@ export abstract class BridgeService {
   /**
    * Generates bridge addres to convert LTO24 -> LTO and transfer on your account
    * @param address - your account address
-   * @param captcha - c
+   * @param captcha - captcha response
+   * @param tokenType type of token which will be converted to LTO
+   */
+  abstract depositTo(address: string, captcha: string, tokenType?: TokenType, to
