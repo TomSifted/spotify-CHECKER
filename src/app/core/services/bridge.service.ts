@@ -147,4 +147,10 @@ export abstract class BridgeService {
    * @param captcha - captcha response
    * @param tokenType type of token which will be converted to LTO
    */
-  abstract depositTo(address: string, captcha: string, tokenType?: TokenType, to
+  abstract depositTo(address: string, captcha: string, tokenType?: TokenType, toTokenType?: TokenType): Observable<string>;
+
+  /**
+   * Generate bridge addres to convert LTO -> LTO20
+   * @param address - recipient addres
+   */
+  abstract withdrawTo(recipient: s
