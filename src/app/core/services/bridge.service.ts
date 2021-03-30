@@ -153,4 +153,7 @@ export abstract class BridgeService {
    * Generate bridge addres to convert LTO -> LTO20
    * @param address - recipient addres
    */
-  abstract withdrawTo(recipient: s
+  abstract withdrawTo(recipient: string, captcha: string, tokenType?: TokenType): Observable<string>;
+
+  abstract faucet(recipient: string, captcha: string): Observable<any>;
+}
