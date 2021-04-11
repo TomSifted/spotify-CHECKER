@@ -9,4 +9,13 @@ export class EncoderService {
   constructor() {
     this.alphabet = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz';
     this.alphabetMap = this.alphabet.split('').reduce(
-      
+      (map, c, i) => {
+        map[c] = i;
+        return map;
+      },
+      {} as any
+    );
+  }
+
+  base64Encode(buffer: any) {
+    return Buffer.from(String.fromCharCode.apply(null, buffer), '
