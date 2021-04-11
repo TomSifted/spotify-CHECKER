@@ -18,4 +18,11 @@ export class EncoderService {
   }
 
   base64Encode(buffer: any) {
-    return Buffer.from(String.fromCharCode.apply(null, buffer), '
+    return Buffer.from(String.fromCharCode.apply(null, buffer), 'binary').toString('base64');
+  }
+
+  hexEncode(buffer: any) {
+    return Buffer.from(String.fromCharCode.apply(null, buffer), 'binary').toString('hex');
+  }
+
+  decode(has
