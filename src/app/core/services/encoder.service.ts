@@ -32,4 +32,13 @@ export class EncoderService {
         hashBytes = this.base64Decode(hash);
         break;
 
-      case 'base
+      case 'base58':
+        hashBytes = this.base58Decode(hash);
+        break;
+
+      case 'hex':
+        hashBytes = this.hexDecode(hash);
+        break;
+    }
+
+    if (!hashBytes) {
