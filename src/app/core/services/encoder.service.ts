@@ -25,4 +25,11 @@ export class EncoderService {
     return Buffer.from(String.fromCharCode.apply(null, buffer), 'binary').toString('hex');
   }
 
-  decode(has
+  decode(hash: string, encoding: string) {
+    let hashBytes;
+    switch (encoding) {
+      case 'base64':
+        hashBytes = this.base64Decode(hash);
+        break;
+
+      case 'base
