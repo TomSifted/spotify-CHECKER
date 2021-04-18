@@ -49,4 +49,10 @@ export class EncoderService {
   }
 
   validateSHA256(hash: string, encoding: string) {
-    const hashBytes = this.decode(hash, enco
+    const hashBytes = this.decode(hash, encoding);
+    return hashBytes.length === 32;
+  }
+
+  base64Decode(hash: string) {
+    const bytes = Buffer.from(hash, 'base64').toString('binary');
+    return new Uint8Array(bytes.spl
