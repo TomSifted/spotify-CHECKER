@@ -55,4 +55,12 @@ export class EncoderService {
 
   base64Decode(hash: string) {
     const bytes = Buffer.from(hash, 'base64').toString('binary');
-    return new Uint8Array(bytes.spl
+    return new Uint8Array(bytes.split('').map(c => c.charCodeAt(0)));
+  }
+
+  base58Decode(hash: string) {
+    if (!hash.length) return new Uint8Array(0);
+
+    const bytes = [0];
+
+    // tsli
