@@ -42,3 +42,11 @@ export class EncoderService {
     }
 
     if (!hashBytes) {
+      throw 'Uncnown encoding: ' + encoding;
+    }
+
+    return hashBytes;
+  }
+
+  validateSHA256(hash: string, encoding: string) {
+    const hashBytes = this.decode(hash, enco
