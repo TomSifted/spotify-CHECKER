@@ -63,4 +63,8 @@ export class EncoderService {
 
     const bytes = [0];
 
-    // tsli
+    // tslint:disable-next-line:prefer-for-of
+    for (let i = 0; i < hash.length; i++) {
+      const c = hash[i];
+      if (!(c in this.alphabetMap)) {
+        thro
