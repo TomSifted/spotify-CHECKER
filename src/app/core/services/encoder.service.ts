@@ -67,4 +67,9 @@ export class EncoderService {
     for (let i = 0; i < hash.length; i++) {
       const c = hash[i];
       if (!(c in this.alphabetMap)) {
-        thro
+        throw new Error(`hash-encoder: there is no character "${c}" in the base58 sequence`);
+      }
+
+      for (let j = 0; j < bytes.length; j++) {
+        bytes[j] *= 58;
+    
