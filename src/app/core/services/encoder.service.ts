@@ -79,4 +79,11 @@ export class EncoderService {
 
       for (let j = 0; j < bytes.length; j++) {
         bytes[j] += carry;
-        // tslint:disable-next-lin
+        // tslint:disable-next-line:no-bitwise
+        carry = bytes[j] >> 8;
+        // tslint:disable-next-line:no-bitwise
+        bytes[j] &= 0xff;
+      }
+
+      while (carry) {
+        // tslint:dis
