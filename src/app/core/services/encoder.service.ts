@@ -72,4 +72,11 @@ export class EncoderService {
 
       for (let j = 0; j < bytes.length; j++) {
         bytes[j] *= 58;
-    
+      }
+
+      bytes[0] += this.alphabetMap[c];
+      let carry = 0;
+
+      for (let j = 0; j < bytes.length; j++) {
+        bytes[j] += carry;
+        // tslint:disable-next-lin
