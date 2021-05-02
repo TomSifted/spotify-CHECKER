@@ -86,4 +86,11 @@ export class EncoderService {
       }
 
       while (carry) {
-        // tslint:dis
+        // tslint:disable-next-line:no-bitwise
+        bytes.push(carry & 0xff);
+        // tslint:disable-next-line:no-bitwise
+        carry >>= 8;
+      }
+    }
+
+    for (let i = 0; hash[i] 
