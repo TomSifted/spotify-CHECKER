@@ -93,4 +93,12 @@ export class EncoderService {
       }
     }
 
-    for (let i = 0; hash[i] 
+    for (let i = 0; hash[i] === '1' && i < hash.length - 1; i++) {
+      bytes.push(0);
+    }
+
+    return new Uint8Array(bytes.reverse());
+  }
+
+  base58Encode(buffer: any): string {
+    if (!buffer.leng
