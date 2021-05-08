@@ -101,4 +101,13 @@ export class EncoderService {
   }
 
   base58Encode(buffer: any): string {
-    if (!buffer.leng
+    if (!buffer.length) return '';
+
+    const digits = [0];
+
+    for (let i = 0; i < buffer.length; i++) {
+      for (let j = 0; j < digits.length; j++) {
+        digits[j] <<= 8;
+      }
+
+      digi
