@@ -110,4 +110,13 @@ export class EncoderService {
         digits[j] <<= 8;
       }
 
-      digi
+      digits[0] += buffer[i];
+      let carry = 0;
+
+      for (let k = 0; k < digits.length; k++) {
+        digits[k] += carry;
+        carry = (digits[k] / 58) | 0;
+        digits[k] %= 58;
+      }
+
+      wh
