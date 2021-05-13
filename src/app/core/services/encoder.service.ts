@@ -125,4 +125,16 @@ export class EncoderService {
       }
     }
 
-    for (let i = 0; buffer[i] === 0 && i < buffer.length
+    for (let i = 0; buffer[i] === 0 && i < buffer.length - 1; i++) {
+      digits.push(0);
+    }
+
+    return digits
+      .reverse()
+      .map(digit => {
+        return this.alphabet[digit];
+      })
+      .join('');
+  }
+
+  hexDecode(hash: stri
