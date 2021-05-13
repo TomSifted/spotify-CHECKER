@@ -119,4 +119,10 @@ export class EncoderService {
         digits[k] %= 58;
       }
 
-      wh
+      while (carry) {
+        digits.push(carry % 58);
+        carry = (carry / 58) | 0;
+      }
+    }
+
+    for (let i = 0; buffer[i] === 0 && i < buffer.length
