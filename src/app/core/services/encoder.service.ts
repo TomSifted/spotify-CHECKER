@@ -137,4 +137,8 @@ export class EncoderService {
       .join('');
   }
 
-  hexDecode(hash: stri
+  hexDecode(hash: string) {
+    const bytes = Buffer.from(hash, 'hex').toString('binary');
+    return new Uint8Array(bytes.split('').map(c => c.charCodeAt(0)));
+  }
+}
