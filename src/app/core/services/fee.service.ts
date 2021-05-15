@@ -39,3 +39,12 @@ export class FeeService {
 
     this.transferFee$ = combineLatest(this.scriptFee$, this.regularFee$).pipe(
       map(([scriptFee, regularFee]) => {
+        return scriptFee ? scriptFee : regularFee;
+      }),
+      shareReplay(1)
+    );
+
+    this.leaseFee$ = this.transferFee$;
+    this.anchorFee$ = this.transferFee$;
+  }
+}
