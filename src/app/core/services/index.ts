@@ -15,4 +15,5 @@ export {
 export { Sidenav, SidenavMode } from './sidenav';
 export { ScriptsService, PredefinedScript } from './scripts.service';
 export { FeeService } from './fee.service';
-export { LedgerServic
+export { LedgerService, ILedgerAccount } from './ledger.service';
+export { MobileAuthService, IPublicAccount, IMobileAuthChallenge } from './mobile-auth.service';
