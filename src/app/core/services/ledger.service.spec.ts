@@ -10,4 +10,11 @@ describe('Core/LedgerService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [MatDialogModule],
- 
+      providers: [
+        LedgerService.provider,
+        { provide: LTO_NETWORK_BYTE, useValue: 'T' },
+        { provide: LTO_PUBLIC_API, useValue: 'http://localhost' },
+      ],
+    });
+
+    le
