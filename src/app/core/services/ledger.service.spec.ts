@@ -17,4 +17,10 @@ describe('Core/LedgerService', () => {
       ],
     });
 
-    le
+    ledger = TestBed.get(LedgerService);
+  });
+
+  it('should create', () => {
+    expect(ledger).toBeTruthy();
+  });
+});
