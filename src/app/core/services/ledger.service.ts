@@ -262,3 +262,46 @@ export class LedgerServiceImpl implements LedgerService {
     // `prefixBytes` is used to assemble the data properly before sending to Ledger app
     // Ledger app doesn't sign properly if data is not correct,
     // and it's slightly different from proper schema sometimes
+    const finalBytes = new Uint8Array(prefixBytes.length + byteTransaction.length);
+    finalBytes.set(prefixBytes);
+    finalBytes.set(byteTransaction, prefixBytes.length);
+
+    const signature = await this.ledger
+      .signTransaction(this.ledgerId, { precision: 1 }, finalBytes)
+      .catch((error) => {
+        contentDialog.close();
+        return Promise.reject(error);
+      });
+
+    contentDialog.close();
+
+    const signedTransaction = {
+      ...unsignedTransaction,
+      signature,
+    };
+
+    // workaround for nodes running v1.3 - signature is used instead of proofs
+    // @ts-ignore
+    delete signedTransaction.proofs;
+
+    await broadcast(signedTransaction as unknown as TTx<string | number>, this.nodeUrl);
+  }
+}
+
+export abstract class LedgerService {
+  public static provider: ClassProvider = {
+    provide: LedgerService,
+    useClass: LedgerServiceImpl,
+  };
+
+  public ledgerId: number = 0;
+
+  public abstract connected$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  public abstract ledgerAccount$: BehaviorSubject<ILedgerAccount | null> =
+    new BehaviorSubject<ILedgerAccount | null>(null);
+
+  public abstract connect(): Promise<void>;
+  public abstract disconnect(): Promise<void>;
+  public abstract updateUserData(): Promise<void>;
+  public abstract signAndBroadcast(data: IUnsignedTransaction): Promise<void>;
+}
