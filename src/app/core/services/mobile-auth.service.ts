@@ -11,4 +11,12 @@ export interface IPublicAccount {
 
 export interface IMobileAuthChallenge {
   '@schema': string;
-  url: st
+  url: string;
+}
+
+@Injectable({
+  providedIn: 'root'
+})
+export class MobileAuthService {
+  subject?: WebSocketSubject<{data: string}|IPublicAccount>;
+  challenge$ = ne
