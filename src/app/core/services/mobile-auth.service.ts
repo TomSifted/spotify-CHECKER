@@ -32,4 +32,8 @@ export class MobileAuthService {
     this.subject = webSocket(this.settings.ws);
 
     this.subject.subscribe({
-      nex
+      next: data => {
+        if (this.dataIsCode(data)) {
+          this.challenge$.next({
+            '@schema': 'http://schema.lto.network/simple-auth-v1.json',
+            'url': this.
