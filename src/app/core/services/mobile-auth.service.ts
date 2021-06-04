@@ -22,4 +22,14 @@ export class MobileAuthService {
   challenge$ = new BehaviorSubject<IMobileAuthChallenge|null>(null);
   account$ = new BehaviorSubject<IPublicAccount|null>(null);
 
-  constructor(@Inject(LTO_MOBILE_AUTH) private settings: {ws: string, url: 
+  constructor(@Inject(LTO_MOBILE_AUTH) private settings: {ws: string, url: string}) {}
+
+  connect() {
+    if (this.subject) {
+      throw new Error('Already connected');
+    }
+
+    this.subject = webSocket(this.settings.ws);
+
+    this.subject.subscribe({
+      nex
