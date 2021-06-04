@@ -19,4 +19,7 @@ export interface IMobileAuthChallenge {
 })
 export class MobileAuthService {
   subject?: WebSocketSubject<{data: string}|IPublicAccount>;
-  challenge$ = ne
+  challenge$ = new BehaviorSubject<IMobileAuthChallenge|null>(null);
+  account$ = new BehaviorSubject<IPublicAccount|null>(null);
+
+  constructor(@Inject(LTO_MOBILE_AUTH) private settings: {ws: string, url: 
