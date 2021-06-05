@@ -36,4 +36,10 @@ export class MobileAuthService {
         if (this.dataIsCode(data)) {
           this.challenge$.next({
             '@schema': 'http://schema.lto.network/simple-auth-v1.json',
-            'url': this.
+            'url': this.settings.url + data.code
+          });
+        } else if (this.dataIsAccount(data)) {
+          this.account$.next(data);
+          this.subject?.complete();
+        }
+      }
