@@ -42,4 +42,10 @@ export class MobileAuthService {
           this.account$.next(data);
           this.subject?.complete();
         }
-      }
+      },
+      error: err => {
+        (this.challenge$.getValue() === null ? this.challenge$ : this.account$).error(err);
+        delete this.subject;
+      },
+      complete: () => {
+     
