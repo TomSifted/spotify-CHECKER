@@ -55,4 +55,10 @@ export class MobileAuthService {
   }
 
   private dataIsCode(data: object): data is { code: string } {
-    return typeof (data as any).code !
+    return typeof (data as any).code !== 'undefined';
+  }
+
+  private dataIsAccount(data: object): data is IPublicAccount {
+    return typeof (data as any).address !== 'undefined';
+  }
+}
