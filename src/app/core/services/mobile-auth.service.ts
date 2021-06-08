@@ -48,4 +48,11 @@ export class MobileAuthService {
         delete this.subject;
       },
       complete: () => {
-     
+        this.challenge$.next(null);
+        delete this.subject;
+      }
+    });
+  }
+
+  private dataIsCode(data: object): data is { code: string } {
+    return typeof (data as any).code !
