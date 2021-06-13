@@ -8,4 +8,11 @@ import { map } from 'rxjs/operators';
 export class AuthServiceMock implements AuthService {
   static provider = {
     provide: AuthService,
-    useClass: AuthServiceM
+    useClass: AuthServiceMock,
+  };
+
+  readonly STORAGE_KEY: string = 'TEST_KEY';
+
+  authenticated$: Observable<boolean> = of(true);
+  wallet$: BehaviorSubject<Account | null> = new BehaviorSubject<Account | null>(null);
+  localAccount$: Behavio
