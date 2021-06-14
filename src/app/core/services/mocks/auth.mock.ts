@@ -28,4 +28,11 @@ export class AuthServiceMock implements AuthService {
     API: {
       PublicNode: {
         transactions: {
-      
+          broadcast: () => {}
+        }
+      }
+    }
+  } as any;
+  availableAccounts$: Observable<IUserAccount[]> = of([]);
+
+  saveAccount(name: string, password: string, wallet: Account): IUse
