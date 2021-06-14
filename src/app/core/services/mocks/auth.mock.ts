@@ -35,4 +35,15 @@ export class AuthServiceMock implements AuthService {
   } as any;
   availableAccounts$: Observable<IUserAccount[]> = of([]);
 
-  saveAccount(name: string, password: string, wallet: Account): IUse
+  saveAccount(name: string, password: string, wallet: Account): IUserAccount {
+    return {
+      name: 'foo',
+      encryptedSeed: 'bar',
+      address: 'zed',
+    };
+  }
+  generateWallet(phrase?: string): Account {
+    return {} as any;
+  }
+
+  login(userA
