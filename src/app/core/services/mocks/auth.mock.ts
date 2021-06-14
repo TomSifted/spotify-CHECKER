@@ -17,4 +17,7 @@ export class AuthServiceMock implements AuthService {
   wallet$: BehaviorSubject<Account | null> = new BehaviorSubject<Account | null>(null);
   localAccount$: BehaviorSubject<IUserAccount | null> = new BehaviorSubject<IUserAccount | null>(null);
   ledgerAccount$: BehaviorSubject<ILedgerAccount | null> = new BehaviorSubject<ILedgerAccount | null>(null);
-  account$: Observable<IU
+  account$: Observable<IUserAccount | null> = combineLatest(this.localAccount$, this.ledgerAccount$).pipe(
+    map(([localAccount, ledgerAccount]) =>
+      localAccount ||
+      (ledgerAccount ? { name: ledger
