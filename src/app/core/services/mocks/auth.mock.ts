@@ -46,4 +46,10 @@ export class AuthServiceMock implements AuthService {
     return {} as any;
   }
 
-  login(userA
+  login(userAccount: IUserAccount, password: string): string {
+    return 'foo';
+  }
+
+  logout(): void {}
+  deleteAccount(account: IUserAccount): void {}
+}
