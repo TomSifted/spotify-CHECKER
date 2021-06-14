@@ -15,4 +15,6 @@ export class AuthServiceMock implements AuthService {
 
   authenticated$: Observable<boolean> = of(true);
   wallet$: BehaviorSubject<Account | null> = new BehaviorSubject<Account | null>(null);
-  localAccount$: Behavio
+  localAccount$: BehaviorSubject<IUserAccount | null> = new BehaviorSubject<IUserAccount | null>(null);
+  ledgerAccount$: BehaviorSubject<ILedgerAccount | null> = new BehaviorSubject<ILedgerAccount | null>(null);
+  account$: Observable<IU
