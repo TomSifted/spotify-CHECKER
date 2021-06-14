@@ -20,4 +20,12 @@ export class AuthServiceMock implements AuthService {
   account$: Observable<IUserAccount | null> = combineLatest(this.localAccount$, this.ledgerAccount$).pipe(
     map(([localAccount, ledgerAccount]) =>
       localAccount ||
-      (ledgerAccount ? { name: ledger
+      (ledgerAccount ? { name: ledgerAccount.name + ' @ ledger', address: ledgerAccount.address } : null)
+    )
+  );
+
+  ltoInstance: LTO = {
+    API: {
+      PublicNode: {
+        transactions: {
+      
