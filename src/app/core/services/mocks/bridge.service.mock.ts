@@ -4,4 +4,16 @@ import { of } from 'rxjs';
 export class BridgeServiceMock implements BridgeService {
   static provider = {
     provide: BridgeService,
-    useClass: BridgeServi
+    useClass: BridgeServiceMock
+  };
+
+  burnRate$ = of(1);
+  burnedTokens$ = of(1);
+  burnFees$ = of({lto: 1, lto20: 1, binance: 1});
+
+  depositTo() {
+    return of('test_deposit_address');
+  }
+
+  withdrawTo() {
+    return
