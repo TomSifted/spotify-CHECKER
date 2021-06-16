@@ -16,4 +16,10 @@ export class BridgeServiceMock implements BridgeService {
   }
 
   withdrawTo() {
-    return
+    return of('test_withdraw_address');
+  }
+
+  faucet() {
+    return of(null);
+  }
+}
