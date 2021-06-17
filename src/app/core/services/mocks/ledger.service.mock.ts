@@ -7,4 +7,8 @@ export class LedgerServiceMock implements LedgerService {
     useClass: LedgerServiceMock
   };
 
-  ledgerId: number
+  ledgerId: number = 0;
+  connected$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  ledgerAccount$: BehaviorSubject<ILedgerAccount | null> = new BehaviorSubject<ILedgerAccount | null>(null);
+
+  asy
