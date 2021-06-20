@@ -17,4 +17,5 @@ export class LedgerServiceMock implements LedgerService {
 
   async updateUserData(): Promise<void> {};
 
-  async signAndBroadcast(data: IUnsignedTransaction): Promise<void>
+  async signAndBroadcast(data: IUnsignedTransaction): Promise<void> {};
+}
