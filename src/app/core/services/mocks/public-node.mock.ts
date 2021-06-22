@@ -20,3 +20,19 @@ export class PublicNodeMock implements PublicNode {
   }
 
   headerSequence() {
+    return of([]);
+  }
+
+  transaction(id: string) {
+    return of(null);
+  }
+
+  block() {
+    return of(null);
+  }
+
+  transactionsOf() {
+    return of([]);
+  }
+
+  indexedTransactions
