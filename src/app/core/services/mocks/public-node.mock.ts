@@ -47,4 +47,18 @@ export class PublicNodeMock implements PublicNode {
   }
 
   unconfirmedTransactions() {
-    return of([]
+    return of([]);
+  }
+
+  activeLease() {
+    return of([]);
+  }
+
+  getScript() {
+    return of({});
+  }
+
+  compileScript() {
+    return of(null as any);
+  }
+}
