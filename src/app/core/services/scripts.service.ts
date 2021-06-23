@@ -10,4 +10,9 @@ export interface PredefinedScript {
  *
  * You can find implemetation in : ./scripts.service.impl.ts
  */
-export abstract class ScriptsService 
+export abstract class ScriptsService {
+  abstract predefinedScripts: PredefinedScript[];
+  abstract scriptEnabled$: Observable<boolean>;
+  abstract scriptInfo$: Observable<any>;
+
+  abstract createScript(code: string
