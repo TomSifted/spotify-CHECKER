@@ -154,3 +154,7 @@ export abstract class PublicNode {
   ): Observable<LTO.Page<LTO.Transaction>>;
   abstract balanceOf(address: string): Observable<any>;
   abstract unconfirmedTransactions(): Observable<any[]>;
+  abstract activeLease(address: string): Observable<LTO.Transaction[]>;
+  abstract getScript(address: string): Observable<any>;
+  abstract compileScript(code: string): Observable<CompildedScript>;
+}
