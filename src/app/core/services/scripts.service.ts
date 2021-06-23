@@ -15,4 +15,6 @@ export abstract class ScriptsService {
   abstract scriptEnabled$: Observable<boolean>;
   abstract scriptInfo$: Observable<any>;
 
-  abstract createScript(code: string
+  abstract createScript(code: string): any;
+  abstract disabeScript(fee: number): any;
+}
