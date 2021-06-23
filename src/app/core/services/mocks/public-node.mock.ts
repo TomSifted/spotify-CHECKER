@@ -35,4 +35,16 @@ export class PublicNodeMock implements PublicNode {
     return of([]);
   }
 
-  indexedTransactions
+  indexedTransactions() {
+    return of({
+      total: 0,
+      items: []
+    });
+  }
+
+  balanceOf() {
+    return of(null);
+  }
+
+  unconfirmedTransactions() {
+    return of([]
