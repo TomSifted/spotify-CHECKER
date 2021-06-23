@@ -41,3 +41,7 @@ export class WalletServiceMock implements WalletService {
 
   prepareAnchor = (data: IAnchorPayload) => ({});
   prepareCancelLease = (transactionId: string) => ({});
+  prepareLease = (data: ILeasePayload) => ({});
+  prepareMassTransfer = (data: IMassTransferPayload) => ({});
+  prepareTransfer = (data: ITransferPayload) => ({});
+}
