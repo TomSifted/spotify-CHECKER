@@ -221,3 +221,174 @@ export class WalletServiceImpl implements WalletService {
           total: anchors.total,
           items: [...anchors.items, ...unconfirmedAnchors]
         };
+      }),
+      shareReplay(1)
+    );
+
+    this.balance$.subscribe(); // make balance hot
+  }
+
+  prepareTransfer(data: ITransferPayload): object {
+    const fee = Math.round(data.fee * this.amountDivider);
+    const amount = Math.round(data.amount * this.amountDivider);
+
+    return {
+      ...data,
+      type: TransactionTypes.TRANSFER,
+      version: 3,
+      timestamp: Date.now(),
+      fee,
+      amount,
+    };
+  }
+
+  async transfer(data: ITransferPayload) {
+    const wallet = await toPromise(this.auth.wallet$);
+    const ledger = await toPromise(this.auth.ledgerAccount$);
+
+    if (!wallet && !ledger) throw new Error('No account connected');
+
+    const tx = this.prepareTransfer(data);
+
+    if (ledger) {
+      await this.ledgerService.signAndBroadcast(tx as IUnsignedTransaction);
+    } else if (wallet) {
+      await this.auth.ltoInstance.API.PublicNode.transactions.broadcast('transfer', tx, wallet.getSignKeys());
+    }
+
+    this.manualUpdate$.next();
+  }
+
+  prepareMassTransfer(data: IMassTransferPayload): object {
+    const fee = Math.round(data.fee * this.amountDivider);
+    const transfers = data.transfers.map(transfer => ({
+      recipient: transfer.recipient,
+      amount: Math.round(transfer.amount * this.amountDivider)
+    }));
+
+    return {
+      type: TransactionTypes.MASS_TRANSFER,
+      version: 3,
+      timestamp: Date.now(),
+      transfers,
+      fee,
+    };
+  }
+
+  async massTransfer(data: IMassTransferPayload) {
+    const wallet = await toPromise(this.auth.wallet$);
+    const ledger = await toPromise(this.auth.ledgerAccount$);
+
+    if (!wallet && !ledger) throw new Error('No account connected');
+
+    const tx = this.prepareMassTransfer(data);
+
+    if (ledger) {
+      await this.ledgerService.signAndBroadcast(tx as IUnsignedTransaction);
+    } else if (wallet) {
+      await this.auth.ltoInstance.API.PublicNode.transactions.broadcast('massTransfer', tx, wallet.getSignKeys());
+    }
+
+    this.manualUpdate$.next();
+  }
+
+  async withdraw(recipient: string, amount: number, fee: number, captcha: string, tokenType: TokenType = 'LTO20', attachment?: string) {
+    const bridgeAddress = await toPromise(this.bridgeService.withdrawTo(recipient, captcha, tokenType));
+
+    const data: any = {
+      amount,
+      recipient: bridgeAddress,
+      fee: fee / this.amountDivider
+    };
+
+    if (attachment) {
+      data.attachment = attachment;
+    }
+
+    return this.transfer(data);
+  }
+
+  prepareLease(data: ILeasePayload): object {
+    const fee = Math.round(data.fee * this.amountDivider);
+    const amount = Math.round(data.amount * this.amountDivider);
+
+    return {
+      ...data,
+      type: TransactionTypes.LEASING,
+      version: 3,
+      timestamp: Date.now(),
+      fee,
+      amount,
+    };
+  }
+
+  async lease(data: ILeasePayload): Promise<any> {
+    const wallet = await toPromise(this.auth.wallet$);
+    const ledger = await toPromise(this.auth.ledgerAccount$);
+
+    if (!wallet && !ledger) throw new Error('No account connected');
+
+    const tx = this.prepareLease(data);
+
+    if (ledger) {
+      await this.ledgerService.signAndBroadcast(tx as IUnsignedTransaction);
+    } else if (wallet) {
+      await this.auth.ltoInstance.API.PublicNode.transactions.broadcast('lease', tx, wallet.getSignKeys());
+    }
+
+    this.manualUpdate$.next();
+  }
+
+  prepareCancelLease(transactionId: string): object {
+    return {
+      transactionId,
+      timestamp: Date.now(),
+      type: TransactionTypes.CANCEL_LEASING,
+      version: 3,
+      fee: this.defaultTransferFee,
+    };
+  }
+
+  async cancelLease(transactionId: string): Promise<any> {
+    const wallet = await toPromise(this.auth.wallet$);
+    const ledger = await toPromise(this.auth.ledgerAccount$);
+
+    if (!wallet && !ledger) throw new Error('No account connected');
+
+    const tx = this.prepareCancelLease(transactionId);
+
+    if (ledger) {
+      await this.ledgerService.signAndBroadcast(tx as IUnsignedTransaction);
+    } else if (wallet) {
+      await this.auth.ltoInstance.API.PublicNode.transactions.broadcast('cancelLeasing', tx, wallet.getSignKeys());
+    }
+
+    this.manualUpdate$.next();
+  }
+
+  prepareAnchor(data: IAnchorPayload): object {
+    const fee = Math.round(data.fee * this.amountDivider);
+    const anchors = [data.hash];
+
+    return {
+      ...data,
+      type: TransactionTypes.ANCHOR,
+      version: 3,
+      timestamp: Date.now(),
+      fee,
+      anchors,
+    };
+  }
+
+  async anchor(data: IAnchorPayload) {
+    const wallet = await toPromise(this.auth.wallet$);
+    const ledger = await toPromise(this.auth.ledgerAccount$);
+
+    if (!wallet && !ledger) throw new Error('No account connected');
+
+    const tx = this.prepareAnchor(data);
+
+    if (ledger) {
+      await this.ledgerService.signAndBroadcast(tx as IUnsignedTransaction);
+    } else if (wallet) {
+      await this.auth.ltoInstance.API.PublicNode.transactions.broadcast('anchor', tx, wallet.getSignKeys());
