@@ -392,3 +392,63 @@ export class WalletServiceImpl implements WalletService {
       await this.ledgerService.signAndBroadcast(tx as IUnsignedTransaction);
     } else if (wallet) {
       await this.auth.ltoInstance.API.PublicNode.transactions.broadcast('anchor', tx, wallet.getSignKeys());
+    }
+
+    this.manualUpdate$.next();
+  }
+
+  private filterOutAccountTransactions(address: string, unconfirmedTransactions: any[]): any[] {
+    // Filter transactions where current user involved
+    return unconfirmedTransactions
+      .filter(transaction => {
+        if (transaction.sender === address || transaction.recipient === address) {
+          return true;
+        }
+
+        if (transaction.transfers) {
+          transaction.transfers.some((transfer: any) => transfer.recipient === address);
+        }
+
+        return false;
+      })
+      .map(transaction => {
+        return {
+          ...transaction,
+          unconfirmed: true
+        };
+      });
+  }
+}
+
+export abstract class WalletService {
+  static provider: ClassProvider = {
+    provide: WalletService,
+    useClass: WalletServiceImpl
+  };
+
+  abstract address$: Observable<string>;
+  abstract balance$: Observable<IBalance>;
+  abstract canSign$: Observable<boolean>;
+  abstract transferFee$: Observable<number>;
+
+  // Transactions history
+  abstract transactions$: Observable<any[]>;
+  abstract leasingTransactions$: Observable<any[]>;
+  abstract dataTransactions$: Observable<any[]>;
+  abstract transfers$: Observable<LTO.Page<LTO.Transaction>>; // Filtered by type 4 and 11
+  abstract anchors$: Observable<LTO.Page<LTO.Transaction>>;
+
+  abstract prepareTransfer(data: ITransferPayload): object;
+  abstract prepareMassTransfer(data: IMassTransferPayload): object;
+  abstract prepareLease(data: ILeasePayload): object;
+  abstract prepareCancelLease(transactionId: string): object;
+  abstract prepareAnchor(data: IAnchorPayload): object;
+
+  abstract transfer(data: ITransferPayload): Promise<void>;
+  abstract massTransfer(data: IMassTransferPayload): Promise<void>;
+  abstract lease(data: ILeasePayload): Promise<any>;
+  abstract cancelLease(transactionId: string): Promise<any>;
+  abstract anchor(data: IAnchorPayload): Promise<void>;
+
+  abstract withdraw(address: string, amount: number, fee: number, captcha: string, tokenType?: TokenType, attachment?: string): Promise<any>;
+}
