@@ -12,4 +12,7 @@ export interface TransactionsGroup {
 export function groupByDate(transactions: any[]): TransactionsGroup[] {
   const grouped = transactions.reduce((group, transaction) => {
     const date = moment(transaction.timestamp).format('MMMM, D, YYYY');
-    const dateGroup: any[] = group[date] ||
+    const dateGroup: any[] = group[date] || [];
+    dateGroup.push(transaction);
+    // Transactions come in random order, so we need to sort them by timestamp
+    const sortedDateGroup = dateGroup.sort((a, b) => (a.time
