@@ -9,4 +9,7 @@ export interface TransactionsGroup {
  * Groups transactions by same date
  * @param transactions - array of transactions
  */
-export function groupByDate(transactions: any[]): TransactionsGroup
+export function groupByDate(transactions: any[]): TransactionsGroup[] {
+  const grouped = transactions.reduce((group, transaction) => {
+    const date = moment(transaction.timestamp).format('MMMM, D, YYYY');
+    const dateGroup: any[] = group[date] ||
