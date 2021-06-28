@@ -5,3 +5,9 @@ export function formControlErrors(
   controlName: string
 ): ValidationErrors | null {
   const control = form ? form.get(controlName) : null;
+  if (control && control.dirty && control.touched) {
+    return control.errors;
+  }
+
+  return null;
+}
