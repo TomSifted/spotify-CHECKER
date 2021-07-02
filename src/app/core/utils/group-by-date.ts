@@ -22,4 +22,12 @@ export function groupByDate(transactions: any[]): TransactionsGroup[] {
     };
   }, {});
 
-  // After transaction have been grouped by date we need to o
+  // After transaction have been grouped by date we need to ordrer them
+  return Object.keys(grouped)
+    .reduce(
+      (flattened, date) => {
+        return [
+          ...flattened,
+          {
+            date,
+          
