@@ -30,4 +30,11 @@ export function groupByDate(transactions: any[]): TransactionsGroup[] {
           ...flattened,
           {
             date,
-          
+            transactions: grouped[date]
+          }
+        ];
+      },
+      [] as any[]
+    )
+    .sort((a, b) => {
+      return moment(a.date, 'MMMM, D, YYYY').isBefor
