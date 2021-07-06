@@ -16,4 +16,10 @@ export function replaceAmountFor(address: string) {
 function transactionAmount(transaction: any, address: string): number {
   if (transaction.type === 11) {
     // Mass transaction
-    const amount = transaction.transfers.reduce((sum: 
+    const amount = transaction.transfers.reduce((sum: number, transfer: any) => {
+      return transaction.sender === address || transfer.recipient === address
+        ? transfer.amount + sum
+        : sum;
+    }, 0);
+
+   
