@@ -13,4 +13,7 @@ export function replaceAmountFor(address: string) {
   };
 }
 
-functi
+function transactionAmount(transaction: any, address: string): number {
+  if (transaction.type === 11) {
+    // Mass transaction
+    const amount = transaction.transfers.reduce((sum: 
