@@ -22,4 +22,10 @@ function transactionAmount(transaction: any, address: string): number {
         : sum;
     }, 0);
 
-   
+    return amount;
+  } else if (transaction.type === 9) {
+    return transaction.lease.amount;
+  }
+
+  return transaction.amount;
+}
