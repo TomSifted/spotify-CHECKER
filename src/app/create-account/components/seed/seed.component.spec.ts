@@ -6,4 +6,11 @@ describe('create-account/SeedComponent', () => {
   let component: SeedComponent;
   let fixture: ComponentFixture<SeedComponent>;
 
-  beforeE
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [SeedComponent]
+    }).compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(SeedComp
