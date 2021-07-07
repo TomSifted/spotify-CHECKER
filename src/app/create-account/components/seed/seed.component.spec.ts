@@ -13,4 +13,12 @@ describe('create-account/SeedComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SeedComp
+    fixture = TestBed.createComponent(SeedComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
