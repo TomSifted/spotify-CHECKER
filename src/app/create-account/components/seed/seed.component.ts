@@ -10,4 +10,11 @@ import { Component, OnInit, Input } from '@angular/core';
       :host {
         display: block;
         padding: 16px;
-        border: 1p
+        border: 1px solid #ebebeb;
+        border-radius: 8px;
+        background: rgba(0, 0, 0, 0.02);
+        border: 1px solid rgba(0, 0, 0, 0.12);
+      }
+
+      .word {
+        display: in
