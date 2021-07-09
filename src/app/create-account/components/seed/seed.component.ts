@@ -17,4 +17,16 @@ import { Component, OnInit, Input } from '@angular/core';
       }
 
       .word {
-        display: in
+        display: inline-block;
+        margin: 8px;
+      }
+    `
+  ]
+})
+export class SeedComponent {
+  @Input()
+  set seed(value: string[]) {
+    this.words = value;
+  }
+
+  words: string[] = 
