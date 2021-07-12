@@ -4,4 +4,11 @@
       <div>
         <h1>Create New Account</h1>
         <div class="create-account-steps">
-          <ng-con
+          <ng-container *ngTemplateOutlet="stepTemplate"></ng-container>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</lto-content-section>
+
+<ng-template
