@@ -29,4 +29,5 @@ export class SeedComponent {
     this.words = value;
   }
 
-  words: string[] = 
+  words: string[] = [];
+}
