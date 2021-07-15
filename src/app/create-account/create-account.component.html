@@ -18,4 +18,11 @@
   <div class="buttons">
     <div class="inner" fxLayout="row" fxLayout.xs="column" fxLayoutGap="16px">
       <button fxFlex="1 1 50" mat-flat-button color="primary" (click)="goToStep(2)">Continue</button>
-      <a fxFlex="1 1 50" mat
+      <a fxFlex="1 1 50" mat-button color="primary" routerLink="/import-account">Import account</a>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #step2Tpl>
+  <div class="step-2 narrow">
+    <p>Acco
