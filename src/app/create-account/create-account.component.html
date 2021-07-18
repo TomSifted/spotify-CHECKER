@@ -32,4 +32,13 @@
   </div>
   <div class="buttons">
     <div class="inner">
-      <button fxFlex="1 1 100" mat-flat-button [disabled]="credentialsForm.invalid" (click)="saveAccount(cred
+      <button fxFlex="1 1 100" mat-flat-button [disabled]="credentialsForm.invalid" (click)="saveAccount(credentialsForm.value)" color="primary">
+        Continue
+      </button>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #step3Tpl>
+  <div class="step-3 narrow">
+    <p>Please carefully write do
