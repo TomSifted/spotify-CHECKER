@@ -63,4 +63,8 @@
 
     <ng-container *ngIf="finished && invalid">
       <div class="error">Wrong order</div>
-      <button mat-flat-button color="primary" (click)="resetConfirmatio
+      <button mat-flat-button color="primary" (click)="resetConfirmation()">Try again</button>
+    </ng-container>
+    <ng-container *ngIf="!finished || !invalid">
+      <div class="words">
+        <div class="word" *ngFor="let word of shuffledWords; 
