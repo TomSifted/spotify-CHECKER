@@ -67,4 +67,7 @@
     </ng-container>
     <ng-container *ngIf="!finished || !invalid">
       <div class="words">
-        <div class="word" *ngFor="let word of shuffledWords; 
+        <div class="word" *ngFor="let word of shuffledWords; index as i" [ngClass]="{ selected: isSelected(i) }">
+          <button mat-flat-button color="accent" (click)="selectWord(word, i)">{{ word }}</button>
+        </div>
+      
