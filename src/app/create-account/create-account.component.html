@@ -70,4 +70,9 @@
         <div class="word" *ngFor="let word of shuffledWords; index as i" [ngClass]="{ selected: isSelected(i) }">
           <button mat-flat-button color="accent" (click)="selectWord(word, i)">{{ word }}</button>
         </div>
-      
+      </div>
+    </ng-container>
+  </div>
+  <div class="buttons">
+    <div class="inner" fxLayout="row" fxLayout.xs="column" fxLayoutGap="16px">
+      <button fxFlex="1 1 50" mat-flat-button (
