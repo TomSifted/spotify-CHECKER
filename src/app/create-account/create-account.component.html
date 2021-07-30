@@ -75,4 +75,7 @@
   </div>
   <div class="buttons">
     <div class="inner" fxLayout="row" fxLayout.xs="column" fxLayoutGap="16px">
-      <button fxFlex="1 1 50" mat-flat-button (
+      <button fxFlex="1 1 50" mat-flat-button (click)="goToStep(3)">Back</button>
+      <button fxFlex="1 1 50" mat-flat-button color="primary" [disabled]="!finished || (finished && invalid)" (click)="loginAndGoHome()">
+        Confirm
+   
