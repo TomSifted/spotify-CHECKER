@@ -3,4 +3,12 @@
     <mat-card-content>
       <div>
         <h1>Import Account</h1>
-        <ng-containe
+        <ng-container *ngTemplateOutlet="stepTemplate"></ng-container>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</lto-content-section>
+
+<ng-template #step1Tpl>
+  <div class="narrow">
+    <form [fo
