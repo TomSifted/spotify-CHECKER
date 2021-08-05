@@ -1,1 +1,2 @@
-export * from './create-account.c
+export * from './create-account.component';
+export * from './create-account.module';
