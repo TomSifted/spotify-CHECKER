@@ -4,4 +4,8 @@ import { RouterModule } from '@angular/router';
 import { CreateAccountComponent } from './create-account.component';
 import { SeedComponent } from './components/seed/seed.component';
 
-@NgMod
+@NgModule({
+  declarations: [CreateAccountComponent, SeedComponent],
+  imports: [SharedModule, RouterModule.forChild([])]
+})
+export class CreateAccountModule {}
