@@ -11,4 +11,7 @@
 
 <ng-template #step1Tpl>
   <div class="narrow">
-    <form [fo
+    <form [formGroup]="seedForm">
+      <mat-form-field floatLabel="always" appearance="outline">
+        <mat-label>Your wallet seed</mat-label>
+        <textarea rows="5" matInput placeholder="Your seed i
