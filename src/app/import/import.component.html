@@ -14,4 +14,8 @@
     <form [formGroup]="seedForm">
       <mat-form-field floatLabel="always" appearance="outline">
         <mat-label>Your wallet seed</mat-label>
-        <textarea rows="5" matInput placeholder="Your seed i
+        <textarea rows="5" matInput placeholder="Your seed is the 15 words you saved when creating your account"
+          required formControlName="seed"></textarea>
+      </mat-form-field>
+      <div id="tidy" class="narrow" fxLayout="row">
+    
