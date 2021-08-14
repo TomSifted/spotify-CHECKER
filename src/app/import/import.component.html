@@ -20,4 +20,9 @@
       <div id="tidy" class="narrow" fxLayout="row">
         <mat-checkbox class="example-margin" formControlName="tidy" matTooltip="Case and space insensitive">Tidy seed phrase <small>(recommended)</small></mat-checkbox>
       </div>
-      Address: {{walletAdd
+      Address: {{walletAddress$ | async}}
+    </form>
+  </div>
+  <div class="buttons">
+    <div class="narrow" fxLayout="row" fxLayoutAlign="center">
+      <button fxFlex="1 1 100" mat-flat-button color="prima
