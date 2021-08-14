@@ -25,4 +25,11 @@
   </div>
   <div class="buttons">
     <div class="narrow" fxLayout="row" fxLayoutAlign="center">
-      <button fxFlex="1 1 100" mat-flat-button color="prima
+      <button fxFlex="1 1 100" mat-flat-button color="primary" [disabled]="(account$ | async) === null" (click)="gotoStep2()">
+        Continue
+      </button>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #step2Tp
