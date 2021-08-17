@@ -12,3 +12,7 @@ import { ImportComponent } from './import.component';
     SharedModule,
     RouterModule.forChild([]),
     ReactiveFormsModule,
+    MatCheckboxModule,
+    MatTooltipModule]
+})
+export class ImportModule {}
