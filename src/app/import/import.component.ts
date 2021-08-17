@@ -30,3 +30,56 @@ export class ImportComponent implements OnInit {
   account$: Observable<Account | null>;
 
   constructor(private auth: AuthService, private snackbar: MatSnackBar, private router: Router) {
+    this.account$ = this.seedForm.valueChanges.pipe(
+      filter(value => value.seed.length > 0),
+      trimSeed(),
+      map((formValue: any) => {
+        try {
+          return this.auth.generateWallet(formValue.seed);
+        } catch (err) {
+          return null;
+        }
+      }),
+      shareReplay(1)
+    );
+
+    this.walletAddress$ = this.account$.pipe(
+      map((account) => {
+        return account ? account.address : '';
+      })
+    );
+  }
+
+  ngOnInit() {
+    this.stepTemplate = this.step1;
+  }
+
+  gotoStep2() {
+    this.account$.pipe(take(1)).subscribe((account) => {
+      if (account) {
+        this.wallet = account;
+        this.stepTemplate = this.step2;
+      }
+    });
+  }
+
+  saveAccount(credentials: { accountName: string; password: string }) {
+    try {
+      const account = this.auth.saveAccount(
+        credentials.accountName,
+        credentials.password,
+        this.wallet
+      );
+      this.auth.login(account, credentials.password);
+      this.router.navigate(['/']);
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  private notify(message: string) {
+    this.snackbar.open(message, 'Dismiss', {
+      duration: 3000,
+    });
+  }
+}
