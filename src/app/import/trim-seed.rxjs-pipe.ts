@@ -11,4 +11,9 @@ export function trimSeed() {
       source.subscribe({
         next(value) {
           value.seed = value.seed.trim();
-          if (v
+          if (value.tidy) {
+            value.seed = value.seed.toLowerCase().replace(/\s{2,}/gm, ' ');
+          }
+          subscriber.next(value);
+        },
+        error(erro
