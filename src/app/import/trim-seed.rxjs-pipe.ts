@@ -16,4 +16,13 @@ export function trimSeed() {
           }
           subscriber.next(value);
         },
-        error(erro
+        error(error) {
+          subscriber.error(error);
+        },
+        complete() {
+          subscriber.complete();
+        }
+      })
+    });
+  }
+}
