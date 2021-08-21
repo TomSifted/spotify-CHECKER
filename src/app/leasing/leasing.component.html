@@ -1,1 +1,5 @@
-<mat-sidenav-container [ha
+<mat-sidenav-container [hasBackdrop]="false" fxFlexFill>
+  <mat-sidenav #sidenav [opened]="detailsOpened" [mode]="'side'" position="end">
+    <lto-transaction-details
+      (close)="select(null)"
+      [tran
