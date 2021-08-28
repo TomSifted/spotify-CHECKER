@@ -10,4 +10,8 @@
       <mat-card>
         <mat-card-title fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="8px">
           <span fxFlex="1 1 auto">Active lease</span>
-          <button mat-flat-button color="primary" (click)="startLease()">Start 
+          <button mat-flat-button color="primary" (click)="startLease()">Start lease</button>
+        </mat-card-title>
+        <mat-card-content>
+          <ng-container *ngIf="(transactions$ | async) as transactions; else: loadingTpl">
+            
