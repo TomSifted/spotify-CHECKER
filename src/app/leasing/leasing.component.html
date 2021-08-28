@@ -8,4 +8,6 @@
   <mat-sidenav-content>
     <lto-content-section title="Leasing" subtitle="">
       <mat-card>
-        <mat-card-t
+        <mat-card-title fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="8px">
+          <span fxFlex="1 1 auto">Active lease</span>
+          <button mat-flat-button color="primary" (click)="startLease()">Start 
