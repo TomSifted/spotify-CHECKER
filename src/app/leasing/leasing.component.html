@@ -14,4 +14,8 @@
         </mat-card-title>
         <mat-card-content>
           <ng-container *ngIf="(transactions$ | async) as transactions; else: loadingTpl">
-            
+            <lto-transactions-list
+              *ngIf="transactions.length; else: emptyTpl"
+              [transactions]="transactions"
+              [address]="address$ | async"
+              (cancelLease)="cance
