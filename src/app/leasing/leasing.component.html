@@ -18,4 +18,9 @@
               *ngIf="transactions.length; else: emptyTpl"
               [transactions]="transactions"
               [address]="address$ | async"
-              (cancelLease)="cance
+              (cancelLease)="cancelLease($event)"
+              [selectedId]="123"
+              (transactionClick)="select($event)"
+            ></lto-transactions-list>
+          </ng-container>
+        </mat-card-co
