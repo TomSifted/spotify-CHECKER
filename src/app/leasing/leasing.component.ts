@@ -72,3 +72,70 @@ export class LeasingComponent implements OnInit {
       if (leaseData !== true) { // If leaseData is true it means the tx has been sent using a QR.
         await this.wallet.lease({ ...leaseData });
       }
+      this.notify('New lease created');
+    } catch (Err) {
+      this.notify('Cannot lease');
+      console.error(Err);
+    }
+  }
+
+  async cancelLease(leaseTransaction: any) {
+    if (!await toPromise(this.wallet.canSign$)) {
+      await this._cancelLeaseViaQr(leaseTransaction);
+      return;
+    }
+
+    const leaseData = await this.confirmDialog.show({
+      title: 'Confirm transaction',
+      transactionData: this._describeTransaction(leaseTransaction)
+    });
+    if (!leaseData) {
+      return;
+    }
+    try {
+      await this.wallet.cancelLease(leaseTransaction.id);
+      this.notify('Lease has been canceled');
+    } catch (err) {
+      this.notify('Ooops. Something went wrong');
+    }
+  }
+
+  private async _cancelLeaseViaQr(leaseTransaction: any) {
+    const tx = this.wallet.prepareCancelLease(leaseTransaction.id)
+    const send = await this.qrDialog.show({
+      tx: {...tx, sender: await toPromise(this.wallet.address$)},
+      transactionData: this._describeTransaction(leaseTransaction)
+    });
+
+    if (send) {
+      this.notify('Lease has been canceled');
+    }
+  }
+
+  private _describeTransaction(leaseTransaction: any) {
+    return [
+      {
+        label: 'Amount',
+        value: Number(leaseTransaction.amount) / this.AMOUNT_DIVIDER,
+      },
+      {
+        label: 'Node Address',
+        value: leaseTransaction.recipient,
+      },
+      {
+        label: 'Unbonding time',
+        value: '3000 Blocks (50 hours)',
+      }
+    ];
+  }
+
+  trackByFn(transaction: any) {
+    return transaction.id;
+  }
+
+  private notify(message: string) {
+    this.snackbar.open(message, 'DISMISS', {
+      duration: 3000,
+    });
+  }
+}
