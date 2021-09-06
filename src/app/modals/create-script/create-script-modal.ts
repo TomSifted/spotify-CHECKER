@@ -4,4 +4,10 @@ import { CreateScriptComponent } from './create-script.component';
 
 @Injectable()
 export class CreateScriptModal {
-  constructor(pr
+  constructor(private _matDialog: MatDialog) {}
+
+  async show() {
+    const dialog = this._matDialog.open(CreateScriptComponent);
+    return dialog.afterClosed().toPromise();
+  }
+}
