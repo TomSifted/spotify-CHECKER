@@ -5,4 +5,8 @@
     <mat-select [formControl]="scriptTextCtrl">
       <mat-option *ngFor="let script of predefinedScripts" [value]="script.value">{{script.label}}</mat-option>
     </mat-select>
-  </mat-form-fi
+  </mat-form-field>
+  <pre>{{scriptTextCtrl.value}}</pre>
+  <div class="warning">
+    <h4 class="mat-h4">Warning: actions can lead to loss of access to your account</h4>
+    We do
