@@ -10,4 +10,8 @@ import { Observable } from 'rxjs';
   styleUrls: ['./create-script.component.scss'],
 })
 export class CreateScriptComponent {
-  scri
+  scriptTextCtrl: FormControl;
+  predefinedScripts: PredefinedScript[];
+
+  constructor(private _dialogRef: MatDialogRef<any>, private _scriptsService: ScriptsService) {
+    this.predefinedSc
