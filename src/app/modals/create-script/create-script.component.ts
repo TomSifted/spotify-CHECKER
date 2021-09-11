@@ -19,4 +19,6 @@ export class CreateScriptComponent {
   }
 
   createScript() {
-    this._dialogRef.close(this.scriptTextCtrl.val
+    this._dialogRef.close(this.scriptTextCtrl.value);
+  }
+}
