@@ -14,4 +14,9 @@ export class CreateScriptComponent {
   predefinedScripts: PredefinedScript[];
 
   constructor(private _dialogRef: MatDialogRef<any>, private _scriptsService: ScriptsService) {
-    this.predefinedSc
+    this.predefinedScripts = _scriptsService.predefinedScripts;
+    this.scriptTextCtrl = new FormControl(this.predefinedScripts[0].value);
+  }
+
+  createScript() {
+    this._dialogRef.close(this.scriptTextCtrl.val
