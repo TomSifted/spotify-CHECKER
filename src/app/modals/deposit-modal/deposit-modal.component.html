@@ -3,4 +3,8 @@
   <ng-container *ngIf="loaded; else: loadingTpl">
     <ng-container *ngIf="!error; else: errorTpl">
       <p>What is deposit and maybe some more info</p>
-      <div class="address-conta
+      <div class="address-container">
+        <div class="address">{{ bridgeAddress }}</div>
+      </div>
+      <p>Maybe little more explanation</p>
+      <div class="qr-code"><qrcode [qrdata]="bridgeAddress" [
