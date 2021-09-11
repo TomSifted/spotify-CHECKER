@@ -7,4 +7,8 @@ import { CreateScriptModal } from './create-script-modal';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { 
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+
+@NgModule({
+  declarations: [CreateScriptC
