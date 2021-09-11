@@ -22,4 +22,7 @@ import { MatSelectModule } from '@angular/material/select';
     ReactiveFormsModule,
     MatSelectModule,
   ],
- 
+  entryComponents: [CreateScriptComponent],
+  providers: [CreateScriptModal],
+})
+export class CreateScriptModule {}
