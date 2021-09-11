@@ -1,2 +1,6 @@
 <div mat-dialog-title>Deposit</div>
-<mat-dialog-conten
+<mat-dialog-content>
+  <ng-container *ngIf="loaded; else: loadingTpl">
+    <ng-container *ngIf="!error; else: errorTpl">
+      <p>What is deposit and maybe some more info</p>
+      <div class="address-conta
