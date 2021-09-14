@@ -7,4 +7,9 @@
         <div class="address">{{ bridgeAddress }}</div>
       </div>
       <p>Maybe little more explanation</p>
-      <div class="qr-code"><qrcode [qrdata]="bridgeAddress" [
+      <div class="qr-code"><qrcode [qrdata]="bridgeAddress" [size]="128"></qrcode></div>
+    </ng-container>
+  </ng-container>
+</mat-dialog-content>
+<mat-dialog-actions fxLayout="row" fxLayoutAlign="end">
+  <button mat
