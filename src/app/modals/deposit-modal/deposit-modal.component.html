@@ -12,4 +12,8 @@
   </ng-container>
 </mat-dialog-content>
 <mat-dialog-actions fxLayout="row" fxLayoutAlign="end">
-  <button mat
+  <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>
+
+<ng-template #loadingTpl>
+  <div class="loading"><mat-progress-spinner mode="indeterminate"></mat-prog
