@@ -7,4 +7,6 @@ export class DisableScriptModal {
   constructor(private _matDialog: MatDialog) {}
 
   show(fee: number): Promise<boolean> {
-    return this._matDialog.open(Disab
+    return this._matDialog.open(DisableScriptComponent, { data: fee }).afterClosed().toPromise();
+  }
+}
