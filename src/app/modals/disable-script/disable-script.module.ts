@@ -8,4 +8,8 @@ import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [DisableScriptComponent],
-  imports: [CommonModule, 
+  imports: [CommonModule, MatDialogModule, MatButtonModule, AmountDividePipeModule],
+  entryComponents: [DisableScriptComponent],
+  providers: [DisableScriptModal],
+})
+export class DisableScriptM
