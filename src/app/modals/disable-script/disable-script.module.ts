@@ -3,4 +3,9 @@ import { CommonModule } from '@angular/common';
 import { DisableScriptModal } from './disable-script-modal';
 import { DisableScriptComponent } from './disable-script.component';
 import { AmountDividePipeModule } from '../../shared/pipes';
-import { MatDial
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+
+@NgModule({
+  declarations: [DisableScriptComponent],
+  imports: [CommonModule, 
