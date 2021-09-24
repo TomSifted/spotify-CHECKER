@@ -12,4 +12,4 @@ import { MatButtonModule } from '@angular/material/button';
   entryComponents: [DisableScriptComponent],
   providers: [DisableScriptModal],
 })
-export class DisableScriptM
+export class DisableScriptModule {}
