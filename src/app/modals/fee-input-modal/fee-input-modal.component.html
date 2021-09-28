@@ -13,4 +13,7 @@
 </mat-dialog-content>
 <mat-dialog-actions fxLayout="row" fxLayoutAlign="end center">
   <button mat-button mat-dialog-close>Cancel</button>
-  <button mat-button color="primary" (click)="closeDialog()" [disabled]="feeInp
+  <button mat-button color="primary" (click)="closeDialog()" [disabled]="feeInput.invalid">
+    Anchor
+  </button>
+</mat-dialog-actions>
