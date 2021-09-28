@@ -14,3 +14,5 @@ export class FeeInputModal {
     });
 
     return dialog.afterClosed().toPromise();
+  }
+}
