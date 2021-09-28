@@ -1,1 +1,3 @@
-<form [formG
+<form [formGroup]="sendForm" *ngIf="sendForm" [ngClass]="{ 'mass-transaction': transfersCount > 1 }">
+    <div class="transfers" fxLayout="column">
+        <div *ngFor="let transferGroup of sendForm.contr
