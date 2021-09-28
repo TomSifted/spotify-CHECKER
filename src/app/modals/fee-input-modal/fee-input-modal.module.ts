@@ -18,4 +18,10 @@ import { FeeInputModal } from './fee-input.modal';
     MatDialogModule,
     MatButtonModule,
     MatInputModule,
-    MatFormFie
+    MatFormFieldModule,
+    FlexLayoutModule,
+  ],
+  entryComponents: [FeeInputModalComponent],
+  providers: [FeeInputModal],
+})
+export class FeeInputModalModule {}
