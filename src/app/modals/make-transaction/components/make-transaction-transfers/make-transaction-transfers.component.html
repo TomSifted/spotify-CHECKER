@@ -2,4 +2,7 @@
     <div class="transfers" fxLayout="column">
         <div *ngFor="let transferGroup of sendForm.controls.transfers.controls; index as i"
             [formGroup]="transferGroup" class="transfer-row" [ngClass]="{'visible': i === transferVisible}">
-            <m
+            <mat-form-field class="recipient">
+                <mat-label>
+                    Recipient {{transfersCount > 1 ? i + 1 : ''}}
+                </mat-label>
