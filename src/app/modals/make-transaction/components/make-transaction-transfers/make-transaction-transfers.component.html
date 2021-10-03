@@ -1,3 +1,5 @@
 <form [formGroup]="sendForm" *ngIf="sendForm" [ngClass]="{ 'mass-transaction': transfersCount > 1 }">
     <div class="transfers" fxLayout="column">
-        <div *ngFor="let transferGroup of sendForm.contr
+        <div *ngFor="let transferGroup of sendForm.controls.transfers.controls; index as i"
+            [formGroup]="transferGroup" class="transfer-row" [ngClass]="{'visible': i === transferVisible}">
+            <m
