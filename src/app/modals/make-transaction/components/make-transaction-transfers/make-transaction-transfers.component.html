@@ -6,3 +6,6 @@
                 <mat-label>
                     Recipient {{transfersCount > 1 ? i + 1 : ''}}
                 </mat-label>
+                <input matInput formControlName="recipient" required />
+                <mat-error *ngIf="recipientErrors && recipientErrors.invalidAddress">Invalid address</mat-error>
+    
