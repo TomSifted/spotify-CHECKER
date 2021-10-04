@@ -8,4 +8,8 @@
                 </mat-label>
                 <input matInput formControlName="recipient" required />
                 <mat-error *ngIf="recipientErrors && recipientErrors.invalidAddress">Invalid address</mat-error>
-    
+            </mat-form-field>
+            <mat-form-field class="amount">
+                <mat-label>
+                    Amount {{transfersCount > 1 ? i + 1 : ''}}
+             
