@@ -12,4 +12,6 @@
             <mat-form-field class="amount">
                 <mat-label>
                     Amount {{transfersCount > 1 ? i + 1 : ''}}
-             
+                </mat-label>
+                <input matInput type="number" formControlName="amount" (blur)="updateAmountsValidators()" required />
+                <mat-hint class="balance">Bal
