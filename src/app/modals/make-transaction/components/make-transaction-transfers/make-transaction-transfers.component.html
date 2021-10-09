@@ -19,4 +19,9 @@
                     Max value: {{ transferMaxAmount }}
                 </mat-error>
             </mat-form-field>
-            <button mat-button (click)="delTransfer(i)" title="Remove this transfer"><mat-icon>clear</mat-icon></b
+            <button mat-button (click)="delTransfer(i)" title="Remove this transfer"><mat-icon>clear</mat-icon></button>
+        </div>
+    </div>
+    <mat-dialog-actions fxLayout="row" fxLayoutAlign="end">
+        <ng-container *ngIf="transfersCount > 1">
+            <button mat-button ngClass="small-screen-contro
