@@ -30,4 +30,6 @@
             <button mat-button ngClass="small-screen-control" (click)="next()" [disabled]="transferVisible === transfersCount - 1">
                 <mat-icon>chevron_right</mat-icon>
             </button>
-            <button mat-button ng
+            <button mat-button ngClass="small-screen-control" (click)="delTransfer()">Remove recipient</button>
+        </ng-container>
+        <button *ngIf="!(ledger$ | async)" mat-button (click)="addTransfer()" [dis
