@@ -27,4 +27,7 @@
             <button mat-button ngClass="small-screen-control" (click)="previous()" [disabled]="transferVisible === 0">
                 <mat-icon>chevron_left</mat-icon>
             </button>
-            <button mat-button ngClass="small-screen-
+            <button mat-button ngClass="small-screen-control" (click)="next()" [disabled]="transferVisible === transfersCount - 1">
+                <mat-icon>chevron_right</mat-icon>
+            </button>
+            <button mat-button ng
