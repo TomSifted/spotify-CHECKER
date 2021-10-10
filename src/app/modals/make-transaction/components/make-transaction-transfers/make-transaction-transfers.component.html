@@ -24,4 +24,7 @@
     </div>
     <mat-dialog-actions fxLayout="row" fxLayoutAlign="end">
         <ng-container *ngIf="transfersCount > 1">
-            <button mat-button ngClass="small-screen-contro
+            <button mat-button ngClass="small-screen-control" (click)="previous()" [disabled]="transferVisible === 0">
+                <mat-icon>chevron_left</mat-icon>
+            </button>
+            <button mat-button ngClass="small-screen-
