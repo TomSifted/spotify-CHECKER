@@ -4,4 +4,15 @@ mat-dialog-actions {
 
 .transfer-row {
   display: flex;
-  flex-dire
+  flex-direction: column;
+  box-sizing: border-box;
+
+  button {
+    display: none;
+  }
+}
+
+/**
+  For mass tx on big screens, show transfers as a table
+*/
+@media screen and (min-wi
