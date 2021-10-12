@@ -15,4 +15,16 @@ mat-dialog-actions {
 /**
   For mass tx on big screens, show transfers as a table
 */
-@media screen and (min-wi
+@media screen and (min-width: 801px) {
+  .mass-transaction {
+    .transfers {
+      gap: 20px;
+    }
+
+    .transfer-row {
+      flex-direction: row;
+      gap: 10px;
+
+      mat-form-field.recipient {
+        flex-grow: 10;
+    
