@@ -27,4 +27,16 @@ mat-dialog-actions {
 
       mat-form-field.recipient {
         flex-grow: 10;
-    
+      }
+
+      mat-form-field.amount {
+        flex-grow: 1;
+      }
+
+      button {
+        display: inline-block;
+      }
+    }
+
+    /** Hide controls used for small screens */
+    .small-screen-cont
