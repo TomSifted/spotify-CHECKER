@@ -39,4 +39,10 @@ mat-dialog-actions {
     }
 
     /** Hide controls used for small screens */
-    .small-screen-cont
+    .small-screen-control {
+      display: none !important;
+    }
+
+    /** Show current balance only when focusing on a input to avoid duplicating information */
+    .balance {
+    
