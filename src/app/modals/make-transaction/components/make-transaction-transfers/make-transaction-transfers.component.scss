@@ -54,4 +54,9 @@ mat-dialog-actions {
 }
 
 /** For mass tx on small screens, show one transfer at a time */
-@media screen and (max-width
+@media screen and (max-width: 800px) {
+  .transfer-row {
+    display: none;
+    &.visible { display: flex; }
+  }
+}
