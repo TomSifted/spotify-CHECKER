@@ -45,4 +45,13 @@ mat-dialog-actions {
 
     /** Show current balance only when focusing on a input to avoid duplicating information */
     .balance {
-    
+      display: none;
+    }
+    .mat-focused .balance {
+      display: block;
+    }
+  }
+}
+
+/** For mass tx on small screens, show one transfer at a time */
+@media screen and (max-width
