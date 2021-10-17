@@ -4,4 +4,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
-import { 
+import { MakeTransactionComponent } from './make-transaction.component';
+import { MakeTransactionModal } from './make-transaction-modal';
+import { MatProgressSpinnerModule } from '
