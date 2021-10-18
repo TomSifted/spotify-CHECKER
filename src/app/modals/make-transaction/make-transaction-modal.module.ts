@@ -19,4 +19,9 @@ import { MakeTransactionTransfersComponent } from './components/make-transaction
   ],
   declarations: [
     MakeTransactionComponent,
-    MakeTransactionTr
+    MakeTransactionTransfersComponent
+  ],
+  entryComponents: [MakeTransactionComponent],
+  providers: [MakeTransactionModal],
+})
+export class MakeTransactionModalModule {}
