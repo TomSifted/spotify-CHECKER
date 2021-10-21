@@ -1,1 +1,4 @@
-<div mat-dialog-title>New <span *ngIf="this.sendForm?.controls.transfers.length 
+<div mat-dialog-title>New <span *ngIf="this.sendForm?.controls.transfers.length > 1">mass</span> transaction</div>
+<mat-dialog-content *ngIf="(balance$ | async) as balance">
+  <form [formGroup]="sendForm" fxLayout="column" *ngIf="sendForm; else emptyTpl">
+    <lto-wallet-
