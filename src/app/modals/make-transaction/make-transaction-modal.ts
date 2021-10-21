@@ -8,4 +8,10 @@ export class MakeTransactionModal {
   constructor(private _dialog: MatDialog) {}
 
   show(): Promise<void> {
-    const dialog = this._dialog.open(Mak
+    const dialog = this._dialog.open(MakeTransactionComponent, {
+      width: '500px',
+    });
+
+    return toPromise(dialog.afterClosed());
+  }
+}
