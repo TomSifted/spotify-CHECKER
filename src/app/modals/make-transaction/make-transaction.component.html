@@ -14,4 +14,8 @@
 </mat-dialog-content>
 <mat-dialog-actions fxLayout="row" fxLayoutAlign="end">
   <button mat-button [disabled]="loading" matDialogClose>Cancel</button>
-  <button ma
+  <button mat-button (click)="send()" [disabled]="sendForm?.invalid || loading">Send</button>
+</mat-dialog-actions>
+
+<ng-template #emptyTpl>
+  <div fxLayout="row" fxLay
