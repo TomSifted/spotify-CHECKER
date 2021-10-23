@@ -1,0 +1,139 @@
+
+import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Observable, Subscription } from 'rxjs';
+import { WalletService, IBalance, FeeService, toPromise, TransactionTypes } from '@app/core';
+import { take, withLatestFrom } from 'rxjs/operators';
+import { TransactionConfirmDialog } from '@app/components/transaction-confirmation-dialog';
+import { TransactionQrDialog } from '@app/components/transaction-qr-dialog';
+import { MakeTransactionService } from '@app/core/services/make-transaction.service';
+import { base58Encode } from 'lto-ledger-js-unofficial-test/lib/utils';
+
+interface FormValue {
+  transfers: FormTransfersValue[];
+  attachment: string;
+  fee: number;
+}
+
+interface FormTransfersValue {
+  recipient: string;
+  amount: number;
+}
+
+@Component({
+  selector: 'lto-wallet-make-transaction',
+  templateUrl: './make-transaction.component.html',
+  styleUrls: ['./make-transaction.component.scss'],
+})
+export class MakeTransactionComponent implements OnInit {
+  loading = false;
+
+  sendForm: FormGroup | null = null;
+  private _recipientsCountSubscription: Subscription;
+
+  balance$!: Observable<IBalance>;
+
+  constructor(
+    public dialogRef: MatDialogRef<any>,
+    private wallet: WalletService,
+    private snackbar: MatSnackBar,
+    private transactionConfirmDialog: TransactionConfirmDialog,
+    private transactionQrDialog: TransactionQrDialog,
+    private _feeService: FeeService,
+    private _transactionService: MakeTransactionService
+  ) {
+    this._recipientsCountSubscription = this._transactionService.transfersCount$.subscribe(
+      (transfers) => this.updateDialogSize(transfers)
+    );
+  }
+
+  ngOnInit() {
+    this.balance$ = this.wallet.balance$;
+
+    this.balance$
+      .pipe(
+        withLatestFrom(this._feeService.transferFee$, this._feeService.massTransferFee$),
+        take(1)
+      )
+      .subscribe(([balance, transferFee, massTransferFee]) => {
+        this.sendForm = this._transactionService.initForm(balance, transferFee, massTransferFee);
+      });
+  }
+
+  ngOnDestroy() {
+    this._recipientsCountSubscription.unsubscribe();
+  }
+
+  async send() {
+    if (!this.sendForm) {
+      return;
+    }
+    const formValue = this.sendForm.getRawValue() as FormValue;
+
+    if (!await toPromise(this.wallet.canSign$)) {
+      const tx = formValue.transfers.length === 1
+        ? this.wallet.prepareTransfer(this._transferData(formValue))
+        : this.wallet.prepareMassTransfer(formValue);
+
+      (tx as any).attachment = base58Encode(new TextEncoder().encode((tx as any).attachment));
+
+      const send = await this.transactionQrDialog.show({
+        tx: {...tx, sender: await toPromise(this.wallet.address$)},
+        transactionData: this._describeTransfer(formValue),
+      });
+
+      if (send) {
+        this.dialogRef.close();
+      }
+      return;
+    }
+
+    const confirmed = await this.transactionConfirmDialog.show({
+      transactionData: this._describeTransfer(formValue)
+    });
+
+    if (!confirmed) {
+      return;
+    }
+
+    this.loading = true;
+
+    try {
+      if (formValue.transfers.length === 1) {
+        // Send simple transaction
+        await this.wallet.transfer(this._transferData(formValue));
+      } else {
+        // Send mass transaction
+        await this.wallet.massTransfer(formValue);
+      }
+    } catch (error) {
+      this.snackbar.open('Transaction error', 'DISMISS', { duration: 3000 });
+    }
+
+    this.loading = false;
+    this.dialogRef.close();
+  }
+
+  private _transferData(formValue: FormValue) {
+    return {
+      ...formValue.transfers[0],
+      fee: formValue.fee,
+      attachment: formValue.attachment,
+    };
+  }
+  private _describeTransfer(formValue: FormValue) {
+    const transactionData = [];
+
+    if (formValue.transfers.length === 1) {
+      // Simple transaction information
+      transactionData.push(
+        {
+          label: 'To',
+          value: formValue.transfers[0].recipient,
+        },
+        {
+          label: 'Amount',
+          value: formValue.transfers[0].amount,
+        }
