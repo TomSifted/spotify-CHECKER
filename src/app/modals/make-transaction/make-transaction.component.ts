@@ -137,3 +137,43 @@ export class MakeTransactionComponent implements OnInit {
           label: 'Amount',
           value: formValue.transfers[0].amount,
         }
+      );
+    } else {
+      // Mass transaction information
+      transactionData.push({
+        label: 'Number of recipients',
+        value: formValue.transfers.length,
+      });
+      formValue.transfers.forEach((transfer) => {
+        transactionData.push({
+          label: transfer.recipient,
+          value: transfer.amount,
+          detailOnly: true,
+        });
+      });
+      transactionData.push({
+        label: 'Total amount',
+        value: this._transactionService.totalAmount,
+      });
+    }
+
+    // Shared information
+    transactionData.push(
+      {
+        label: 'Fee',
+        value: formValue.fee,
+      },
+      {
+        label: 'Attachment',
+        value: formValue.attachment,
+      }
+    );
+
+    return transactionData;
+  }
+
+  private updateDialogSize(transfers: number) {
+    if (transfers === 1) this.dialogRef.updateSize('500px');
+    else if (transfers === 2) this.dialogRef.updateSize('700px');
+  }
+}
