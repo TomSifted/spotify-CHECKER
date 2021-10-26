@@ -7,4 +7,8 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'lto-mobile-auth-modal',
-  t
+  templateUrl: './mobile-auth-modal.component.html',
+  styleUrls: ['./mobile-auth-modal.component.scss'],
+})
+export class MobileAuthModalComponent implements OnInit {
+  public challenge$: Observable<IMobileA
