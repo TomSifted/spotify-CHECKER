@@ -25,4 +25,10 @@ export class MobileAuthModalComponent implements OnInit {
   ngOnInit() {
     this.challenge$.subscribe({
       error: error => {
-        this.snackbar.open(
+        this.snackbar.open('Unable to sign in using mobile wallet', 'Dismiss', { duration: 3000 });
+        this.dialog.close();
+      }
+    });
+
+    this.mobileAuth.account$.subscribe({
+      next: a
