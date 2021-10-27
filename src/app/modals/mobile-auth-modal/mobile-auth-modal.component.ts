@@ -11,4 +11,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./mobile-auth-modal.component.scss'],
 })
 export class MobileAuthModalComponent implements OnInit {
-  public challenge$: Observable<IMobileA
+  public challenge$: Observable<IMobileAuthChallenge|null>;
+
+  constructor(
+    private dialog: MatDialogRef<any>,
+    private mobileAuth: MobileAuthService,
+    private snackbar: MatSnackBar,
+    private r
