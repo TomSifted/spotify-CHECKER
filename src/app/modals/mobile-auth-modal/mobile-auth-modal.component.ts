@@ -17,4 +17,12 @@ export class MobileAuthModalComponent implements OnInit {
     private dialog: MatDialogRef<any>,
     private mobileAuth: MobileAuthService,
     private snackbar: MatSnackBar,
-    private r
+    private router: Router,
+  ) {
+    this.challenge$ = this.mobileAuth.challenge$;
+  }
+
+  ngOnInit() {
+    this.challenge$.subscribe({
+      error: error => {
+        this.snackbar.open(
