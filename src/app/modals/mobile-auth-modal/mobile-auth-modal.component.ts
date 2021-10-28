@@ -31,4 +31,14 @@ export class MobileAuthModalComponent implements OnInit {
     });
 
     this.mobileAuth.account$.subscribe({
-      next: a
+      next: async account => {
+        if (!account) return;
+
+        await this.router.navigate(['/']);
+        this.dialog.close();
+      }
+    });
+
+    this.mobileAuth.connect();
+  }
+}
