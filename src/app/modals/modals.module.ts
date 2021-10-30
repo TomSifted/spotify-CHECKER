@@ -8,3 +8,11 @@ import { FeeInputModalModule } from './fee-input-modal';
 import { CreateScriptModule } from './create-script';
 import { ScriptInfoModalModule } from './script-info-modal';
 import { DisableScriptModule } from './disable-script';
+import { MobileAuthModalModule } from './mobile-auth-modal';
+
+@NgModule({
+  imports: [
+    MakeTransactionModalModule,
+    WithdrawModalModule,
+    DepositModalModule,
+    StartLeaseMod
