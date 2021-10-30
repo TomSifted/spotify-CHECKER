@@ -15,4 +15,12 @@ import { MobileAuthModalModule } from './mobile-auth-modal';
     MakeTransactionModalModule,
     WithdrawModalModule,
     DepositModalModule,
-    StartLeaseMod
+    StartLeaseModalModule,
+    FeeInputModalModule,
+    CreateScriptModule,
+    ScriptInfoModalModule,
+    DisableScriptModule,
+    MobileAuthModalModule
+  ]
+})
+export class ModalsModule {}
