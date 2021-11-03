@@ -4,4 +4,10 @@ import { Observable } from 'rxjs';
 
 @Component({
   selector: 'lto-wallet-script-info-modal',
-  templateUrl: './sc
+  templateUrl: './script-info-modal.component.html',
+  styleUrls: ['./script-info-modal.component.scss']
+})
+export class ScriptInfoModalComponent implements OnInit {
+  info$: Observable<any>;
+
+  constructor(private _scr
