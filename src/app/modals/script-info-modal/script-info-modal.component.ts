@@ -10,4 +10,9 @@ import { Observable } from 'rxjs';
 export class ScriptInfoModalComponent implements OnInit {
   info$: Observable<any>;
 
-  constructor(private _scr
+  constructor(private _scriptsService: ScriptsService) {
+    this.info$ = _scriptsService.scriptInfo$;
+  }
+
+  ngOnInit() {}
+}
