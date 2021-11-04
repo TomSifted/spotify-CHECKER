@@ -1,3 +1,9 @@
 <div mat-dialog-title>Start lease</div>
 <mat-dialog-content>
-  <ng-container 
+  <ng-container *ngIf="!isNodeSelected">
+
+    <ng-container *ngIf="communityNodesCustom.length>0">
+      <table mat-table [dataSource]="communityNodesCustom">
+        <ng-container matColumnDef="name">
+
+          <
