@@ -4,4 +4,9 @@ import { ScriptInfoModalComponent } from './script-info-modal.component';
 
 @Injectable()
 export class ScriptInfoModal {
-  constr
+  constructor(private _matDialog: MatDialog) {}
+
+  show() {
+    this._matDialog.open(ScriptInfoModalComponent);
+  }
+}
