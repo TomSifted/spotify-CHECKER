@@ -6,4 +6,8 @@
       <table mat-table [dataSource]="communityNodesCustom">
         <ng-container matColumnDef="name">
 
-          <
+          <td mat-cell *matCellDef="let element" class="noPaddingLeft">
+            <strong>{{element.name}}</strong><br />
+            <small>{{element.comment}}</small>
+          </td>
+        <
