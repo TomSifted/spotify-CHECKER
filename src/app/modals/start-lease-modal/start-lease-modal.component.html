@@ -18,4 +18,8 @@
         <ng-container matColumnDef="name">
           <td mat-cell *matCellDef="let element" class="noPaddingLeft">
             <strong>{{element.name}}</strong>
-            <a (click)="$event.stopPropagation()" href='{{element.website}}' target="_blank" class="btn btn-link"><img src="assets/icons/external-link.svg" class="imgL
+            <a (click)="$event.stopPropagation()" href='{{element.website}}' target="_blank" class="btn btn-link"><img src="assets/icons/external-link.svg" class="imgLink" alt="External link" /></a>
+            <br /><span class="nodeAdr"> {{element.address}}</span>
+            <!--<br /><small>Payout: {{element.sharing}}</small>-->
+          </td>
+
