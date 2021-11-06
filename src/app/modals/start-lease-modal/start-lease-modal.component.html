@@ -10,4 +10,8 @@
             <strong>{{element.name}}</strong><br />
             <small>{{element.comment}}</small>
           </td>
-        <
+        </ng-container>
+        <tr mat-row *matRowDef="let row; columns: displayedColumnsCustom;" (click)="selectNode(row)"></tr>
+
+      </table>
+      <table mat-table [dataSourc
