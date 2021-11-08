@@ -42,4 +42,9 @@
         <input matInput disabled value="{{ balance | amountDivide }}" />
         <mat-error *ngIf="recipientErrors && recipientErrors.invalidAddress">Invalid address</mat-error>
       </mat-form-field>
-      <mat-for
+      <mat-form-field>
+        <mat-label>Recipient</mat-label>
+        <input type="text" formControlName="recipient" required matInput />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>A
