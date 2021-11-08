@@ -29,4 +29,11 @@
             <span class="nodeAdr"> {{element.address}}</span><br /><small>{{element.payoutSchedule}}</small>
           </td>
         </ng-container>
-        <tr mat-row *matRowDe
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selectNode(row)"></tr>
+
+      </table>
+    </ng-container>
+  </ng-container>
+  <ng-container *ngIf="isNodeSelected">
+
+    <for
