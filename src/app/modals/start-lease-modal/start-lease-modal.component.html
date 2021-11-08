@@ -36,4 +36,7 @@
   </ng-container>
   <ng-container *ngIf="isNodeSelected">
 
-    <for
+    <form [formGroup]="leaseForm" fxLayout="column" *ngIf="leaseForm; else loadingTpl">
+      <mat-form-field>
+        <mat-label>Balance</mat-label>
+        <input matInput disa
