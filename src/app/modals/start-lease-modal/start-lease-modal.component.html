@@ -39,4 +39,7 @@
     <form [formGroup]="leaseForm" fxLayout="column" *ngIf="leaseForm; else loadingTpl">
       <mat-form-field>
         <mat-label>Balance</mat-label>
-        <input matInput disa
+        <input matInput disabled value="{{ balance | amountDivide }}" />
+        <mat-error *ngIf="recipientErrors && recipientErrors.invalidAddress">Invalid address</mat-error>
+      </mat-form-field>
+      <mat-for
