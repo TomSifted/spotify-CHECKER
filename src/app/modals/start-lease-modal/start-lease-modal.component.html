@@ -47,4 +47,7 @@
         <input type="text" formControlName="recipient" required matInput />
       </mat-form-field>
       <mat-form-field>
-        <mat-label>A
+        <mat-label>Amount</mat-label>
+        <input type="number" formControlName="amount" required matInput />
+        <mat-error *ngIf="leaseForm?.controls.amount.hasError('max')">
+          Max v
