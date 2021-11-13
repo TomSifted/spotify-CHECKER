@@ -61,4 +61,9 @@
   </ng-container>
 </mat-dialog-content>
 <mat-dialog-actions fxLayout="row" fxLayoutAlign="end">
-  <button mat-button m
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button (click)="lease()" [disabled]="leaseForm?.invalid || !isNodeSelected">Start lease</button>
+</mat-dialog-actions>
+
+
+<ng-template #loadingTpl>
