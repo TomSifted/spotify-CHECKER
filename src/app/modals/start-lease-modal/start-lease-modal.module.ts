@@ -3,4 +3,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../../shared';
 import { MatDialogModule } from '@angular/material/dialog';
 import { StartLeaseModalComponent } from './start-lease-modal.component';
-import { Start
+import { StartLeaseModal } from './start-lease-modal';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
+@NgModule({
+  imports: [SharedModule, ReactiveFormsModule, MatDialogMod
