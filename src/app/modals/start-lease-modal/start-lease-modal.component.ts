@@ -78,3 +78,82 @@ export class StartLeaseModalComponent implements OnInit {
     });
     this.balance$ = this._wallet.balance$;
   }
+
+  ngOnInit() {
+  }
+
+  selectNode(element: CommunityNode) {
+    this.isNodeSelected = true;
+    this._wallet.balance$
+      .pipe(withLatestFrom(this._feeService.leaseFee$), take(1))
+      .subscribe(([balance, leaseFee]) => {
+        const maxAmount = balance.available / balance.amountDivider;
+        const minAmount = 1 / balance.amountDivider;
+        const fee = leaseFee / balance.amountDivider;
+
+        const maxLeased = (balance.available / balance.amountDivider) > 1 ?
+          (balance.available / balance.amountDivider) - 1 : 0;
+        this.leaseForm = new FormGroup({
+          recipient: new FormControl(element.address, [Validators.required, this._addressValidator]),
+          amount: new FormControl(maxLeased, [
+            Validators.required,
+            Validators.min(minAmount),
+            Validators.max(maxAmount),
+          ]),
+          fee: new FormControl({ value: fee, disabled: true }, [
+            Validators.required,
+            Validators.min(minAmount),
+          ]),
+        });
+      });
+  }
+
+  async lease() {
+    if (!this.leaseForm) {
+      return;
+    }
+
+    const formData = this.leaseForm.getRawValue() as LeaseFormData;
+
+    if (!await toPromise(this._wallet.canSign$)) {
+      const tx = this._wallet.prepareLease(formData);
+      const send = await this.qrDialog.show({
+        tx: {...tx, sender: await toPromise(this._wallet.address$)},
+        transactionData: this._describeTransaction(formData)
+      });
+
+      if (send) {
+        this.dialogRef.close(true);
+      }
+      return;
+    }
+
+    const confirmed = await this.confirmDialog.show({
+      title: 'Confirm lease',
+      transactionData: this._describeTransaction(formData)
+    });
+
+    if (!confirmed) {
+      return;
+    }
+
+    this.dialogRef.close(formData);
+  }
+
+  private _describeTransaction(formData: LeaseFormData) {
+    return [
+      {
+        label: 'To',
+        value: formData.recipient,
+      },
+      {
+        label: 'Amount',
+        value: formData.amount,
+      },
+      {
+        label: 'Fee',
+        value: formData.fee,
+      },
+    ];
+  }
+}
