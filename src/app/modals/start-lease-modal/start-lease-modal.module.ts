@@ -12,4 +12,4 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
   entryComponents: [StartLeaseModalComponent],
   providers: [StartLeaseModal],
 })
-export class StartLea
+export class StartLeaseModalModule {}
