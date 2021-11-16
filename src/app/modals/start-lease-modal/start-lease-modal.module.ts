@@ -7,4 +7,9 @@ import { StartLeaseModal } from './start-lease-modal';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
-  imports: [SharedModule, ReactiveFormsModule, MatDialogMod
+  imports: [SharedModule, ReactiveFormsModule, MatDialogModule, MatProgressSpinnerModule],
+  declarations: [StartLeaseModalComponent],
+  entryComponents: [StartLeaseModalComponent],
+  providers: [StartLeaseModal],
+})
+export class StartLea
