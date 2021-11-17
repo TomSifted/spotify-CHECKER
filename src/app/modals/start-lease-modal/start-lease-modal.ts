@@ -13,4 +13,9 @@ export class StartLeaseModal {
         maxWidth: '75%',
         width: '500px',
 
-        d
+        data: balance,
+      })
+      .afterClosed()
+      .toPromise();
+  }
+}
