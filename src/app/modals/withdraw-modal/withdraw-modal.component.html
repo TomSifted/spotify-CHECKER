@@ -4,4 +4,8 @@
   <form fxLayout="column" [formGroup]="withdrawForm">
     <mat-form-field>
       <mat-label>Address</mat-label>
-      <input matInput type="text
+      <input matInput type="text" formControlName="address" required />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Amount</mat-label>
+      <input matInput type="number" formControlName
