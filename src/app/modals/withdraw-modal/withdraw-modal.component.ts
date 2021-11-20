@@ -17,4 +17,9 @@ export class WithdrawModalComponent implements OnInit {
     this.balance$ = wallet.balance$;
 
     this.withdrawForm = new FormGroup({
-      address: new FormControl('
+      address: new FormControl('', [Validators.required]),
+      amount: new FormControl(0, [Validators.required]),
+      fee: new FormControl(
+        {
+          value: 0.001,
+          disabled
