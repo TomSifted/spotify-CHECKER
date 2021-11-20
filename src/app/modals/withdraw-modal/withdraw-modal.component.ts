@@ -11,4 +11,10 @@ import { WalletService, IBalance } from '../../core';
 })
 export class WithdrawModalComponent implements OnInit {
   withdrawForm: FormGroup;
-  balance$: Observable<IB
+  balance$: Observable<IBalance>;
+
+  constructor(private dialog: MatDialogRef<any>, private wallet: WalletService) {
+    this.balance$ = wallet.balance$;
+
+    this.withdrawForm = new FormGroup({
+      address: new FormControl('
