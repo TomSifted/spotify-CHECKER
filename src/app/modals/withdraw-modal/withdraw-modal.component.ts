@@ -22,4 +22,15 @@ export class WithdrawModalComponent implements OnInit {
       fee: new FormControl(
         {
           value: 0.001,
-          disabled
+          disabled: true,
+        },
+        []
+      ),
+    });
+  }
+
+  ngOnInit() {}
+
+  async withdraw() {
+    const { address, amount, fee } = this.withdrawForm.value;
+    // await this.wallet.wi
