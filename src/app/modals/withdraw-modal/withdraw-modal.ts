@@ -5,4 +5,8 @@ import { toPromise } from '../../core';
 
 @Injectable()
 export class WithdrawModal {
-  const
+  constructor(private matDialog: MatDialog) {}
+
+  show(): Promise<void> {
+    const dialog = this.matDialog.open(WithdrawModalComponent, {
+      maxWidth: '100%',
