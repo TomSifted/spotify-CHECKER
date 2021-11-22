@@ -10,3 +10,8 @@ export class WithdrawModal {
   show(): Promise<void> {
     const dialog = this.matDialog.open(WithdrawModalComponent, {
       maxWidth: '100%',
+      width: '500px',
+    });
+    return toPromise(dialog.afterClosed());
+  }
+}
