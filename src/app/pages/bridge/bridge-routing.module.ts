@@ -9,4 +9,8 @@ const routes: Routes = [
   }
 ];
 
-@N
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+export class BridgeRoutingModule {}
