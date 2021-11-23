@@ -1,2 +1,4 @@
 <ng-container [ngSwitch]="step">
-  <lto-wallet-instructions *ngSwitc
+  <lto-wallet-instructions *ngSwitchCase="1" (nextStep)="gotoStep2()"></lto-wallet-instructions>
+  <lto-wallet-swap-type *ngSwitchCase="2" (selectType)="selectSwapType($event)"></lto-wallet-swap-type>
+  <lto
