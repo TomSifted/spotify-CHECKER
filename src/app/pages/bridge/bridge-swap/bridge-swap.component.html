@@ -5,4 +5,5 @@
   <!-- From here our path splits 4 erc->mainnet part, 5-13 mainnet->erc part -->
   <lto-wallet-deposit-erc *ngSwitchCase="4" [swapType]="swapType" (close)="close()"></lto-wallet-deposit-erc>
   <!-- mainnet -> erc part -->
-  <lto-wallet-withdraw-form *ng
+  <lto-wallet-withdraw-form *ngSwitchCase="5" [swapType]="swapType" (close)=" close()"></lto-wallet-withdraw-form>
+  <lto-wallet-withdraw-cex *ngSwitchCase="100" (nextStep)="toBinanceCEX()" (close)="
