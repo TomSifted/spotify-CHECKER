@@ -1,0 +1,11 @@
+:host {
+  display: block;
+  max-width: 960px;
+  // width: 960px;
+  position: relative;
+}
+
+:host::ng-deep {
+  [mat-dialog-title] {
+    text-align: center;
+    font-size: 
