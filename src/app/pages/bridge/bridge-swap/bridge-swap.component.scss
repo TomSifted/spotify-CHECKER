@@ -15,4 +15,14 @@
     border-bottom: 1px solid #e0e2e8;
     padding: 24px;
     box-sizing: border-box;
-  
+  }
+
+  mat-dialog-content {
+    padding-top: 32px;
+    max-width: 500px !important;
+    margin: 0 auto !important;
+    text-align: center;
+  }
+
+  mat-dialog-actions {
+ 
