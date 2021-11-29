@@ -17,4 +17,17 @@ export class BridgeSwapComponent implements OnInit {
 
   ngOnInit() {}
 
-  setSwapType(type: SwapTyp
+  setSwapType(type: SwapType) {
+    this.swapType = type;
+  }
+
+  toBinanceCEX() {
+    this._dialogRef.close();
+    this.makeTransactionModal.show();
+  }
+
+  gotoStep2() {
+    this.step = 2;
+  }
+
+  se
