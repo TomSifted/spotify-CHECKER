@@ -53,4 +53,7 @@ export class BridgeSwapComponent implements OnInit {
     }
   }
 
-  close()
+  close() {
+    this._dialogRef.close();
+  }
+}
