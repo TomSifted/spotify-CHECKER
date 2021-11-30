@@ -30,4 +30,9 @@ export class BridgeSwapComponent implements OnInit {
     this.step = 2;
   }
 
-  se
+  selectSwapType(type: SwapType) {
+    this.swapType = type;
+    if (this.swapType === SwapType.MAIN_BINANCEEXCHANGE) {
+      this.step = 100;
+    } else {
+      this.ste
