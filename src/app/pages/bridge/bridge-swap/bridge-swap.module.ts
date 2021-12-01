@@ -9,4 +9,6 @@ import { ExampleComponent } from './steps/example/example.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { DepositErcComponent } 
+import { DepositErcComponent } from './steps/deposit-erc/deposit-erc.component';
+import { CopyableTextModule, LoadingSpinnerModule } from '../../../shared/components';
+import { FlexLayoutModule } from '@angular/f
