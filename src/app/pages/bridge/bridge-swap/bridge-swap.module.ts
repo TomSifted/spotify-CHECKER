@@ -6,4 +6,7 @@ import { QRCodeModule } from 'angularx-qrcode';
 import { BridgeSwapComponent } from './bridge-swap.component';
 import { SwapTypeComponent } from './steps/swap-type/swap-type.component';
 import { ExampleComponent } from './steps/example/example.component';
-import { MatDialogModule } from
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { DepositErcComponent } 
