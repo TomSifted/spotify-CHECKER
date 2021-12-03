@@ -11,4 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { DepositErcComponent } from './steps/deposit-erc/deposit-erc.component';
 import { CopyableTextModule, LoadingSpinnerModule } from '../../../shared/components';
-import { FlexLayoutModule } from '@angular/f
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { NgSuspenseModule } from 'ng-suspense';
+import { WithdrawFormComponent } from './steps/withdraw-form/withdraw-form.component';
+import { WithdrawCexComponent } fro
