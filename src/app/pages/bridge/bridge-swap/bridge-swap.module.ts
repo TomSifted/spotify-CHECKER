@@ -14,4 +14,11 @@ import { CopyableTextModule, LoadingSpinnerModule } from '../../../shared/compon
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgSuspenseModule } from 'ng-suspense';
 import { WithdrawFormComponent } from './steps/withdraw-form/withdraw-form.component';
-import { WithdrawCexComponent } fro
+import { WithdrawCexComponent } from './steps/withdraw-cex/withdraw-cex.component';
+
+@NgModule({
+  declarations: [
+    BridgeSwapComponent,
+    SwapTypeComponent,
+    ExampleComponent,
+    DepositErc
