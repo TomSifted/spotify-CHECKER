@@ -21,4 +21,12 @@ import { WithdrawCexComponent } from './steps/withdraw-cex/withdraw-cex.componen
     BridgeSwapComponent,
     SwapTypeComponent,
     ExampleComponent,
-    DepositErc
+    DepositErcComponent,
+    WithdrawFormComponent,
+    WithdrawCexComponent,
+  ],
+  imports: [
+    CommonModule,
+    MatDialogModule,
+    MatButtonModule,
+    RecaptchaModule,
