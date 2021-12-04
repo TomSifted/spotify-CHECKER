@@ -37,4 +37,9 @@ import { WithdrawCexComponent } from './steps/withdraw-cex/withdraw-cex.componen
     LoadingSpinnerModule,
     ReactiveFormsModule,
     FormsModule,
-    MatIconModu
+    MatIconModule,
+  ],
+  exports: [BridgeSwapComponent],
+  entryComponents: [BridgeSwapComponent],
+})
+export class BridgeSwapModule {}
