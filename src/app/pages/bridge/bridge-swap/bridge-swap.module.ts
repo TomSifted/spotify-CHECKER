@@ -30,3 +30,11 @@ import { WithdrawCexComponent } from './steps/withdraw-cex/withdraw-cex.componen
     MatDialogModule,
     MatButtonModule,
     RecaptchaModule,
+    QRCodeModule,
+    CopyableTextModule,
+    FlexLayoutModule,
+    NgSuspenseModule,
+    LoadingSpinnerModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatIconModu
