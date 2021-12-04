@@ -88,3 +88,27 @@ lto-copyable-text {
   border: 1px solid #d6d6d6;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   padding: 8px;
+}
+
+.captcha-box {
+  padding: 10px;
+}
+
+.troll {
+  width: 300px;
+}
+
+.invalid {
+  color: red !important;
+
+  .value {
+    border-color: red !important;
+  }
+}
+
+
+.form-errors {
+  text-align: left;
+  color: red;
+  margin-top: 16px;
+}
