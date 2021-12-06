@@ -8,4 +8,9 @@ import * as bech32 from 'bech32';
 
 @Component({
   selector: 'lto-wallet-deposit-erc',
-  templateUrl: './deposit-erc.component.ht
+  templateUrl: './deposit-erc.component.html',
+  styleUrls: ['./deposit-erc.component.scss']
+})
+export class DepositErcComponent implements OnInit {
+  @Input() swapType!: SwapType;
+  @Output() close = new EventEmit
