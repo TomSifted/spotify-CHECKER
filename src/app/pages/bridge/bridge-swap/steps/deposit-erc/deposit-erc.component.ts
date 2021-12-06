@@ -21,4 +21,13 @@ export class DepositErcComponent implements OnInit {
   depositForm!: FormGroup;
 
   get toTokenType(): string {
-    switch (this.swapType
+    switch (this.swapType) {
+      case SwapType.ERC20_BINANCE:
+        return 'BEP-2';
+      default:
+        return 'MAINNET';
+    }
+  }
+
+  get toColor(): string {
+    switch (t
