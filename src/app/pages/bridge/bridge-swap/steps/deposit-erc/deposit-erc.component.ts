@@ -30,4 +30,13 @@ export class DepositErcComponent implements OnInit {
   }
 
   get toColor(): string {
-    switch (t
+    switch (this.swapType) {
+      case SwapType.ERC20_BINANCE:
+        return 'yellow';
+      default:
+        return 'purple';
+    }
+  }
+
+  get otherTokenType(): string {
+    sw
