@@ -13,4 +13,12 @@ import * as bech32 from 'bech32';
 })
 export class DepositErcComponent implements OnInit {
   @Input() swapType!: SwapType;
-  @Output() close = new EventEmit
+  @Output() close = new EventEmitter();
+
+  shouldShowCaptcha = false;
+  captchaResponse = '';
+  address$: Observable<string> | null = null;
+  depositForm!: FormGroup;
+
+  get toTokenType(): string {
+    switch (this.swapType
