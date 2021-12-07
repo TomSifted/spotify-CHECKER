@@ -39,4 +39,9 @@ export class DepositErcComponent implements OnInit {
   }
 
   get otherTokenType(): string {
-    sw
+    switch (this.swapType) {
+      case SwapType.ERC20_MAIN:
+      case SwapType.MAIN_ERC20:
+      case SwapType.ERC20_BINANCE:
+        return 'ERC-20';
+      case SwapType.BINANC
