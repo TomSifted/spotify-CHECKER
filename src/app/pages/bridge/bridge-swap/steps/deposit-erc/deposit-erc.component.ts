@@ -58,4 +58,11 @@ export class DepositErcComponent implements OnInit {
       case SwapType.MAIN_ERC20:
       case SwapType.ERC20_BINANCE:
         return 'blue';
-      case 
+      case SwapType.BINANCE_MAIN:
+      case SwapType.MAIN_BINANCE:
+      case SwapType.MAIN_BINANCEEXCHANGE:
+        return 'yellow';
+    }
+  }
+
+  get shouldSpecifyToAddress(): bool
