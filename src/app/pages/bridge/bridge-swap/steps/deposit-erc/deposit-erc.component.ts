@@ -44,4 +44,12 @@ export class DepositErcComponent implements OnInit {
       case SwapType.MAIN_ERC20:
       case SwapType.ERC20_BINANCE:
         return 'ERC-20';
-      case SwapType.BINANC
+      case SwapType.BINANCE_MAIN:
+      case SwapType.MAIN_BINANCE:
+        return 'BEP-2';
+      case SwapType.MAIN_BINANCEEXCHANGE:
+        return 'MAINNET';
+    }
+  }
+
+  get otherColor():
