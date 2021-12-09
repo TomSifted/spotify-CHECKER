@@ -65,4 +65,15 @@ export class DepositErcComponent implements OnInit {
     }
   }
 
-  get shouldSpecifyToAddress(): bool
+  get shouldSpecifyToAddress(): boolean {
+    switch (this.swapType) {
+      case SwapType.ERC20_BINANCE:
+        return true;
+      default:
+        return false;
+    }
+  }
+
+  addressPlaceholder!: string;
+
+  constructor(privat
