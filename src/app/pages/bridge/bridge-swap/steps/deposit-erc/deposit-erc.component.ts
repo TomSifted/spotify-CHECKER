@@ -76,4 +76,8 @@ export class DepositErcComponent implements OnInit {
 
   addressPlaceholder!: string;
 
-  constructor(privat
+  constructor(private _bridge: BridgeService, private _wallet: WalletService) {}
+
+  ngOnInit() {
+    this.addressPlaceholder = this.swapType === SwapType.ERC20_BINANCE ? 'BEP-2' : 'LTO20';
+    const ad
