@@ -89,4 +89,11 @@ export class DepositErcComponent implements OnInit {
         const address = ctrl.value || '';
         try {
           const decodeAddress = bech32.decode(address);
-          if (decodeAddress.prefix 
+          if (decodeAddress.prefix === 'tbnb' || decodeAddress.prefix === 'bnb') {
+            return null;
+          }
+
+          return {
+            invalidAddress: true
+          };
+        } catch (err) {
