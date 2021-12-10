@@ -80,4 +80,9 @@ export class DepositErcComponent implements OnInit {
 
   ngOnInit() {
     this.addressPlaceholder = this.swapType === SwapType.ERC20_BINANCE ? 'BEP-2' : 'LTO20';
-    const ad
+    const addressValidators: ValidatorFn[] = [Validators.required];
+
+    this.shouldShowCaptcha = !this.shouldSpecifyToAddress;
+
+    if (this.swapType === SwapType.ERC20_BINANCE) {
+      add
