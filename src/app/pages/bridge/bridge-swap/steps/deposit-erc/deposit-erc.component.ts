@@ -85,4 +85,8 @@ export class DepositErcComponent implements OnInit {
     this.shouldShowCaptcha = !this.shouldSpecifyToAddress;
 
     if (this.swapType === SwapType.ERC20_BINANCE) {
-      add
+      addressValidators.push((ctrl: AbstractControl) => {
+        const address = ctrl.value || '';
+        try {
+          const decodeAddress = bech32.decode(address);
+          if (decodeAddress.prefix 
