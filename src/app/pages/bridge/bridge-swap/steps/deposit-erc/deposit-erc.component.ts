@@ -97,3 +97,13 @@ export class DepositErcComponent implements OnInit {
             invalidAddress: true
           };
         } catch (err) {
+          return {
+            invalidAddress: true
+          };
+        }
+      });
+    }
+
+    this.depositForm = new FormGroup({
+      address: new FormControl('', addressValidators)
+ 
