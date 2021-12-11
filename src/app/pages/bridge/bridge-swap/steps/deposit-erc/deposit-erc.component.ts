@@ -106,4 +106,10 @@ export class DepositErcComponent implements OnInit {
 
     this.depositForm = new FormGroup({
       address: new FormControl('', addressValidators)
- 
+    });
+  }
+
+  resolveCaptcha(response: string) {
+    this.captchaResponse = response;
+    const tokenType =
+      this.swapType === SwapType.ERC20_MAIN || this.
