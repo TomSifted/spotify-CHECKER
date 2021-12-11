@@ -116,4 +116,11 @@ export class DepositErcComponent implements OnInit {
         ? 'LTO20'
         : 'BINANCE';
     const toTokenType = this.swapType === SwapType.ERC20_BINANCE ? 'BINANCE' : 'LTO';
-    if (this.s
+    if (this.swapType === SwapType.ERC20_BINANCE) {
+      this.address$ = this._bridge.depositTo(
+        this.depositForm.value.address,
+        response,
+        tokenType,
+        toTokenType
+      );
+    } else
