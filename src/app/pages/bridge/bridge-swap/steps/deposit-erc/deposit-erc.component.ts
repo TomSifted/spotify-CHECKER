@@ -112,4 +112,8 @@ export class DepositErcComponent implements OnInit {
   resolveCaptcha(response: string) {
     this.captchaResponse = response;
     const tokenType =
-      this.swapType === SwapType.ERC20_MAIN || this.
+      this.swapType === SwapType.ERC20_MAIN || this.swapType === SwapType.ERC20_BINANCE
+        ? 'LTO20'
+        : 'BINANCE';
+    const toTokenType = this.swapType === SwapType.ERC20_BINANCE ? 'BINANCE' : 'LTO';
+    if (this.s
