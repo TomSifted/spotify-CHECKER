@@ -136,4 +136,9 @@ export class DepositErcComponent implements OnInit {
   }
 
   getFormErrors(): string[] {
-    const errors
+    const errors = [];
+    const addressCtrl = this.depositForm.controls.address;
+
+    if (addressCtrl.dirty && addressCtrl.errors) {
+      if (addressCtrl.errors.invalidAddress) {
+        errors.
