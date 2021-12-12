@@ -130,4 +130,10 @@ export class DepositErcComponent implements OnInit {
     }
   }
 
-  isInv
+  isInvalid(controlName: string) {
+    const control = this.depositForm.controls[controlName];
+    return control.dirty && control.invalid;
+  }
+
+  getFormErrors(): string[] {
+    const errors
