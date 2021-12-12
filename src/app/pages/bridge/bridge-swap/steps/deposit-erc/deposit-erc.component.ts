@@ -123,4 +123,11 @@ export class DepositErcComponent implements OnInit {
         tokenType,
         toTokenType
       );
-    } else
+    } else {
+      this.address$ = this._wallet.address$.pipe(
+        switchMap(address => this._bridge.depositTo(address, response, tokenType, toTokenType))
+      );
+    }
+  }
+
+  isInv
