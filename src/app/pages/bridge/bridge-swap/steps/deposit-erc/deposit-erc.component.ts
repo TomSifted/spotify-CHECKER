@@ -153,4 +153,6 @@ export class DepositErcComponent implements OnInit {
   }
 
   closeClick() {
-    this.clos
+    this.close.next();
+  }
+}
