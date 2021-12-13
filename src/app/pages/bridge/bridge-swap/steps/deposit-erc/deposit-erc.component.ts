@@ -141,4 +141,16 @@ export class DepositErcComponent implements OnInit {
 
     if (addressCtrl.dirty && addressCtrl.errors) {
       if (addressCtrl.errors.invalidAddress) {
-        errors.
+        errors.push('Invalid address');
+      }
+
+      if (addressCtrl.errors.required) {
+        errors.push('Address required');
+      }
+    }
+
+    return errors;
+  }
+
+  closeClick() {
+    this.clos
