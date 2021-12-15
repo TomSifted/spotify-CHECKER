@@ -19,4 +19,15 @@ export class SwapTypeComponent {
   }
 
   get mainToErcActive(): boolean {
-    return this.selectedType === SwapType.M
+    return this.selectedType === SwapType.MAIN_ERC20;
+  }
+
+  constructor() {}
+
+  selectERC20ToMain() {
+    this.selectedType = SwapType.ERC20_MAIN;
+  }
+
+  selectMainToERC20() {
+    this.selectedType = SwapType.MAIN_ERC20;
+ 
