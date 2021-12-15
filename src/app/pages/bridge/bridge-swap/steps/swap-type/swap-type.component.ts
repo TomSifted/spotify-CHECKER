@@ -12,4 +12,11 @@ export class SwapTypeComponent {
   @Output() selectType = new EventEmitter<SwapType>();
 
   selectedType: SwapType | null = null;
-  SwapType
+  SwapType = SwapType;
+
+  get ercToMainActive(): boolean {
+    return this.selectedType === SwapType.ERC20_MAIN;
+  }
+
+  get mainToErcActive(): boolean {
+    return this.selectedType === SwapType.M
