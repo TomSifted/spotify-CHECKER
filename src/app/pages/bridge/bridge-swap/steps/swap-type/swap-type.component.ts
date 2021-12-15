@@ -1,3 +1,9 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 
-imp
+import { SwapType } from '../../swap-type';
+
+
+@Component({
+  selector: 'lto-wallet-swap-type',
+  templateUrl: './swap-type.component.html',
+  styleUrls: ['./swap-type.component.s
