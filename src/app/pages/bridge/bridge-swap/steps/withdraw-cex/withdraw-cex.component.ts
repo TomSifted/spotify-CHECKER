@@ -9,4 +9,9 @@ import { BridgeService } from '../../../../../core';
   templateUrl: './withdraw-cex.component.html',
   styleUrls: ['./withdraw-cex.component.scss']
 })
-exp
+export class WithdrawCexComponent implements OnInit {
+  @Input() swapType!: SwapType;
+  @Output() nextStep = new EventEmitter();
+
+  burnRatePct$!: Observable<number>;
+  burnedTokens$
