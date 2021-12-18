@@ -14,4 +14,11 @@ export class WithdrawCexComponent implements OnInit {
   @Output() nextStep = new EventEmitter();
 
   burnRatePct$!: Observable<number>;
-  burnedTokens$
+  burnedTokens$!: Observable<number>;
+  receiving$!: Observable<number>;
+  burnFeeERC$!: Observable<number>;
+  burnFeeMain$!: Observable<number>;
+
+  ercDesiting = 1000;
+
+  get bridgeFee$(): Observable<numb
