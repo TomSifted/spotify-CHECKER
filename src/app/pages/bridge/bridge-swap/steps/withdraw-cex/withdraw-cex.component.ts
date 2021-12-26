@@ -49,3 +49,12 @@ export class WithdrawCexComponent implements OnInit {
       case SwapType.MAIN_ERC20:
       case SwapType.MAIN_BINANCE:
       case SwapType.MAIN_BINANCEEXCHANGE:
+        return 'purple';
+    }
+  }
+
+  get toTokenType(): string {
+    switch (this.swapType) {
+      case SwapType.ERC20_MAIN:
+      case SwapType.BINANCE_MAIN:
+      case SwapType.MAIN_BINANCE
