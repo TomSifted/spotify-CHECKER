@@ -76,4 +76,19 @@ export class WithdrawCexComponent implements OnInit {
       case SwapType.MAIN_BINANCE:
       case SwapType.MAIN_BINANCEEXCHANGE:
         return 'yellow';
-      case SwapType.MAIN_ERC20
+      case SwapType.MAIN_ERC20:
+        return 'blue';
+    }
+  }
+
+  ltoWithdrawing = 1000;
+
+  receiving(fee: number): number {
+    if (this.ercDesiting < fee) {
+      return 0;
+    }
+
+    return this.ercDesiting - fee;
+  }
+
+  get burned
