@@ -91,4 +91,14 @@ export class WithdrawCexComponent implements OnInit {
     return this.ercDesiting - fee;
   }
 
-  get burned
+  get burnedTokens(): number {
+    return this.ltoWithdrawing / 2;
+  }
+
+  get ercReceving(): number {
+    return this.ltoWithdrawing / 2;
+  }
+
+  get isERC20ToMain(): boolean {
+    return (
+    
