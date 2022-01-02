@@ -101,4 +101,10 @@ export class WithdrawCexComponent implements OnInit {
 
   get isERC20ToMain(): boolean {
     return (
-    
+      this.swapType === SwapType.ERC20_MAIN ||
+      this.swapType === SwapType.BINANCE_MAIN ||
+      this.swapType === SwapType.ERC20_BINANCE
+    );
+  }
+
+  constructor(private _bridge: BridgeService) 
