@@ -107,4 +107,8 @@ export class WithdrawCexComponent implements OnInit {
     );
   }
 
-  constructor(private _bridge: BridgeService) 
+  constructor(private _bridge: BridgeService) {}
+
+  ngOnInit() {
+    this.burnRatePct$ = this._bridge.burnRate$.pipe(map(rate => rate * 100));
+    this.burnedTokens$ = this._bridge.burnRate$.pipe(map(rate => rate * 1000
