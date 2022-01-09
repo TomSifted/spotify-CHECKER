@@ -111,4 +111,6 @@ export class WithdrawCexComponent implements OnInit {
 
   ngOnInit() {
     this.burnRatePct$ = this._bridge.burnRate$.pipe(map(rate => rate * 100));
-    this.burnedTokens$ = this._bridge.burnRate$.pipe(map(rate => rate * 1000
+    this.burnedTokens$ = this._bridge.burnRate$.pipe(map(rate => rate * 1000));
+    this.receiving$ = this.burnedTokens$.pipe(map(burned => 1000 - burned));
+    this.burnFeeERC$ = this._bridge.burnFees$.pipe(map(fees => fees.l
