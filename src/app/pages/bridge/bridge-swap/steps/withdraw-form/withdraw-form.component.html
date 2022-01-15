@@ -1,1 +1,6 @@
-<h2 mat-dialog-title>LTO (<span clas
+<h2 mat-dialog-title>LTO (<span class="purple">MAINNET</span>) to LTO (<span
+    class="{{otherColor}}">{{otherTokenType}}</span>)
+</h2>
+<mat-dialog-content>
+  <ng-container *ngIf="!transfer$; else trollTpl">
+  
