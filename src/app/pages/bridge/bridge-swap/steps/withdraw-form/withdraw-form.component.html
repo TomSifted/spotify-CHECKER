@@ -21,4 +21,9 @@
     <form class="withdraw-form" [formGroup]="withdrawForm">
       <div class="row" [ngClass]="{invalid: isInvalid('amount')}">
         <div class="label">Sending</div>
-        <div class="value input"><input type="number" formControlName="amount">
+        <div class="value input"><input type="number" formControlName="amount"> LTO (<span
+            class="purple">MAINNET</span>)</div>
+      </div>
+      <div class="row">
+        <div class="label">Fee</div>
+        <div class="value">- {{ brid
