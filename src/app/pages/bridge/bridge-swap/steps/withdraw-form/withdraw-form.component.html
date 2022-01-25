@@ -26,4 +26,9 @@
       </div>
       <div class="row">
         <div class="label">Fee</div>
-        <div class="value">- {{ brid
+        <div class="value">- {{ bridgeFee$ | async }} LTO <span class="{{toColor}}">{{toTokenType}}</span></div>
+      </div>
+
+      <div class="row">
+        <div class="label">Receiving</div>
+        <div class="value">{{rece
