@@ -36,4 +36,6 @@
         </div>
       </div>
 
-      <div class="row address" [ngClass]="{invali
+      <div class="row address" [ngClass]="{invalid: isInvalid('address')}">
+        <div class="label">To</div>
+        <div class="value input"><input type="text" placeholder="{{addressPlaceholder}} ADDRESS" r
