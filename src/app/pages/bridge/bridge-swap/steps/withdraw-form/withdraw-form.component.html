@@ -31,4 +31,9 @@
 
       <div class="row">
         <div class="label">Receiving</div>
-        <div class="value">{{rece
+        <div class="value">{{receiving$ | async | number: '1.0-4'}} LTO (<span
+            class="{{otherColor}}">{{otherTokenType}}</span>)
+        </div>
+      </div>
+
+      <div class="row address" [ngClass]="{invali
