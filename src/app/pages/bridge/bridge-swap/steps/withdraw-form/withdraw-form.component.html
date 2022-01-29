@@ -38,4 +38,10 @@
 
       <div class="row address" [ngClass]="{invalid: isInvalid('address')}">
         <div class="label">To</div>
-        <div class="value input"><input type="text" placeholder="{{addressPlaceholder}} ADDRESS" r
+        <div class="value input"><input type="text" placeholder="{{addressPlaceholder}} ADDRESS" required
+            formControlName="address"></div>
+      </div>
+
+      <div *ngIf="toTokenType === 'BEP-2'" class="row address">
+        <div class="label">Memo</div>
+        <div c
