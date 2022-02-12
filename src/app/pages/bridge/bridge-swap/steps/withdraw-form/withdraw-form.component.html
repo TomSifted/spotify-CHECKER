@@ -44,4 +44,8 @@
 
       <div *ngIf="toTokenType === 'BEP-2'" class="row address">
         <div class="label">Memo</div>
-        <div c
+        <div class="value input"><input type="text" placeholder="memo"
+          formControlName="memo"></div>
+      </div>
+    </form>
+    <div class="form-errors" *ngIf="withdrawForm.dirty && withdrawForm.i
