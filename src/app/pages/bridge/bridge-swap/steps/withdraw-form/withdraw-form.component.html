@@ -52,4 +52,7 @@
       <div class="form-error" *ngFor="let error of getFormErrors()">{{error}}</div>
     </div>
     <ng-container *ngIf="step === 'confirm'">
-      <div class="conf
+      <div class="confirmation" fxLayout="row" fxLayoutGap="8px">
+        <input type="checkbox" name="confirm" id="confirm" (change)="confirm()">
+        <label for="confirm">
+          I confirm that t
