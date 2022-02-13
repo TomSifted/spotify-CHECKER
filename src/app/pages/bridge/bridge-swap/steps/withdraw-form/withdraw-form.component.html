@@ -48,4 +48,8 @@
           formControlName="memo"></div>
       </div>
     </form>
-    <div class="form-errors" *ngIf="withdrawForm.dirty && withdrawForm.i
+    <div class="form-errors" *ngIf="withdrawForm.dirty && withdrawForm.invalid">
+      <div class="form-error" *ngFor="let error of getFormErrors()">{{error}}</div>
+    </div>
+    <ng-container *ngIf="step === 'confirm'">
+      <div class="conf
