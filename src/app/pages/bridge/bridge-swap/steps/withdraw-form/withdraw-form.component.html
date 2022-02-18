@@ -55,4 +55,8 @@
       <div class="confirmation" fxLayout="row" fxLayoutGap="8px">
         <input type="checkbox" name="confirm" id="confirm" (change)="confirm()">
         <label for="confirm">
-          I confirm that t
+          I confirm that the all the information I filled in is correct.
+        </label>
+      </div>
+      <div *ngIf="confirmed" class="captcha-box" fxLayout="row" fxLayoutAlign="center">
+        <r
