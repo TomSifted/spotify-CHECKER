@@ -66,4 +66,7 @@
 </mat-dialog-content>
 <mat-dialog-actions fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px">
   <ng-container *ngIf="!transfer$">
-    <button mat-flat-button color="primary" [disabled]="withdrawForm.pristine || withdrawFo
+    <button mat-flat-button color="primary" [disabled]="withdrawForm.pristine || withdrawForm.invalid"
+      *ngIf="step === 'input'" (click)="goToConfirmation()">Next</button>
+    <ng-container *ngIf="step ==='confirm'">
+      <button mat-button (click)="g
