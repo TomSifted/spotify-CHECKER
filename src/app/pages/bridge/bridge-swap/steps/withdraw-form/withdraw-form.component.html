@@ -64,4 +64,6 @@
     </ng-container>
   </ng-container>
 </mat-dialog-content>
-<mat-dialog-actions fx
+<mat-dialog-actions fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px">
+  <ng-container *ngIf="!transfer$">
+    <button mat-flat-button color="primary" [disabled]="withdrawForm.pristine || withdrawFo
