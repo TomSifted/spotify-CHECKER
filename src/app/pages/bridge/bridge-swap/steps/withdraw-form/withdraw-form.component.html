@@ -69,4 +69,7 @@
     <button mat-flat-button color="primary" [disabled]="withdrawForm.pristine || withdrawForm.invalid"
       *ngIf="step === 'input'" (click)="goToConfirmation()">Next</button>
     <ng-container *ngIf="step ==='confirm'">
-      <button mat-button (click)="g
+      <button mat-button (click)="goToInputStep()">Back</button>
+      <button mat-flat-button color="primary" [disabled]="cannotSend" (click)="transfer()">Transfer</button>
+    </ng-container>
+  </ng-container>
