@@ -59,4 +59,9 @@
         </label>
       </div>
       <div *ngIf="confirmed" class="captcha-box" fxLayout="row" fxLayoutAlign="center">
-        <r
+        <re-captcha (resolved)="solveCaptcha($event)"></re-captcha>
+      </div>
+    </ng-container>
+  </ng-container>
+</mat-dialog-content>
+<mat-dialog-actions fx
