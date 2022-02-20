@@ -78,4 +78,7 @@
   </ng-container>
 </mat-dialog-actions>
 
-<ng
+<ng-template #trollTpl>
+  <ng-container [ngSuspense]="transfer$">
+    <p *ngSuspenseError class="error">Cannot make a transfer</p>
+    <lto-loading-spinner *ngSuspensePlaceholder="500"></lto-loading
