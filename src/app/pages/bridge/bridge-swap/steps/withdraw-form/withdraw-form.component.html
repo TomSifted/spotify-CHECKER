@@ -73,3 +73,9 @@
       <button mat-flat-button color="primary" [disabled]="cannotSend" (click)="transfer()">Transfer</button>
     </ng-container>
   </ng-container>
+  <ng-container *ngIf="transfer$">
+    <button mat-flat-button color="primary" (click)="closeClick()">Close</button>
+  </ng-container>
+</mat-dialog-actions>
+
+<ng
