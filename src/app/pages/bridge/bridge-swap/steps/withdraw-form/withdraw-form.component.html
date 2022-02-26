@@ -81,4 +81,8 @@
 <ng-template #trollTpl>
   <ng-container [ngSuspense]="transfer$">
     <p *ngSuspenseError class="error">Cannot make a transfer</p>
-    <lto-loading-spinner *ngSuspensePlaceholder="500"></lto-loading
+    <lto-loading-spinner *ngSuspensePlaceholder="500"></lto-loading-spinner>
+    <div *ngSuspenseSuccess>
+      <img class="troll" src="assets/troll.png" alt="">
+      <p>We have sent the LTO (<span class="purple">MAINNET</span>) tokens
+   
