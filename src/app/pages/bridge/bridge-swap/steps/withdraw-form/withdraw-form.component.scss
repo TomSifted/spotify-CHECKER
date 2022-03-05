@@ -27,4 +27,14 @@
     }
 
     .value.input {
-      border-bottom: dotted 1p
+      border-bottom: dotted 1px #888585;
+
+      input {
+        border: none;
+        font-size: 16px;
+        text-align: right;
+        max-width: 100px;
+
+        &:focus {
+          outline: none;
+        
