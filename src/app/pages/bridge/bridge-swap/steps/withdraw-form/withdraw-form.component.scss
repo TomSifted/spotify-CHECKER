@@ -83,4 +83,18 @@
   color: red !important;
 
   .value {
-  
+    border-color: red !important;
+  }
+}
+
+
+.form-errors {
+  text-align: left;
+  color: red;
+  margin-top: 16px;
+}
+
+.warning {
+  border: 2px solid #ffa500;
+  padding: 8px;
+  background: #
