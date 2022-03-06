@@ -37,4 +37,21 @@
 
         &:focus {
           outline: none;
-        
+        }
+      }
+    }
+  }
+
+  .address {
+    .label {
+      flex: 0;
+      margin-right: 8px;
+    }
+
+    .value {
+      flex: 1 1 auto;
+    }
+
+    input {
+      max-width: 100% !important;
+      width:
