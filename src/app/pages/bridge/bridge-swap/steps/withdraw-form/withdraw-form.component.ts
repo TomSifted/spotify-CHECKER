@@ -10,4 +10,10 @@ import * as bech32 from 'bech32';
 @Component({
   selector: 'lto-wallet-withdraw-form',
   templateUrl: './withdraw-form.component.html',
-  styleUrls: ['./wi
+  styleUrls: ['./withdraw-form.component.scss']
+})
+export class WithdrawFormComponent implements OnInit, OnDestroy {
+  @Input() swapType!: SwapType;
+  @Output() close = new EventEmitter();
+
+  withd
