@@ -16,4 +16,15 @@ export class WithdrawFormComponent implements OnInit, OnDestroy {
   @Input() swapType!: SwapType;
   @Output() close = new EventEmitter();
 
-  withd
+  withdrawForm!: FormGroup;
+
+  step = 'input';
+
+  confirmed = false;
+  captchaResponse = '';
+
+  transfer$: Promise<any> | null = null;
+
+  receiving$!: Observable<number>;
+
+  burnFee
