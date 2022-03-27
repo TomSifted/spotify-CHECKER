@@ -33,4 +33,14 @@ export class WithdrawFormComponent implements OnInit, OnDestroy {
   get bridgeFee$(): Observable<number> {
     switch (this.swapType) {
       case SwapType.MAIN_ERC20:
-      case SwapType.E
+      case SwapType.ERC20_BINANCE:
+        return this.burnFeeERC$;
+      default:
+        return this.burnFeeMain$;
+    }
+  }
+
+  get toTokenType(): string {
+    switch (this.swapType) {
+      case SwapType.ERC20_MAIN:
+      case Swa
