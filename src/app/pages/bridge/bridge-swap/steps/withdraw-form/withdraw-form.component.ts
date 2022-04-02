@@ -79,4 +79,13 @@ export class WithdrawFormComponent implements OnInit, OnDestroy {
         return 'ERC-20';
       case SwapType.BINANCE_MAIN:
       case SwapType.MAIN_BINANCE:
-      case SwapType.ERC20
+      case SwapType.ERC20_BINANCE:
+        return 'BEP-2';
+      case SwapType.MAIN_BINANCEEXCHANGE:
+        return 'MAINNET';
+    }
+  }
+
+  get otherColor(): string {
+    switch (this.swapType) {
+      ca
