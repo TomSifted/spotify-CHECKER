@@ -99,4 +99,14 @@ export class WithdrawFormComponent implements OnInit, OnDestroy {
     }
   }
 
-  addressPlaceholder!:
+  addressPlaceholder!: string;
+
+  private _subscriptions = new Subscription();
+
+  get cannotSend(): boolean {
+    return !this.confirmed || !this.captchaResponse;
+  }
+
+  constructor(
+    private _wallet: WalletService,
+   
