@@ -109,4 +109,7 @@ export class WithdrawFormComponent implements OnInit, OnDestroy {
 
   constructor(
     private _wallet: WalletService,
-   
+    private _bridge: BridgeService,
+    @Inject(DEFAULT_TRANSFER_FEE) private _transferFee: number
+  ) {
+    this.burnFeeERC$ = this._bridge.burnFees$.pipe(map(fees => fees
