@@ -117,4 +117,10 @@ export class WithdrawFormComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.addressPlaceholder = this.swapType === SwapType.MAIN_ERC20 ?
+    this.addressPlaceholder = this.swapType === SwapType.MAIN_ERC20 ? 'ETH' : 'BEP-2';
+
+    const addressValidators: ValidatorFn[] = [Validators.required];
+
+    this.bridgeFee$.pipe(take(1)).subscribe(fee => (this.BRIDGE_MINIMAL_FEE = fee));
+
+    if (this.s
