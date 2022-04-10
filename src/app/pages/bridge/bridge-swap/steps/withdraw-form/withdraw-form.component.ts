@@ -112,4 +112,9 @@ export class WithdrawFormComponent implements OnInit, OnDestroy {
     private _bridge: BridgeService,
     @Inject(DEFAULT_TRANSFER_FEE) private _transferFee: number
   ) {
-    this.burnFeeERC$ = this._bridge.burnFees$.pipe(map(fees => fees
+    this.burnFeeERC$ = this._bridge.burnFees$.pipe(map(fees => fees.lto20));
+    this.burnFeeMain$ = this._bridge.burnFees$.pipe(map(fees => fees.lto));
+  }
+
+  ngOnInit() {
+    this.addressPlaceholder = this.swapType === SwapType.MAIN_ERC20 ?
