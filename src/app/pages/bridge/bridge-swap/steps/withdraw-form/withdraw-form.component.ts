@@ -123,4 +123,8 @@ export class WithdrawFormComponent implements OnInit, OnDestroy {
 
     this.bridgeFee$.pipe(take(1)).subscribe(fee => (this.BRIDGE_MINIMAL_FEE = fee));
 
-    if (this.s
+    if (this.swapType === SwapType.MAIN_ERC20) {
+      addressValidators.push(etheriumAddressValidator);
+    } else {
+      addressValidators.push((ctrl: AbstractControl) => {
+        const 
