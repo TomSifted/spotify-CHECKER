@@ -127,4 +127,8 @@ export class WithdrawFormComponent implements OnInit, OnDestroy {
       addressValidators.push(etheriumAddressValidator);
     } else {
       addressValidators.push((ctrl: AbstractControl) => {
-        const 
+        const address = ctrl.value || '';
+        try {
+          const decodeAddress = bech32.decode(address);
+          if (decodeAddress.prefix === 'tbnb' || decodeAddress.prefix === 'bnb') {
+      
