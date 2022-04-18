@@ -131,4 +131,13 @@ export class WithdrawFormComponent implements OnInit, OnDestroy {
         try {
           const decodeAddress = bech32.decode(address);
           if (decodeAddress.prefix === 'tbnb' || decodeAddress.prefix === 'bnb') {
-      
+            return null;
+          }
+
+          return {
+            invalidAddress: true
+          };
+        } catch (err) {
+          return {
+            invalidAddress: true
+          };
