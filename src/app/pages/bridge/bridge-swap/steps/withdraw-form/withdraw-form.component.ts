@@ -148,4 +148,11 @@ export class WithdrawFormComponent implements OnInit, OnDestroy {
     this.withdrawForm = new FormGroup({
       amount: new FormControl(
         this.BRIDGE_MINIMAL_FEE,
-        [Validators.min(this.BRIDGE_MINIMAL_FE
+        [Validators.min(this.BRIDGE_MINIMAL_FEE), Validators.required],
+        this.validateAmount.bind(this)
+      ),
+      address: new FormControl('', addressValidators),
+      memo: new FormControl('')
+    });
+
+    th
