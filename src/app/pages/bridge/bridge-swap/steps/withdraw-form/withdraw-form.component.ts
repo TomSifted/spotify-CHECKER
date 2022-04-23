@@ -141,3 +141,11 @@ export class WithdrawFormComponent implements OnInit, OnDestroy {
           return {
             invalidAddress: true
           };
+        }
+      });
+    }
+
+    this.withdrawForm = new FormGroup({
+      amount: new FormControl(
+        this.BRIDGE_MINIMAL_FEE,
+        [Validators.min(this.BRIDGE_MINIMAL_FE
