@@ -155,4 +155,8 @@ export class WithdrawFormComponent implements OnInit, OnDestroy {
       memo: new FormControl('')
     });
 
-    th
+    this.receiving$ = this.withdrawForm.valueChanges.pipe(
+      map(value => value.amount),
+      withLatestFrom(this.bridgeFee$),
+      map(([amount, burned]) => {
+   
