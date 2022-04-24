@@ -159,4 +159,12 @@ export class WithdrawFormComponent implements OnInit, OnDestroy {
       map(value => value.amount),
       withLatestFrom(this.bridgeFee$),
       map(([amount, burned]) => {
-   
+        if (amount < burned) {
+          return 0;
+        }
+        return amount - burned;
+      })
+    );
+
+    this._subscriptions.add(
+      combineLatest(this._wallet.balance
