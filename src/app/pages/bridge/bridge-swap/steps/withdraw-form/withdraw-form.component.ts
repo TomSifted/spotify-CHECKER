@@ -170,4 +170,15 @@ export class WithdrawFormComponent implements OnInit, OnDestroy {
       combineLatest(this._wallet.balance$, this._wallet.transferFee$).subscribe(
         ([balance, transferFee]) => {
           this.maxAmount =
-            (balance.available - transferFee * balan
+            (balance.available - transferFee * balance.amountDivider) / balance.amountDivider;
+        }
+      )
+    );
+  }
+
+  ngOnDestroy() {
+    this._subscriptions.unsubscribe();
+  }
+
+  goToInputStep() {
+    this.withdrawF
