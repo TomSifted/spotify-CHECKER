@@ -181,4 +181,12 @@ export class WithdrawFormComponent implements OnInit, OnDestroy {
   }
 
   goToInputStep() {
-    this.withdrawF
+    this.withdrawForm.enable();
+    this.step = 'input';
+    this.captchaResponse = '';
+    this.confirmed = false;
+  }
+
+  goToConfirmation() {
+    this.step = 'confirm';
+    this.withdrawForm.d
