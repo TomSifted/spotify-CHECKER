@@ -189,4 +189,16 @@ export class WithdrawFormComponent implements OnInit, OnDestroy {
 
   goToConfirmation() {
     this.step = 'confirm';
-    this.withdrawForm.d
+    this.withdrawForm.disable();
+  }
+
+  solveCaptcha(response: string) {
+    this.captchaResponse = response;
+  }
+
+  confirm() {
+    this.confirmed = true;
+  }
+
+  transfer() {
+    const { amount, address, memo } =
