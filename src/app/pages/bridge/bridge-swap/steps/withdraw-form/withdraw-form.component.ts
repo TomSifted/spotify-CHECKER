@@ -217,4 +217,10 @@ export class WithdrawFormComponent implements OnInit, OnDestroy {
     this.close.next();
   }
 
-  isInvalid(controlName: st
+  isInvalid(controlName: string) {
+    const control = this.withdrawForm.controls[controlName];
+    return control.dirty && control.invalid;
+  }
+
+  validateAmount(ctrl: AbstractControl) {
+    return combineLatest(this._w
