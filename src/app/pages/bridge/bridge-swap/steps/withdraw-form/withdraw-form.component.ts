@@ -204,4 +204,17 @@ export class WithdrawFormComponent implements OnInit, OnDestroy {
     const { amount, address, memo } = this.withdrawForm.value;
     const tokenType = this.swapType === SwapType.MAIN_ERC20 ? 'LTO20' : 'BINANCE';
     this.transfer$ = this._wallet.withdraw(
-    
+      address,
+      amount,
+      this._transferFee,
+      this.captchaResponse,
+      tokenType,
+      memo
+    );
+  }
+
+  closeClick() {
+    this.close.next();
+  }
+
+  isInvalid(controlName: st
