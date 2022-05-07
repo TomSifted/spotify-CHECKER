@@ -223,4 +223,7 @@ export class WithdrawFormComponent implements OnInit, OnDestroy {
   }
 
   validateAmount(ctrl: AbstractControl) {
-    return combineLatest(this._w
+    return combineLatest(this._wallet.balance$, this._wallet.transferFee$).pipe(
+      map(([balance, transferFee]) => {
+        const amount = ctrl.value * balance.amountDivider;
+     
