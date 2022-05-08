@@ -237,4 +237,10 @@ export class WithdrawFormComponent implements OnInit, OnDestroy {
   getFormErrors(): string[] {
     const errors = [];
     const amountCtrl = this.withdrawForm.controls.amount;
-    const addressCtrl = this.withdrawForm.controls.ad
+    const addressCtrl = this.withdrawForm.controls.address;
+    if (amountCtrl.dirty && amountCtrl.errors) {
+      if (amountCtrl.errors.min) {
+        errors.push('Amount cannot be less than ' + this.BRIDGE_MINIMAL_FEE);
+      }
+
+      if (amountCtrl.err
