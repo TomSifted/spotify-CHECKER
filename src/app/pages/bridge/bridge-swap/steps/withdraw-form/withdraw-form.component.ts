@@ -226,4 +226,7 @@ export class WithdrawFormComponent implements OnInit, OnDestroy {
     return combineLatest(this._wallet.balance$, this._wallet.transferFee$).pipe(
       map(([balance, transferFee]) => {
         const amount = ctrl.value * balance.amountDivider;
-     
+        const maxAmount = balance.available - transferFee * balance.amountDivider;
+        const invalid = amount > maxAmount;
+        return invalid ? { max: true } : null;
+      }
