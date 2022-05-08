@@ -229,4 +229,12 @@ export class WithdrawFormComponent implements OnInit, OnDestroy {
         const maxAmount = balance.available - transferFee * balance.amountDivider;
         const invalid = amount > maxAmount;
         return invalid ? { max: true } : null;
-      }
+      }),
+      take(1)
+    );
+  }
+
+  getFormErrors(): string[] {
+    const errors = [];
+    const amountCtrl = this.withdrawForm.controls.amount;
+    const addressCtrl = this.withdrawForm.controls.ad
