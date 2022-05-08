@@ -243,4 +243,13 @@ export class WithdrawFormComponent implements OnInit, OnDestroy {
         errors.push('Amount cannot be less than ' + this.BRIDGE_MINIMAL_FEE);
       }
 
-      if (amountCtrl.err
+      if (amountCtrl.errors.max) {
+        errors.push('Maximum amount is ' + this.maxAmount);
+      }
+
+      if (amountCtrl.errors.required) {
+        errors.push('Amount required');
+      }
+    }
+
+    if (addres
