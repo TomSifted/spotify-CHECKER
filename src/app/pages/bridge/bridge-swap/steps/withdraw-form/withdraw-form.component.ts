@@ -257,4 +257,11 @@ export class WithdrawFormComponent implements OnInit, OnDestroy {
         errors.push('Invalid address');
       }
 
-      if (addressCtrl.error
+      if (addressCtrl.errors.required) {
+        errors.push('Address required');
+      }
+    }
+
+    return errors;
+  }
+}
