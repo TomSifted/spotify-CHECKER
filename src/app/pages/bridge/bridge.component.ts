@@ -4,4 +4,12 @@ import { BridgeSwapComponent } from './bridge-swap';
 
 @Component({
   selector: 'lto-wallet-bridge',
-  templateUrl:
+  templateUrl: './bridge.component.html',
+  styleUrls: ['./bridge.component.scss'],
+})
+export class BridgeComponent implements OnInit {
+  constructor(private _matDialog: MatDialog) { }
+
+  ngOnInit() { }
+
+  s
