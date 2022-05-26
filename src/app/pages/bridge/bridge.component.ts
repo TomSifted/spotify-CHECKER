@@ -12,4 +12,7 @@ export class BridgeComponent implements OnInit {
 
   ngOnInit() { }
 
-  s
+  showSwpaDialog() {
+    const dialog = this._matDialog.open(BridgeSwapComponent);
+  }
+}
