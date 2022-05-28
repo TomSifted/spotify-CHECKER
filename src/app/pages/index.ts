@@ -1,2 +1,2 @@
 export * from './signin/signin.component';
-export * from './setti
+export * from './settings-page/settings-page.component';
