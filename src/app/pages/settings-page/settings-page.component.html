@@ -1,3 +1,6 @@
 <lto-content-section title="Settings" subtitle="" fxLayout="column" fxLayoutGap="32px">
   <mat-card *ngIf="ltoAccount">
-    <mat-card-title>Account: {{ userAc
+    <mat-card-title>Account: {{ userAccount?.name }}</mat-card-title>
+    <mat-card-content>
+      <div class="items" fxLayout="column" fxLayoutGap="16px">
+        <lto-copyable-text label="Your a
