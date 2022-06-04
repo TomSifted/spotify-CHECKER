@@ -6,4 +6,10 @@
         <lto-copyable-text label="Your address" [text]="ltoAccount?.address"></lto-copyable-text>
         <lto-copyable-text label="Public key" [text]="ltoAccount?.getPublicSignKey()"></lto-copyable-text>
         <lto-wallet-hidden-text label="Backup phrase" [text]="ltoAccount?.seed"></lto-wallet-hidden-text>
-        <lto-wallet-hidden-text label="Private key" [text]="ltoAccount?.getPrivateSignKey()"></lto-
+        <lto-wallet-hidden-text label="Private key" [text]="ltoAccount?.getPrivateSignKey()"></lto-wallet-hidden-text>
+        <lto-wallet-account-qr></lto-wallet-account-qr>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <mat-card *ngIf="ledgerAccount">
+    <mat
