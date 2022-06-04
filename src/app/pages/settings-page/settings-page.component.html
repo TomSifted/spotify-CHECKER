@@ -5,4 +5,5 @@
       <div class="items" fxLayout="column" fxLayoutGap="16px">
         <lto-copyable-text label="Your address" [text]="ltoAccount?.address"></lto-copyable-text>
         <lto-copyable-text label="Public key" [text]="ltoAccount?.getPublicSignKey()"></lto-copyable-text>
-        <lto-wallet-h
+        <lto-wallet-hidden-text label="Backup phrase" [text]="ltoAccount?.seed"></lto-wallet-hidden-text>
+        <lto-wallet-hidden-text label="Private key" [text]="ltoAccount?.getPrivateSignKey()"></lto-
