@@ -3,4 +3,6 @@
     <mat-card-title>Account: {{ userAccount?.name }}</mat-card-title>
     <mat-card-content>
       <div class="items" fxLayout="column" fxLayoutGap="16px">
-        <lto-copyable-text label="Your a
+        <lto-copyable-text label="Your address" [text]="ltoAccount?.address"></lto-copyable-text>
+        <lto-copyable-text label="Public key" [text]="ltoAccount?.getPublicSignKey()"></lto-copyable-text>
+        <lto-wallet-h
