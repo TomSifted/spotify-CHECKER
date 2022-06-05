@@ -15,4 +15,7 @@
     <mat-card-title> Account </mat-card-title>
     <mat-card-content>
       <div class="items" fxLayout="column" fxLayoutGap="16px">
-        <h3>Select your L
+        <h3>Select your Ledger address</h3>
+        <mat-form-field appearance="fill">
+          <mat-label>Ledger Address ID</mat-label>
+          <mat-select [ngModel]="selectedLedgerId" (ngModelChange)="onChange
