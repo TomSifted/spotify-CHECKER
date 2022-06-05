@@ -18,4 +18,10 @@
         <h3>Select your Ledger address</h3>
         <mat-form-field appearance="fill">
           <mat-label>Ledger Address ID</mat-label>
-          <mat-select [ngModel]="selectedLedgerId" (ngModelChange)="onChange
+          <mat-select [ngModel]="selectedLedgerId" (ngModelChange)="onChangeLedgerId($event)">
+            <mat-option *ngFor="let id of ledgerIdOptions" [value]="id">
+              {{ id }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+     
