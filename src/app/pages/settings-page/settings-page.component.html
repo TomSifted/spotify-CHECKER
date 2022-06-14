@@ -36,4 +36,7 @@
         <h3 mat-subheader>Scripts</h3>
         <mat-list-item [ngSuspense]="scriptEnabled$">
           <div fxLayout="row" fxLayoutAlign="start center" fxFlexFill *ngSuspenseSuccess="let enabled">
-            <span fxFlex="1 1 auto">Script
+            <span fxFlex="1 1 auto">Script</span>
+            <ng-container *ngIf="enabled">
+              <button mat-button color="warn" (click)="disableScript()">Disable script</button>
+              <button mat-button (c
