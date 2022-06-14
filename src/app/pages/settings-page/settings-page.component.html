@@ -33,4 +33,7 @@
     <mat-card-title>Security</mat-card-title>
     <mat-card-content>
       <mat-list>
-        <h3 mat-subheader
+        <h3 mat-subheader>Scripts</h3>
+        <mat-list-item [ngSuspense]="scriptEnabled$">
+          <div fxLayout="row" fxLayoutAlign="start center" fxFlexFill *ngSuspenseSuccess="let enabled">
+            <span fxFlex="1 1 auto">Script
