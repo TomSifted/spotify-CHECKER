@@ -39,4 +39,7 @@
             <span fxFlex="1 1 auto">Script</span>
             <ng-container *ngIf="enabled">
               <button mat-button color="warn" (click)="disableScript()">Disable script</button>
-              <button mat-button (c
+              <button mat-button (click)="showScriptInfo()">Script info</button>
+            </ng-container>
+            <button mat-button *ngIf="!enabled" (click)="createScript()">Set script</button>
+       
