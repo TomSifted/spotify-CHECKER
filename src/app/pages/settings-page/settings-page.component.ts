@@ -15,4 +15,8 @@ import {
 } from '@app/core';
 
 @Component({
-  s
+  selector: 'lto-wallet-settings-page',
+  templateUrl: './settings-page.component.html',
+  styleUrls: ['./settings-page.component.scss'],
+})
+export class SettingsPageComponent i
