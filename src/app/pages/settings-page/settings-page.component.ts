@@ -4,4 +4,15 @@ import { Account } from 'lto-api';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { LedgerService } from '@app/core/services';
-import { CreateScriptModal, ScriptInfoModal,
+import { CreateScriptModal, ScriptInfoModal, DisableScriptModal } from '@app/modals';
+import {
+  AuthService,
+  ILedgerAccount,
+  IUserAccount,
+  ScriptsService,
+  FeeService,
+  toPromise,
+} from '@app/core';
+
+@Component({
+  s
