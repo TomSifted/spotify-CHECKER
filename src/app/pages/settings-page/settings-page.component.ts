@@ -19,4 +19,11 @@ import {
   templateUrl: './settings-page.component.html',
   styleUrls: ['./settings-page.component.scss'],
 })
-export class SettingsPageComponent i
+export class SettingsPageComponent implements OnInit, OnDestroy {
+  ledger$!: Subscription;
+  ledgerAccount!: ILedgerAccount | null;
+
+  selectedLedgerId!: number;
+  ledgerIdOptions: number[];
+
+  user$!: Subscrip
