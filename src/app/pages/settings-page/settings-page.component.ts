@@ -35,4 +35,9 @@ export class SettingsPageComponent implements OnInit, OnDestroy {
   scriptEnabled$: Observable<boolean>;
 
   constructor(
-    private auth: AuthSe
+    private auth: AuthService,
+    private _createScriptModal: CreateScriptModal,
+    private _scriptService: ScriptsService,
+    private _snackbar: MatSnackBar,
+    private _feeService: FeeService,
+    private _scriptInfoMo
