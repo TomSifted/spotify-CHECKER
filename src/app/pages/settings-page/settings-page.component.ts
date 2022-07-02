@@ -40,4 +40,8 @@ export class SettingsPageComponent implements OnInit, OnDestroy {
     private _scriptService: ScriptsService,
     private _snackbar: MatSnackBar,
     private _feeService: FeeService,
-    private _scriptInfoMo
+    private _scriptInfoModal: ScriptInfoModal,
+    private _disableScriptModal: DisableScriptModal,
+    private _ledgerService: LedgerService
+  ) {
+    this.scriptEnabled$ = _scriptService.scriptE
