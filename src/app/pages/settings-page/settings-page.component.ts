@@ -26,4 +26,13 @@ export class SettingsPageComponent implements OnInit, OnDestroy {
   selectedLedgerId!: number;
   ledgerIdOptions: number[];
 
-  user$!: Subscrip
+  user$!: Subscription;
+  userAccount!: IUserAccount | null;
+
+  lto$!: Subscription;
+  ltoAccount!: Account | null;
+
+  scriptEnabled$: Observable<boolean>;
+
+  constructor(
+    private auth: AuthSe
