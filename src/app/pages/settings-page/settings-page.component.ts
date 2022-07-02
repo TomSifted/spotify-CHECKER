@@ -44,4 +44,10 @@ export class SettingsPageComponent implements OnInit, OnDestroy {
     private _disableScriptModal: DisableScriptModal,
     private _ledgerService: LedgerService
   ) {
-    this.scriptEnabled$ = _scriptService.scriptE
+    this.scriptEnabled$ = _scriptService.scriptEnabled$;
+    this.ledgerIdOptions = Array.from(Array(10).keys());
+  }
+
+  ngOnInit() {
+    this.lto$ = this.auth.wallet$.subscribe((ltoAccount) => (this.ltoAccount = ltoAccount));
+    this.user$ =
