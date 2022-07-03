@@ -52,4 +52,12 @@ export class SettingsPageComponent implements OnInit, OnDestroy {
     this.lto$ = this.auth.wallet$.subscribe((ltoAccount) => (this.ltoAccount = ltoAccount));
     this.user$ = this.auth.account$.subscribe((userAccount) => (this.userAccount = userAccount));
     this.ledger$ = this.auth.ledgerAccount$.subscribe(
-      (ledgerAccount) => (this.ledgerAccount = l
+      (ledgerAccount) => (this.ledgerAccount = ledgerAccount)
+    );
+    this.selectedLedgerId = this._ledgerService.ledgerId;
+  }
+
+  ngOnDestroy() {
+    this.lto$.unsubscribe();
+    this.user$.unsubscribe();
+    this.led
