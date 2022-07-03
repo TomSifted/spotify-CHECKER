@@ -60,4 +60,10 @@ export class SettingsPageComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.lto$.unsubscribe();
     this.user$.unsubscribe();
-    this.led
+    this.ledger$.unsubscribe();
+  }
+
+  onChangeLedgerId(newValue: number) {
+    this.selectedLedgerId = newValue;
+    this._ledgerService.ledgerId = newValue;
+    this._ledgerService.updateUserData(
