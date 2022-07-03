@@ -66,4 +66,14 @@ export class SettingsPageComponent implements OnInit, OnDestroy {
   onChangeLedgerId(newValue: number) {
     this.selectedLedgerId = newValue;
     this._ledgerService.ledgerId = newValue;
-    this._ledgerService.updateUserData(
+    this._ledgerService.updateUserData();
+  }
+
+  async createScript() {
+    const scriptText = await this._createScriptModal.show();
+    if (!scriptText) {
+      return;
+    }
+
+    try {
+      await this._scriptServic
