@@ -76,4 +76,9 @@ export class SettingsPageComponent implements OnInit, OnDestroy {
     }
 
     try {
-      await this._scriptServic
+      await this._scriptService.createScript(scriptText.trim());
+      this._snackbar.open('Script created', 'DISMISS', {
+        duration: 3000,
+      });
+    } catch (error) {
+      this._snackbar.op
