@@ -81,4 +81,12 @@ export class SettingsPageComponent implements OnInit, OnDestroy {
         duration: 3000,
       });
     } catch (error) {
-      this._snackbar.op
+      this._snackbar.open('Cannot create script', 'DISMISS', {
+        duration: 3000,
+      });
+    }
+  }
+
+  async disableScript() {
+    const fee = await toPromise(this._feeService.transferFee$);
+    
