@@ -89,4 +89,10 @@ export class SettingsPageComponent implements OnInit, OnDestroy {
 
   async disableScript() {
     const fee = await toPromise(this._feeService.transferFee$);
-    
+    const disable = await this._disableScriptModal.show(fee);
+    if (!disable) {
+      return;
+    }
+    try {
+      this._scriptService.disabeScript(fee);
+      this._snac
