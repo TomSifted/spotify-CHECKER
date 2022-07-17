@@ -95,4 +95,10 @@ export class SettingsPageComponent implements OnInit, OnDestroy {
     }
     try {
       this._scriptService.disabeScript(fee);
-      this._snac
+      this._snackbar.open('Script removed', 'DISMISS', {
+        duration: 3000,
+      });
+    } catch (error) {
+      this._snackbar.open('Cannot remove script', 'DISMISS', {
+        duration: 3000,
+      });
