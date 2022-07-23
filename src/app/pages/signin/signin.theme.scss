@@ -1,0 +1,4 @@
+@mixin signin-theme($theme) {
+  $primary: map-get($theme, primary);
+
+  lto-signin
