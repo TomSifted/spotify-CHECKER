@@ -102,3 +102,10 @@ export class SettingsPageComponent implements OnInit, OnDestroy {
       this._snackbar.open('Cannot remove script', 'DISMISS', {
         duration: 3000,
       });
+    }
+  }
+
+  showScriptInfo() {
+    this._scriptInfoModal.show();
+  }
+}
