@@ -53,3 +53,34 @@ mat-dialog-content {
     text-align: center;
   }
 }
+
+.page-2 {
+  .address-box {
+    padding-top: 16px;
+
+    lto-copyable-text {
+      width: 100%;
+    }
+  }
+
+  .button-box {
+    padding-top: 32px;
+    text-align: center;
+  }
+}
+
+.page-3 {
+  img.swap {
+    width: 290px;
+  }
+
+  h2 {
+    margin-top: 32px;
+  }
+
+  p {
+    margin-top: 32px;
+
+    margin-bottom: 64px;
+  }
+}
