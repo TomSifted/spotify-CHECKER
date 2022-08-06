@@ -1,3 +1,14 @@
 mat-card-content {
   .guts {
-    t
+    text-align: center;
+    margin: 0 auto;
+    padding: 50px 24px;
+    box-sizing: border-box;
+    max-width: 470px;
+    width: 100%;
+
+    p {
+      font-size: 18px;
+    }
+
+  
