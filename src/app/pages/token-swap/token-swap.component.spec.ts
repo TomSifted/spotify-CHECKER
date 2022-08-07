@@ -5,4 +5,10 @@ import { TokenSwapComponent } from './token-swap.component';
 
 describe('TokenSwapComponent', () => {
   let component: TokenSwapComponent;
-  let fixture: ComponentFixture<
+  let fixture: ComponentFixture<TokenSwapComponent>;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      imports: [SharedModule],
+      declarations: [TokenSwapComponent]
+    }).compileComponents(
