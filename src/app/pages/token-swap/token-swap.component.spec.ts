@@ -11,4 +11,13 @@ describe('TokenSwapComponent', () => {
     TestBed.configureTestingModule({
       imports: [SharedModule],
       declarations: [TokenSwapComponent]
-    }).compileComponents(
+    }).compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(TokenSwapComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should cre
