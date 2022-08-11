@@ -20,4 +20,7 @@ describe('TokenSwapComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should cre
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
