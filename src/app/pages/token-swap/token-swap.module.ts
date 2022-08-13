@@ -3,4 +3,6 @@ import { RouterModule } from '@angular/router';
 import { RecaptchaModule } from 'ng-recaptcha';
 import { QRCodeModule } from 'angularx-qrcode';
 import { SharedModule } from '../../shared';
-import { TokenSw
+import { TokenSwapComponent } from './token-swap.component';
+import { SwapDialogComponent } from './components/swap-dialog/swap-dialog.component';
+import { ReactiveFormsModule } from '@angular/forms
