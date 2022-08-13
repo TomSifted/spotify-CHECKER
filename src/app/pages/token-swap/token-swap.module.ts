@@ -23,4 +23,4 @@ import { ReactiveFormsModule } from '@angular/forms';
   declarations: [TokenSwapComponent, SwapDialogComponent],
   entryComponents: [SwapDialogComponent]
 })
-export class TokenSwap
+export class TokenSwapModule {}
