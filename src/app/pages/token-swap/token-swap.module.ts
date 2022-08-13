@@ -16,4 +16,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     RouterModule.forChild([
       {
         path: '',
-     
+        component: TokenSwapComponent
+      }
+    ])
+  ],
+  declarations: [TokenSwapComponent, SwapDialogComponent],
+  entryComponents: [SwapDialogComponent]
+})
+export class TokenSwap
