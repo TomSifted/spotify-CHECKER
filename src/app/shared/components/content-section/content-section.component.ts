@@ -1,4 +1,9 @@
 import { Component, OnInit, Input, ElementRef, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'lto-content-sectio
+  selector: 'lto-content-section',
+  templateUrl: './content-section.component.html',
+  styleUrls: ['./content-section.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export clas
