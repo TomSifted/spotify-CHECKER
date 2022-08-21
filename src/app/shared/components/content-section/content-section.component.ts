@@ -18,3 +18,14 @@ export class ContentSectionComponent implements OnInit {
       case 'large':
         return '1400px';
       case 'medium':
+        return '1024px';
+      case 'small':
+        return '800px';
+      case 'very-small':
+        return '600px';
+      default:
+        return '1024px';
+    }
+  }
+
+  const
