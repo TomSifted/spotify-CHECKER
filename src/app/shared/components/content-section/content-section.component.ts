@@ -6,4 +6,7 @@ import { Component, OnInit, Input, ElementRef, ChangeDetectionStrategy } from '@
   styleUrls: ['./content-section.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export clas
+export class ContentSectionComponent implements OnInit {
+  @Input() width!: 'full' | 'large' | 'medium' | 'small' | 'very-small';
+  @Input() title: string = '';
+  @Input() subtitle: 
