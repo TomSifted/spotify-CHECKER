@@ -9,4 +9,12 @@ import { Component, OnInit, Input, ElementRef, ChangeDetectionStrategy } from '@
 export class ContentSectionComponent implements OnInit {
   @Input() width!: 'full' | 'large' | 'medium' | 'small' | 'very-small';
   @Input() title: string = '';
-  @Input() subtitle: 
+  @Input() subtitle: string = '';
+
+  get maxWidth(): string {
+    switch (this.width) {
+      case 'full':
+        return '100%';
+      case 'large':
+        return '1400px';
+      case 'medium':
