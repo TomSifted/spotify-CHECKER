@@ -28,4 +28,9 @@ export class ContentSectionComponent implements OnInit {
     }
   }
 
-  const
+  constructor(private elementRef: ElementRef) {}
+
+  ngOnInit() {
+    this.elementRef.nativeElement.style.maxWidth = this.maxWidth;
+  }
+}
