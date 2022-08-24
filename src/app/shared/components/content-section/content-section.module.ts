@@ -4,4 +4,7 @@ import { ContentSectionComponent } from './content-section.component';
 
 @NgModule({
   imports: [CommonModule],
-  declaratio
+  declarations: [ContentSectionComponent],
+  exports: [ContentSectionComponent]
+})
+export class ContentSectionModule {}
