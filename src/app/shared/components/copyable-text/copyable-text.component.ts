@@ -14,4 +14,10 @@ export class CopyableTextComponent implements OnInit {
 
   ngOnInit() {}
 
-  
+  copy() {
+    const input = document.createElement('input');
+    input.style.position = 'absolute';
+    input.style.bottom = '-1000px';
+    document.body.appendChild(input);
+    input.value = this.text;
+    input
