@@ -20,4 +20,10 @@ export class CopyableTextComponent implements OnInit {
     input.style.bottom = '-1000px';
     document.body.appendChild(input);
     input.value = this.text;
-    input
+    input.select();
+    document.execCommand('copy');
+    document.body.removeChild(input);
+
+    this.snackbar.open('Address is copied', 'Dismiss', { duration: 3000 });
+  }
+}
