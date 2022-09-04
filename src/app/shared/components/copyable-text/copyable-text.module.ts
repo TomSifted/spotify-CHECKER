@@ -8,4 +8,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [CopyableTextComponent],
-  imports: [CommonModule, FlexLayoutModule, MatIconModule, MatRippleModule, 
+  imports: [CommonModule, FlexLayoutModule, MatIconModule, MatRippleModule, MatTooltipModule],
+  exports: [CopyableTextComponent],
+})
+export class CopyableTextModule {}
