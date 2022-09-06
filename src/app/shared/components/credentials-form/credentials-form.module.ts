@@ -7,4 +7,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
-  imports: 
+  imports: [
+    ReactiveFormsModule,
+    FlexLayoutModule,
+    MatFormFieldModule,
+    MatInputModule,
+    CommonModule,
+  ],
+  declarations: [CrendetialsFormComponent],
+  exports: 
