@@ -15,4 +15,6 @@ import { MatInputModule } from '@angular/material/input';
     CommonModule,
   ],
   declarations: [CrendetialsFormComponent],
-  exports: 
+  exports: [CrendetialsFormComponent],
+})
+export class CredentialsFormModule {}
