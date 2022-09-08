@@ -1,3 +1,8 @@
 import { NgModule } from '@angular/core';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { LoadingSpin
+import { LoadingSpinnerComponent } from './loading-spinner.component';
+
+@NgModule({
+  declarations: [LoadingSpinnerComponent],
+  imports: [MatProgressSpinnerModule],
+  exports:
