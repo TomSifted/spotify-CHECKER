@@ -70,3 +70,52 @@
         <div class="label">Recipient</div>
         <div class="value">{{ transaction.recipient }}</div>
       </div>
+    </ng-container>
+
+    <div class="item">
+      <div class="label">Fee</div>
+      <div class="value">{{ transaction.fee | amountDivide }}</div>
+    </div>
+
+    <!-- leasing -->
+    <ng-container *ngIf="isLeasing">
+      <div class="item">
+        <div class="label">Status</div>
+        <div class="value uppercase">{{ transaction.status }}</div>
+      </div>
+    </ng-container>
+    <!-- Inactive leasing -->
+
+    <!-- Anchors -->
+    <div class="item anchors" *ngIf="anchors.length">
+      <div fxLayout="row" fxLayoutAlign="start center" class="anchors-header">
+        <div class="label" fxFlex="1 1 auto">Anchors</div>
+        <div
+          class="anchor-button"
+          matRipple
+          [ngClass]="{ selected: selectedAnchorTpe === 'hex' }"
+          (click)="selectAnchorType('hex')"
+        >
+          Hex
+        </div>
+        <div
+          class="anchor-button"
+          matRipple
+          [ngClass]="{ selected: selectedAnchorTpe === 'base64' }"
+          (click)="selectAnchorType('base64')"
+        >
+          Base64
+        </div>
+        <div
+          class="anchor-button"
+          matRipple
+          [ngClass]="{ selected: selectedAnchorTpe === 'base58' }"
+          (click)="selectAnchorType('base58')"
+        >
+          Base58
+        </div>
+      </div>
+      <div class="value anchor" *ngFor="let anchor of anchors">{{ anchor[selectedAnchorTpe] }}</div>
+    </div>
+  </div>
+</ng-container>
