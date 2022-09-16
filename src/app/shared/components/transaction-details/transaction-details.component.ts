@@ -3,4 +3,11 @@ import { EncoderService, TransactionTypes } from '../../../core';
 
 interface AnchorData {
   base64: string;
-  bas
+  base58: string;
+  hex: string;
+}
+
+@Component({
+  selector: 'lto-transaction-details',
+  templateUrl: './transaction-details.component.html',
+  styleUrls: ['./transaction-detai
