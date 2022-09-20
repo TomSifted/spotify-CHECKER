@@ -10,4 +10,9 @@ interface AnchorData {
 @Component({
   selector: 'lto-transaction-details',
   templateUrl: './transaction-details.component.html',
-  styleUrls: ['./transaction-detai
+  styleUrls: ['./transaction-details.component.scss']
+})
+export class TransactionDetailsComponent implements OnInit, OnChanges {
+  @Input() transaction!: LTO.Transaction;
+  @Output() close = new EventEmitter();
+
