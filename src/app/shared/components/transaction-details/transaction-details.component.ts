@@ -22,4 +22,11 @@ export class TransactionDetailsComponent implements OnInit, OnChanges {
 
   get isLeasing(): boolean {
     return (
-      th
+      this.transaction.type === TransactionTypes.LEASING ||
+      this.transaction.type === TransactionTypes.CANCEL_LEASING
+    );
+  }
+
+  selectedAnchorTpe: 'hex' | 'base64' | 'base58' = 'hex';
+
+  an
