@@ -16,3 +16,10 @@ export class TransactionDetailsComponent implements OnInit, OnChanges {
   @Input() transaction!: LTO.Transaction;
   @Output() close = new EventEmitter();
 
+  get isMassTransaction(): boolean {
+    return this.transaction && this.transaction.type === 11;
+  }
+
+  get isLeasing(): boolean {
+    return (
+      th
