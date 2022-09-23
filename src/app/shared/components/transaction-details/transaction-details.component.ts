@@ -29,4 +29,11 @@ export class TransactionDetailsComponent implements OnInit, OnChanges {
 
   selectedAnchorTpe: 'hex' | 'base64' | 'base58' = 'hex';
 
-  an
+  anchors: any[] = [];
+
+  get amountInfoVisible(): boolean {
+    // Do not show amount info for anchors
+    return this.transaction.type !== 15;
+  }
+
+  constructor(private encoder
