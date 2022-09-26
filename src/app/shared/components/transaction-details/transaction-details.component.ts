@@ -58,4 +58,7 @@ export class TransactionDetailsComponent implements OnInit, OnChanges {
     }
 
     return anchorsData.map(anchorData => {
-      
+      if (typeof anchorData === 'string') {
+        const base58 = anchorData;
+        const anchorValue = this.encoderService.decode(base58, 'base58');
+        const hex = this.encoderServ
