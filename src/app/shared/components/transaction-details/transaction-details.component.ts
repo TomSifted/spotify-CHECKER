@@ -52,4 +52,10 @@ export class TransactionDetailsComponent implements OnInit, OnChanges {
     }
 
     if (transaction.type === 12) {
-      anchorsData = transaction.data.filter((item: any) =
+      anchorsData = transaction.data.filter((item: any) => item.key === '⚓');
+    } else if (transaction.type === 15) {
+      anchorsData = transaction.anchors;
+    }
+
+    return anchorsData.map(anchorData => {
+      
