@@ -36,4 +36,12 @@ export class TransactionDetailsComponent implements OnInit, OnChanges {
     return this.transaction.type !== 15;
   }
 
-  constructor(private encoder
+  constructor(private encoderService: EncoderService) {}
+
+  ngOnInit() {}
+
+  ngOnChanges() {
+    this.anchors = this.extractAnchors(this.transaction);
+  }
+
+  private extractAnchors(transaction?: any
