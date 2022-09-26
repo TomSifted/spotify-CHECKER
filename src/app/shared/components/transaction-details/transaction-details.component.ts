@@ -44,4 +44,12 @@ export class TransactionDetailsComponent implements OnInit, OnChanges {
     this.anchors = this.extractAnchors(this.transaction);
   }
 
-  private extractAnchors(transaction?: any
+  private extractAnchors(transaction?: any): AnchorData[] {
+    let anchorsData: any[] = [];
+
+    if (!transaction) {
+      return [];
+    }
+
+    if (transaction.type === 12) {
+      anchorsData = transaction.data.filter((item: any) =
