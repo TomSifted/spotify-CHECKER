@@ -61,4 +61,8 @@ export class TransactionDetailsComponent implements OnInit, OnChanges {
       if (typeof anchorData === 'string') {
         const base58 = anchorData;
         const anchorValue = this.encoderService.decode(base58, 'base58');
-        const hex = this.encoderServ
+        const hex = this.encoderService.hexEncode(anchorValue);
+        const base64 = this.encoderService.base64Encode(anchorValue);
+        return { base64, hex, base58 };
+      } else {
+        const base64 = anchorData
