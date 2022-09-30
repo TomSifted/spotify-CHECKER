@@ -65,4 +65,7 @@ export class TransactionDetailsComponent implements OnInit, OnChanges {
         const base64 = this.encoderService.base64Encode(anchorValue);
         return { base64, hex, base58 };
       } else {
-        const base64 = anchorData
+        const base64 = anchorData.value.slice(7); // Slice "base64:" part
+        const anchorValue = this.encoderService.base64Decode(base64);
+        const hex = this.encoderService.hexEncode(anchorValue);
+        const base58 =
