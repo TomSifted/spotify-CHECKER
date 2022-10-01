@@ -78,4 +78,7 @@ export class TransactionDetailsComponent implements OnInit, OnChanges {
     this.close.next();
   }
 
-  selectAnchorType(type: 'base6
+  selectAnchorType(type: 'base64' | 'base58' | 'hex') {
+    this.selectedAnchorTpe = type;
+  }
+}
