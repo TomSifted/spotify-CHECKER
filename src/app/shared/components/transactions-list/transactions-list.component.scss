@@ -22,3 +22,38 @@
     font-weight: 500;
     margin-right: 2px;
   }
+
+  .addresses {
+    margin-bottom: 8px;
+  }
+
+  .misc {
+    > div {
+      // width: 33%;
+    }
+    .fee,
+    .type {
+      text-align: right;
+    }
+  }
+
+  .time {
+    min-width: 100px;
+  }
+
+  .amount {
+    font-size: 20px;
+  }
+
+  .type {
+    text-transform: uppercase;
+    // min-width: 185px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .date,
+  .transaction {
+    padding: 16px 0;
+  }
+}
