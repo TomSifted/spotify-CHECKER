@@ -38,3 +38,77 @@
     }
     .fee,
     // .type {
+    //   text-align: right;
+    // }
+    .status {
+      text-transform: uppercase;
+
+      .value {
+        color: #818ea3;
+
+        &.active {
+          color: green;
+        }
+      }
+    }
+  }
+
+  .time {
+    min-width: 100px;
+  }
+
+  .amount {
+    font-size: 20px;
+    width: 115px;
+  }
+
+  .type {
+    text-transform: uppercase;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .transaction {
+    padding: 16px 0;
+    font-size: 14px;
+
+    .icon {
+      padding-left: 0;
+
+      mat-icon {
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    .amount {
+      font-size: 16px;
+    }
+  }
+
+  .smallTxt {
+    font-size: 12px;
+  }
+
+  .info {
+    max-width: calc(100% - 130px);
+    font-size: 14px;
+  }
+
+  .isWideScreen {
+    display: none !important;
+  }
+
+  .isSmallScreen {}
+}
+@media only screen and (min-width: 550px) {
+  .info {
+    max-width: calc(100% - 160px);
+  }
+
+  .isWideScreen {}
+
+  .isSmallScreen {
+    display: none !important;
+  }
+}
