@@ -1,0 +1,40 @@
+
+:host {
+  display: block;
+}
+
+.transaction {
+  padding: 16px;
+  color: #818ea3;
+  font-size: 16px;
+  cursor: pointer;
+
+  .icon {
+    padding: 8px;
+
+    .income-icon {
+      color: #17c671;
+    }
+  }
+
+  .label {
+    font-weight: 500;
+    margin-right: 4px;
+  }
+
+  .addresses {
+    margin-bottom: 8px;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    white-space: pre;
+  }
+
+  .misc {
+    > div {
+      // width: 33%;
+    }
+    .fee,
+    // .type {
