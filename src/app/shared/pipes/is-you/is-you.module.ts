@@ -5,4 +5,4 @@ import { IsYouPipe } from './is-you.pipe';
   declarations: [IsYouPipe],
   exports: [IsYouPipe]
 })
-export class
+export class IsYouPipeModule {}
