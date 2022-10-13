@@ -17,4 +17,13 @@ import {
 
 import { AmountDividePipeModule, TypeLabelPipeModule, IsYouPipeModule } from './pipes';
 
-@NgModule(
+@NgModule({
+  declarations: [],
+  exports: [
+    CommonModule,
+    NgSuspenseModule,
+    ContentSectionModule,
+    FlexLayoutModule,
+    MaterialModule,
+    CredentialsFormModule,
+    Copyab
