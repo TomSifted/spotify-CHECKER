@@ -33,4 +33,7 @@ import { AmountDividePipeModule, TypeLabelPipeModule, IsYouPipeModule } from './
     TypeLabelPipeModule,
     IsYouPipeModule,
     TransactionDetailsModule,
-    Transactions
+    TransactionsListModule
+  ]
+})
+export class SharedModule {}
