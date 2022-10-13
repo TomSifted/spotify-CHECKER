@@ -26,4 +26,11 @@ import { AmountDividePipeModule, TypeLabelPipeModule, IsYouPipeModule } from './
     FlexLayoutModule,
     MaterialModule,
     CredentialsFormModule,
-    Copyab
+    CopyableTextModule,
+    FormsModule,
+    LoadingSpinnerModule,
+    AmountDividePipeModule,
+    TypeLabelPipeModule,
+    IsYouPipeModule,
+    TransactionDetailsModule,
+    Transactions
