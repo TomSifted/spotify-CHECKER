@@ -10,4 +10,11 @@ import {
   ContentSectionModule,
   CredentialsFormModule,
   CopyableTextModule,
-  Loa
+  LoadingSpinnerModule,
+  TransactionDetailsModule,
+  TransactionsListModule
+} from './components';
+
+import { AmountDividePipeModule, TypeLabelPipeModule, IsYouPipeModule } from './pipes';
+
+@NgModule(
