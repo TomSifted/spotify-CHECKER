@@ -4,4 +4,7 @@
       (close)="select(null)"
       [transaction]="selectedTransaction"
     ></lto-transaction-details>
-  </mat-s
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <lto-content-section title="Transfers" subtitle="">
+      <div class="balance" fxLayout="row" fxLayout.lt-md="column" *ngIf="(balance$ | async) as balan
