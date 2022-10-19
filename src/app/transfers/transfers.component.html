@@ -13,4 +13,6 @@
           <div class="value" matTooltip="{{ balance.generating | amountDivide }}">{{ balance.regular | amountDivide | number: '1.0-3' }}</div>
         </mat-card>
 
-        <mat-card fxFl
+        <mat-card fxFlex="1 1 20" fxLayout="column" fxHide.lt-md fxLayoutAlign="center center">
+          <div class="label">Generating</div>
+          <div class="value" matTooltip="{{ balance.generating 
