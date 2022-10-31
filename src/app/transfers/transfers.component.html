@@ -37,4 +37,8 @@
         <mat-card-title fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="8px">
           <span fxFlex="1 1 auto">Transactions</span>
           <button mat-flat-button color="primary" (click)="makeTransaction()">Send</button>
-        </mat-car
+        </mat-card-title>
+        <mat-card-content fxFlex="1 1 auto">
+          <ng-container *ngIf="(transfers$ | async) as transfersPage; else loadingTpl">
+            <lto-transactions-list
+              [t
