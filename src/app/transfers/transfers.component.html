@@ -41,4 +41,7 @@
         <mat-card-content fxFlex="1 1 auto">
           <ng-container *ngIf="(transfers$ | async) as transfersPage; else loadingTpl">
             <lto-transactions-list
-              [t
+              [transactions]="transfersPage.items"
+              [address]="address$ | async"
+              (transactionClick)="select($event)"
+              [selectedId]="selectedTransaction?.id"
