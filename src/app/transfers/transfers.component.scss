@@ -24,4 +24,15 @@ mat-card-title {
 
 .balance {
   min-height: 150px;
-  ma
+  margin-bottom: 24px;
+  mat-card {
+    padding: 24px;
+    .label {
+      color: #818ea3;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .value {
+      color: #3d5170;
+      font-
