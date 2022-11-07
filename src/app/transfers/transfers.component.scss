@@ -7,4 +7,21 @@
 
 mat-sidenav-container {
   position: absolute;
-  top: 
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+mat-card-title {
+  height: 71px;
+}
+
+.empty {
+  text-align: center;
+  padding: 50px;
+}
+
+.balance {
+  min-height: 150px;
+  ma
