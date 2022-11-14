@@ -11,3 +11,12 @@ import { MakeTransactionModal, WithdrawModal, DepositModal } from '../modals';
 export class TransfersComponent implements OnInit {
   balance$: Observable<any>;
   transfers$: Observable<LTO.Page<LTO.Transaction>>;
+  address$: Observable<string>;
+
+  visibleColumns = ['id'];
+
+  get detailsOpened(): boolean {
+    return !!this.selectedTransaction;
+  }
+
+  selectedTransaction: any = n
