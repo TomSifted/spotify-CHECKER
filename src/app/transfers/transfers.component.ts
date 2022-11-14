@@ -19,4 +19,10 @@ export class TransfersComponent implements OnInit {
     return !!this.selectedTransaction;
   }
 
-  selectedTransaction: any = n
+  selectedTransaction: any = null;
+
+  constructor(
+    private wallet: WalletService,
+    private makeTransactionModal: MakeTransactionModal,
+    private withdrawModal: WithdrawModal,
+    private deposit
