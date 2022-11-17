@@ -25,4 +25,13 @@ export class TransfersComponent implements OnInit {
     private wallet: WalletService,
     private makeTransactionModal: MakeTransactionModal,
     private withdrawModal: WithdrawModal,
-    private deposit
+    private depositModal: DepositModal
+  ) {
+    this.address$ = wallet.address$;
+    this.balance$ = wallet.balance$;
+    this.transfers$ = wallet.transfers$;
+  }
+
+  ngOnInit() {}
+
+  select(transaction: any
