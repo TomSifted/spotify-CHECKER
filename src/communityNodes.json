@@ -1,0 +1,32 @@
+
+{
+   "nodes":[
+      {
+         "address":"3Jw2JvjSYcYyKFExHaYFGKyZnHDhJ9TimvJ",
+         "sharing":"variable",
+         "name":"PJSmit79",
+         "website":"https://t.me/LTOnaut",
+         "payoutSchedule":"End of month",
+         "tgContact":"@PatrickS79",
+         "hide":true,
+         "comment": "Node is inactive"
+      },
+      {
+         "address":"3JtBYdoHJoQbgf8hYvEz1pyp7jj9URWvvbB",
+         "sharing":"97.0%",
+         "name":"Cryptobieb",
+         "website":"https://cryptobieb.nl/cryptocurrency/ico/lto-leasing-network/",
+         "payoutSchedule":"After 10.000 blocks",
+         "tgContact":"@JellevanderSteen",
+         "hide":false
+      },
+      {
+         "address":"3Jn6jpPBVmi1RLRpUtQGKVibNZpeTRACK2P",
+         "sharing":"98.0%",
+         "name":"Kruptos Nomisma",
+         "website":"https://t.me/joinchat/FWHS41c5dkPila-gl60f7A",
+         "payoutSchedule":"End of month",
+         "tgContact":"@PitBullCH",
+         "hide":false
+      },
+      {
