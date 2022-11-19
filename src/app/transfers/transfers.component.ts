@@ -34,4 +34,16 @@ export class TransfersComponent implements OnInit {
 
   ngOnInit() {}
 
-  select(transaction: any
+  select(transaction: any) {
+    this.selectedTransaction = transaction;
+  }
+
+  makeTransaction() {
+    this.makeTransactionModal.show();
+  }
+
+  withdraw() {
+    this.withdrawModal.show();
+  }
+
+  async dep
