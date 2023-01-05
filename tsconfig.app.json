@@ -6,4 +6,10 @@
     "resolveJsonModule": true
   },
   "exclude": [
-    "./**/*.spe
+    "./**/*.spec.ts",
+    "./src/test.ts",
+    "./src/app/core/mocks.ts",
+    "./src/environments/environment.*.ts",
+    "./src/app/core/services/mocks/**/*.ts"
+  ]
+}
