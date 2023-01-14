@@ -17,4 +17,7 @@
     "skipLibCheck": true,
     "paths": {
       "@app/*": ["src/app/*"],
-      "crypto": ["node
+      "crypto": ["node_modules/crypto-js"]
+    }
+  }
+}
